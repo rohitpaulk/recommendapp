@@ -6,9 +6,11 @@ Rails.application.routes.draw do
 
   get 'auth/facebook/callback' => 'users#create'
 
-  get 'users/show' => 'users#show', as: :users_show
+  get 'users/:id' => 'users#show', as: :users_show
 
   post 'api/callback' => 'api#app_callback', as: :app_callback
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

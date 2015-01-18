@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150117132511) do
+ActiveRecord::Schema.define(version: 20150118124229) do
 
   create_table "elsewheres", force: :cascade do |t|
     t.string  "provider"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20150117132511) do
     t.string   "avatar_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "email"
   end
 
 end
