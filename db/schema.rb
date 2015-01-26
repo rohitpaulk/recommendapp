@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150118124229) do
+ActiveRecord::Schema.define(version: 20150126155232) do
+
+  create_table "android_apps", force: :cascade do |t|
+    t.string   "uid"
+    t.string   "display_name"
+    t.string   "icon_url"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "elsewheres", force: :cascade do |t|
     t.string  "provider"
