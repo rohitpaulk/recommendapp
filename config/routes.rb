@@ -3,12 +3,10 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   get 'start' => 'pages#start'
-
   get 'auth/facebook/callback' => 'users#create'
-
   get 'users/:id' => 'users#show', as: :users_show
 
-  post 'api/callback' => 'api#app_callback', as: :app_callback
+  post 'api/users/upsert' => 'api#users_upsert', as: :users_upsert
 
 
   # The priority is based upon order of creation: first created -> highest priority.

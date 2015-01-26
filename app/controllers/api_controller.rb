@@ -1,7 +1,7 @@
 class ApiController < ApplicationController
-	protect_from_forgery except: :app_callback
+	protect_from_forgery except: :users_upsert
 
-	def app_callback
+	def users_upsert
 		user_params = params.permit(:uid, :name, :access_token, :email)
 		if Elsewhere.exists?(:uid => user_params[:uid], :provider => 'facebook')
 			user = Elsewhere.where(:uid => user_params[:uid], :provider => 'facebook').first.user
