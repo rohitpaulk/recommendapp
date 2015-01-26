@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
 	has_many :elsewheres
+	has_many :android_apps, :through => :user_items, :class_name =>
 
 	validates_presence_of :api_access_token
 

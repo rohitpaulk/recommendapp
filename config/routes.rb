@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'users/:id' => 'users#show', as: :users_show
 
   post 'api/users/upsert' => 'api#users_upsert', as: :users_upsert
+  post 'api/user/apps/upsert' => 'api#user_apps_upsert', as: :user_apps_upsert
 
 
   # The priority is based upon order of creation: first created -> highest priority.
