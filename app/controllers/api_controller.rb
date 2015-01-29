@@ -41,7 +41,7 @@ class ApiController < ApplicationController
 			else
 				name = app[:display_name]
 				name.encode!('UTF-8','binary',invalid: :replace, undef: :replace, replace: '')
-				new_app = AndroidApp.create(:uid => app['uid'], :display_name => :name)
+				new_app = AndroidApp.create(:uid => app['uid'], :display_name => app['display_name'])
 				android_apps.append(new_app)
 			end
 		end
