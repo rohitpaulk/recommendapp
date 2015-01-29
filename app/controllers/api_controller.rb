@@ -34,5 +34,17 @@ class ApiController < ApplicationController
 
 	def user_apps_upsert
 		apps = params["apps"]
+		android_apps = []
+		apps.each do |app|
+			if AndroidApp.exists?(:uid => app['uid'])
+				android_apps.append(AndroidApp.find_by_uid(:app['uid']))
+			else
+				new_app = AndroidApp.create(:uid => app['uid'], :display_name => app['display_name'])
+				android_apps.append(new_app)
+			end
+		end
+		@user.android_apps = android_apps
+		@user.save
+		return @user.android_apps
 	end
 end

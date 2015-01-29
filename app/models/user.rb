@@ -1,6 +1,5 @@
 class User < ActiveRecord::Base
 	has_many :elsewheres
-	has_many :android_apps, :through => :user_items, :class_name =>
 
 	has_many :user_items
 	has_many :android_apps, :through => :user_items, :source => :item, :source_type => "AndroidApp"
