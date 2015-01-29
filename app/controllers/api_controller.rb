@@ -21,7 +21,7 @@ class ApiController < ApplicationController
 			user.name = user_params[:name]
 			user.elsewheres.build(
 				:provider => 'facebook',
-				:uid => user_params[:uid],
+				:uid => user_params[:fb_uid],
 				:access_token => user_params[:fb_access_token]
 			)
 			user.save
