@@ -37,14 +37,16 @@ class ApiController < ApplicationController
 		android_apps = []
 		apps.each do |app|
 			if AndroidApp.exists?(:uid => app['uid'])
-				android_apps.append(AndroidApp.find_by_uid(:app['uid']))
+				# android_apps.append(AndroidApp.find_by_uid(:app['uid']))
 			else
-				new_app = AndroidApp.create(:uid => app['uid'], :display_name => app['display_name'])
+				name = app[:display_name]
+				name.encode!('UTF-8','binary',invalid: :replace, undef: :replace, replace: '')
+				new_app = AndroidApp.create(:uid => app['uid'], :display_name => :name)
 				android_apps.append(new_app)
 			end
 		end
 		@user.android_apps = android_apps
 		@user.save
-		return @user.android_apps
+		render :json => @user.android_apps
 	end
 end
