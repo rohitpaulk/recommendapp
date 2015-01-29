@@ -3,9 +3,9 @@ class ApiController < ApplicationController
 	before_action :require_auth, except: :users_upsert
 
 	def require_auth
-		api_access_key = params["api_access_key"]
-		if User.exists?(:api_access_key => api_access_key)
-			@user = User.find(:api_access_key => api_access_key)
+		api_access_token = params["api_access_token"]
+		if User.exists?(:api_access_token => api_access_token)
+			@user = User.find(:api_access_token => api_access_token)
 		else
 			render plain: "Unauthorized", status: 401 and return
 		end
