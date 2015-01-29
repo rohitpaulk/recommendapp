@@ -37,7 +37,7 @@ class ApiController < ApplicationController
 		android_apps = []
 		apps.each do |app|
 			if AndroidApp.exists?(:uid => app['uid'])
-				# android_apps.append(AndroidApp.find_by_uid(:app['uid']))
+				android_apps.append(AndroidApp.find_by_uid(app['uid']))
 			else
 				name = app[:display_name]
 				name.encode!('UTF-8','binary',invalid: :replace, undef: :replace, replace: '')
