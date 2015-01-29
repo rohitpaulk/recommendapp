@@ -5,7 +5,7 @@ class ApiController < ApplicationController
 	def require_auth
 		api_access_token = params["api_access_token"]
 		if User.exists?(:api_access_token => api_access_token)
-			@user = User.find(:api_access_token => api_access_token)
+			@user = User.find_by_api_access_token(api_access_token)
 		else
 			render plain: "Unauthorized", status: 401 and return
 		end
