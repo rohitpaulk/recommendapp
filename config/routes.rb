@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   post 'api/users/upsert' => 'api#users_upsert', as: :users_upsert
   post 'api/user/apps/upsert' => 'api#user_apps_upsert', as: :user_apps_upsert
 
+  post 'api/recommendations/create' => 'api#recommendations_create', as: :recommendations_create
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

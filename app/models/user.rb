@@ -4,6 +4,9 @@ class User < ActiveRecord::Base
 	has_many :user_items
 	has_many :android_apps, :through => :user_items, :source => :item, :source_type => "AndroidApp"
 
+	has_many :recommendations, :foreign_key => :recommender_id
+	has_many :recommended_android_apps, :through => :recommendations, :source => :item, :source_type => "AndroidApp"
+
 	validates_presence_of :api_access_token
 
 	before_validation :create_api_credentials, on: :create

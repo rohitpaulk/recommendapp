@@ -49,4 +49,19 @@ class ApiController < ApplicationController
 		@user.save
 		render :json => @user.android_apps
 	end
+
+	def recommendations_create
+		recommendee = User.find(params["recommendee_id"])
+		app = AndroidApp.find_by_uid(params['app_uid'])
+		reco = Recommendation.new(
+			:recommender => @user,
+			:recommendee => recommendee,
+			:item => app
+		)
+		if reco.save
+			render :json => reco
+		else
+			render plain: "Bad Request!!", status: 400 and return
+		end
+	end
 end
