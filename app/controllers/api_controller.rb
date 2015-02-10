@@ -66,7 +66,7 @@ class ApiController < ApplicationController
 	end
 
 	def recommendations_list
-		recommendations = Recommendation.where("recommendee_id= ? or recommender_id = ?", @user.id, @user.id)
+		recommendations = Recommendation.where(recommendee_id: @user.id)
 		render :json => recommendations
 	end
 end
