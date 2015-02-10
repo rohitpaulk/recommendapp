@@ -64,4 +64,9 @@ class ApiController < ApplicationController
 			render plain: "Bad Request!!", status: 400 and return
 		end
 	end
+
+	def recommendations_list
+		recommendations = Recommendation.where("recommendee_id= ? or recommender_id = ?", @user.id, @user.id)
+		render :json => recommendations
+	end
 end

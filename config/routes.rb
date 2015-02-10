@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   post 'api/recommendations/create' => 'api#recommendations_create', as: :recommendations_create
 
 
+  get 'api/recommendations/list' => 'api#recommendations_list', as: :recommendations_list
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
