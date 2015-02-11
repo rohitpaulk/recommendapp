@@ -20,6 +20,18 @@ describe "API", :type => :request do
       expect(json['recommender_id']).to eq(@user.id)
     end
 
+    it "returns 409 if recommendation exists" do
+      reco = FactoryGirl.create(:recommendation, :recommender => @user)
+      post '/api/recommendations', {
+        api_access_token: @user.api_access_token,
+        recommendee_id: reco.recommendee.id,
+        item_id: reco.item_id,
+        item_type: reco.item_type
+      }
+      expect(Recommendation.count).to eq(1)
+      expect(response.status).to eq(409)
+    end
+
     include_examples "auth", :post, '/api/recommendations'
   end
 end

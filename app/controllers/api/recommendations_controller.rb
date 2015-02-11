@@ -15,7 +15,7 @@ module Api
       if reco.save
         render :json => reco
       else
-        render plain: "Bad Request!!", status: 400 and return
+        render plain: "Conflict", status: 409 and return
       end
     end
   end
