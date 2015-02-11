@@ -41,6 +41,8 @@ describe "API", :type => :request do
       expect(json.first['recommendee_id']).to eq(@user.id)
     end
 
+    it "can filter by multiple"
+
     include_examples "auth", :get, '/api/recommendations'
   end
 
