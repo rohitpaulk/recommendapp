@@ -2,6 +2,48 @@ require 'rails_helper'
 
 describe "API", :type => :request do
 
+  describe "GET /recommendations" do
+    before do
+      @user = FactoryGirl.create(:user)
+      2.times do
+        FactoryGirl.create(:recommendation)
+      end
+      2.times do
+        FactoryGirl.create(:recommendation, :recommender => @user)
+      end
+      1.times do
+        FactoryGirl.create(:recommendation, :recommendee => @user)
+      end
+    end
+
+    it "lists all recommendations" do
+      get '/api/recommendations', {
+        api_access_token: @user.api_access_token
+      }
+      expect(json.size).to eq(5)
+    end
+
+    it "filters recommendations by recommender_id" do
+      get '/api/recommendations', {
+        api_access_token: @user.api_access_token,
+        recommender_id: @user.id
+      }
+      expect(json.size).to eq(2)
+      expect(json.first['recommender_id']).to eq(@user.id)
+    end
+
+    it "filters recommendations by recommendee_id" do
+      get '/api/recommendations', {
+        api_access_token: @user.api_access_token,
+        recommendee_id: @user.id
+      }
+      expect(json.size).to eq(1)
+      expect(json.first['recommendee_id']).to eq(@user.id)
+    end
+
+    include_examples "auth", :get, '/api/recommendations'
+  end
+
   describe "POST /recommendations" do
     before do
       @user = FactoryGirl.create(:user)
