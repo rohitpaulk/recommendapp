@@ -13,6 +13,6 @@ describe "API", :type => :request do
       expect(json.count).to eq(AndroidApp.count)
     end
 
-    include_examples "auth", '/api/android_apps'
+    include_examples "auth", :get, '/api/android_apps'
   end
 end

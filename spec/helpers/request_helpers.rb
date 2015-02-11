@@ -3,9 +3,9 @@ module RequestHelpers
     JSON.parse(response.body)
   end
 
-  shared_examples "auth" do |url|
+  shared_examples "auth" do |method, url|
     it "requires auth" do
-      get url
+      self.send(method, url)
       expect(response.status).to eq(401)
     end
   end

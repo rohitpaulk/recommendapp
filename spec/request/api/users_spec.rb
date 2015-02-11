@@ -11,7 +11,7 @@ describe "API", :type => :request do
       expect(json.count).to eq(User.count)
     end
 
-    include_examples "auth", '/api/users'
+    include_examples "auth", :get,  '/api/users'
   end
 
   describe "POST /users" do
@@ -56,7 +56,7 @@ describe "API", :type => :request do
       expect(json.size).to eq(2)
     end
 
-    include_examples "auth", "/api/user/1/android_apps"
+    include_examples "auth", :get, "/api/user/1/android_apps"
   end
 
   describe "POST /user/:id/android_apps" do
@@ -85,8 +85,40 @@ describe "API", :type => :request do
       expect(response.status).to eq(401)
     end
 
-    include_examples "auth", "/api/user/1/android_apps"
+    include_examples "auth", :post, "/api/user/1/android_apps"
+  end
+
+  describe "GET /user/:id/recommendations" do
+    before do
+      @user = FactoryGirl.create(:user)
+      @other_user = FactoryGirl.create(:user)
+      @app1 = FactoryGirl.create(:android_app)
+      @app2 = FactoryGirl.create(:android_app)
+      @recommendation_out = FactoryGirl.create(:recommendation,
+        recommender: @user,
+        recommendee: @other_user,
+        item: @app1
+      )
+      @recommendation_in = FactoryGirl.create(:recommendation,
+        recommender: @other_user,
+        recommendee: @user,
+        item: @app2
+      )
+    end
+
+    it "returns all the users recommendations" do
+      get "/api/user/#{@user.id}/recommendations", {
+        api_access_token: @user.api_access_token
+      }
+      expect(json['in'].size).to eq(1)
+      expect(json['in'][0]['item_id']).to eq(@recommendation_in.item.id)
+      expect(json['out'].size).to eq(1)
+      expect(json['out'][0]['item_id']).to eq(@recommendation_out.item.id)
+    end
+
+    include_examples "auth", :get, "/api/user/1/android_apps"
   end
 
 
 end
+

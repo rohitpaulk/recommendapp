@@ -6,8 +6,11 @@ Rails.application.routes.draw do
   post 'api/users' => 'api/users#create'
   get 'api/user/:id/android_apps' => 'api/users#android_apps_index'
   post 'api/user/:id/android_apps' => 'api/users#android_apps_create'
+  get 'api/user/:id/recommendations' => 'api/users#recommendations_index'
 
   get 'api/android_apps' => 'api/android_apps#index'
+
+  post 'api/recommendations' => 'api/recommendations#create'
 
   # post 'api/users/upsert' => 'api#users_upsert', as: :users_upsert
   # post 'api/user/apps/upsert' => 'api#user_apps_upsert', as: :user_apps_upsert

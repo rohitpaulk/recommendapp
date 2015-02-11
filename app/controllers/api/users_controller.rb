@@ -31,5 +31,13 @@ module Api
 
       render :json => user.android_apps.to_json
     end
+
+    def recommendations_index
+      user = User.find(params[:id])
+      render :json => {
+        :in => Recommendation.where(:recommendee => user),
+        :out => Recommendation.where(:recommender => user)
+      }
+    end
   end
 end
