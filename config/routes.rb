@@ -2,17 +2,20 @@ Rails.application.routes.draw do
 
   root 'pages#home'
 
-  get 'start' => 'pages#start'
-  get 'auth/facebook/callback' => 'users#create'
-  get 'users/:id' => 'users#show', as: :users_show
+  get 'api/users' => 'api/users#index'
+  post 'api/users' => 'api/users#create'
+  get 'api/user/:id/android_apps' => 'api/users#android_apps_index'
+  post 'api/user/:id/android_apps' => 'api/users#android_apps_create'
 
-  post 'api/users/upsert' => 'api#users_upsert', as: :users_upsert
-  post 'api/user/apps/upsert' => 'api#user_apps_upsert', as: :user_apps_upsert
+  get 'api/android_apps' => 'api/android_apps#index'
 
-  post 'api/recommendations/create' => 'api#recommendations_create', as: :recommendations_create
+  # post 'api/users/upsert' => 'api#users_upsert', as: :users_upsert
+  # post 'api/user/apps/upsert' => 'api#user_apps_upsert', as: :user_apps_upsert
+
+  # post 'api/recommendations/create' => 'api#recommendations_create', as: :recommendations_create
 
 
-  get 'api/recommendations/list' => 'api#recommendations_list', as: :recommendations_list
+  # get 'api/recommendations/list' => 'api#recommendations_list', as: :recommendations_list
 
 
   # The priority is based upon order of creation: first created -> highest priority.
