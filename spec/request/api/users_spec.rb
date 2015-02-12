@@ -124,7 +124,13 @@ describe "API", :type => :request do
       expect(user.push_id).to eq("abcd")
     end
 
-    it "doesn't let user change other user's ID"
+    it "doesn't let user change other user's ID" do
+      put "/api/user/#{user.id}", {
+        api_access_token: FactoryGirl.create(:user).api_access_token,
+        push_id: "abcd"
+      }
+      expect(response.status).to eq(401)
+    end
 
     include_examples "auth", :put, "/api/user/1"
   end

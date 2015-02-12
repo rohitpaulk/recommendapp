@@ -5,6 +5,7 @@ describe "API", :type => :request do
   describe "GET /recommendations" do
     before do
       @user = FactoryGirl.create(:user)
+      @other_user = FactoryGirl.create(:user)
       2.times do
         FactoryGirl.create(:recommendation)
       end
@@ -14,13 +15,16 @@ describe "API", :type => :request do
       1.times do
         FactoryGirl.create(:recommendation, :recommendee => @user)
       end
+      2.times do
+        FactoryGirl.create(:recommendation, :recommender => @user, :recommendee => @other_user)
+      end
     end
 
     it "lists all recommendations" do
       get '/api/recommendations', {
         api_access_token: @user.api_access_token
       }
-      expect(json.size).to eq(5)
+      expect(json.size).to eq(7)
     end
 
     it "filters recommendations by recommender_id" do
@@ -28,7 +32,7 @@ describe "API", :type => :request do
         api_access_token: @user.api_access_token,
         recommender_id: @user.id
       }
-      expect(json.size).to eq(2)
+      expect(json.size).to eq(4)
       expect(json.first['recommender_id']).to eq(@user.id)
     end
 
@@ -41,7 +45,18 @@ describe "API", :type => :request do
       expect(json.first['recommendee_id']).to eq(@user.id)
     end
 
-    it "can filter by multiple"
+    it "can filter by multiple" do
+      get '/api/recommendations', {
+        api_access_token: @user.api_access_token,
+        recommender_id: @user.id,
+        recommendee_id: @other_user.id
+      }
+      expect(json.size).to eq(2)
+      json.each do |item|
+        expect(item['recommendee_id']).to eq(@other_user.id)
+        expect(item['recommender_id']).to eq(@user.id)
+      end
+    end
 
     include_examples "auth", :get, '/api/recommendations'
   end
@@ -100,4 +115,5 @@ describe "API", :type => :request do
     include_examples "auth", :post, '/api/recommendations'
   end
 end
+
 
