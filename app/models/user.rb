@@ -52,7 +52,7 @@ class User < ActiveRecord::Base
 	end
 
 	def send_notification(data)
-		# Data is already in JSON format
+		# Data is already in hash format
 		GCM.send_notification(push_id, data) if push_id
 	end
 end

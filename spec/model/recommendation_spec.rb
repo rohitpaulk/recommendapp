@@ -39,7 +39,7 @@ describe Recommendation do
     app = FactoryGirl.create(:android_app)
     user = FactoryGirl.create(:user)
 
-    expect(user).to receive(:send_notification).once
+    expect(user).to receive(:send_notification).once.with(hash_including("recommendee_id" => user.id))
 
     FactoryGirl.create(:recommendation,
       :recommender => FactoryGirl.create(:user),

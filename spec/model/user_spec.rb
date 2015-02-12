@@ -109,8 +109,16 @@ describe User do
     end
 
     describe "#send_notification" do
-      it "sends notification to push_id"
-      it "doesn't send if push_id is nil"
+      let(:user) { FactoryGirl.create(:user) }
+      it "sends notification to push_id" do
+        expect(GCM).to receive(:send_notification).with(user.push_id, {abcd: "hey"})
+        user.send_notification({abcd: "hey"})
+      end
+      it "doesn't send if push_id is nil" do
+        user_without_push = FactoryGirl.create(:user, :push_id => nil)
+        expect(GCM).to_not receive(:send_notification)
+        user_without_push.send_notification({abcd: "hey"})
+      end
     end
 
   end
