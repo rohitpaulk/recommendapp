@@ -51,7 +51,8 @@ class User < ActiveRecord::Base
 		save!
 	end
 
-	def send_notification
-		GCM.send_notification(push_id) if push_id
+	def send_notification(data)
+		# Data is already in JSON format
+		GCM.send_notification(push_id, data) if push_id
 	end
 end

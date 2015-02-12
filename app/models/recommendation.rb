@@ -29,6 +29,6 @@ class Recommendation < ActiveRecord::Base
   end
 
   def send_notification
-    recommendee.send_notification
+    recommendee.send_notification(self.to_json)
   end
 end
