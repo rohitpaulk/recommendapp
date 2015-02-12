@@ -81,6 +81,22 @@ describe "API", :type => :request do
       })
     end
 
+    it "returns relevant error message if recommending to self" do
+      post '/api/recommendations', {
+        api_access_token: @user.api_access_token,
+        recommendee_id: @user.id,
+        item_id: @app.id,
+        item_type: @app.class.to_s
+      }
+      expect(Recommendation.count).to eq(0)
+      expect(response.status).to eq(409)
+      expect(json).to eq({
+        "errors" =>  {
+          "base" => ["You can't recommend items to yourself!"]
+        }
+      })
+    end
+
     include_examples "auth", :post, '/api/recommendations'
   end
 end

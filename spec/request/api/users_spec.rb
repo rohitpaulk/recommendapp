@@ -76,6 +76,18 @@ describe "API", :type => :request do
       expect(json.size).to eq(2)
     end
 
+    it "doesn't create apps again if they exist" do
+      FactoryGirl.create(:android_app,
+        uid: valid_params[0][:uid],
+        display_name: valid_params[0][:display_name]
+      )
+      post "/api/user/#{user.id}/android_apps", {
+        api_access_token: user.api_access_token,
+        apps: valid_params
+      }
+      expect(json.size).to eq(2)
+    end
+
     it "doesn't let other users edit" do
       other_user = FactoryGirl.create(:user)
       post "/api/user/#{user.id}/android_apps", {
