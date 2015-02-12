@@ -124,9 +124,7 @@ describe "API", :type => :request do
       expect(user.push_id).to eq("abcd")
     end
 
-    it "doesn't let user change other user's ID" do
-
-    end
+    it "doesn't let user change other user's ID"
 
     include_examples "auth", :put, "/api/user/1"
   end

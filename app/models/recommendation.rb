@@ -10,6 +10,8 @@ class Recommendation < ActiveRecord::Base
 
   validates_uniqueness_of :item_id, scope: [:recommendee, :recommender, :item_type]
 
+  after_create :send_notification
+
   class RecursionValidator < ActiveModel::Validator
     def validate(record)
       if record.recommender_id == record.recommendee_id
@@ -24,5 +26,9 @@ class Recommendation < ActiveRecord::Base
 
   def set_pending_status
     self.status ||= 'pending'
+  end
+
+  def send_notification
+    recommendee.send_notification
   end
 end

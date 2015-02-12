@@ -50,4 +50,8 @@ class User < ActiveRecord::Base
 
 		save!
 	end
+
+	def send_notification
+		GCM.send_notification(push_id) if push_id
+	end
 end

@@ -35,4 +35,17 @@ describe Recommendation do
     )).to_not be_valid
   end
 
+  it "calls user#send_notification once created" do
+    app = FactoryGirl.create(:android_app)
+    user = FactoryGirl.create(:user)
+
+    expect(user).to receive(:send_notification).once
+
+    FactoryGirl.create(:recommendation,
+      :recommender => FactoryGirl.create(:user),
+      :recommendee => user,
+      :item        => app
+    )
+  end
+
 end

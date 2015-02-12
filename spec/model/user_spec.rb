@@ -107,6 +107,12 @@ describe User do
       expect(AndroidApp.count).to eq(2)
       expect(user.android_apps.count).to eq(2)
     end
+
+    describe "#send_notification" do
+      it "sends notification to push_id"
+      it "doesn't send if push_id is nil"
+    end
+
   end
 end
 
