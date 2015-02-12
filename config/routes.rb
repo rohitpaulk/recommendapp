@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get 'api/users' => 'api/users#index'
   post 'api/users' => 'api/users#create'
+  put 'api/user/:id' => 'api/users#update'
   get 'api/user/:id/android_apps' => 'api/users#android_apps_index'
   post 'api/user/:id/android_apps' => 'api/users#android_apps_create'
 

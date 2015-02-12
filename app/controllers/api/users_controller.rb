@@ -18,6 +18,16 @@ module Api
       render :json => user.to_json(:include => :elsewheres)
     end
 
+    def update
+      user_params = params.permit(
+        :push_id
+      )
+      if @user.update(user_params)
+        render :json => @user
+      else
+        render :json => { errors: @user.errors }, status: 409
+      end
+    end
     def android_apps_index
       user = User.find(params[:id])
       render :json => user.android_apps.to_json

@@ -109,5 +109,26 @@ describe "API", :type => :request do
 
     include_examples "auth", :post, "/api/user/1/android_apps"
   end
+
+  describe "PUT /user/:id" do
+    let(:user) { FactoryGirl.create(:user) }
+
+    it "updates push_id for user" do
+      put "/api/user/#{user.id}", {
+        api_access_token: user.api_access_token,
+        push_id: "abcd"
+      }
+      expect(response.status).to eq(200)
+      expect(json["push_id"]).to eq("abcd")
+      user.reload
+      expect(user.push_id).to eq("abcd")
+    end
+
+    it "doesn't let user change other user's ID" do
+
+    end
+
+    include_examples "auth", :put, "/api/user/1"
+  end
 end
 
