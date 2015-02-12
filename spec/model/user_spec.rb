@@ -88,6 +88,25 @@ describe User do
       expect(AndroidApp.count).to eq(2)
       expect(user.android_apps.count).to eq(2)
     end
+
+    it "doesn't recreate user_items if they already exist" do
+      apps = [
+        {
+          uid: "1234",
+          display_name: "Angry Birds"
+        },
+        {
+          uid: "2345",
+          display_name: "Temple Run"
+        }
+      ]
+      user.update_apps(apps)
+      expect(AndroidApp.count).to eq(2)
+      expect(user.android_apps.count).to eq(2)
+      user.update_apps(apps)
+      expect(AndroidApp.count).to eq(2)
+      expect(user.android_apps.count).to eq(2)
+    end
   end
 end
 

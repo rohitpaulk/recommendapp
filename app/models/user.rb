@@ -36,12 +36,15 @@ class User < ActiveRecord::Base
 	def update_apps(apps)
 		apps.each do |app|
 			if AndroidApp.exists?(:uid => app[:uid])
-		    self.android_apps.append(AndroidApp.find_by_uid(app[:uid]))
+				existing_app = AndroidApp.find_by_uid(app[:uid])
+				unless android_apps.include?(existing_app)
+		    	android_apps.append(existing_app)
+		    end
 		  else
 		  	name = app[:display_name]
 		    name.encode!('UTF-8','binary',invalid: :replace, undef: :replace, replace: '')
 		    new_app = AndroidApp.create(:uid => app[:uid], :display_name => name)
-		    self.android_apps.append(new_app)
+		    android_apps.append(new_app)
 		  end
 		end
 

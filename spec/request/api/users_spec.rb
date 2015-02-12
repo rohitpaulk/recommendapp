@@ -88,6 +88,16 @@ describe "API", :type => :request do
       expect(json.size).to eq(2)
     end
 
+    it "returns same number of apps for two identical requests" do
+      3.times do
+        post "/api/user/#{user.id}/android_apps", {
+          api_access_token: user.api_access_token,
+          apps: valid_params
+        }
+        expect(json.size).to eq(2)
+      end
+    end
+
     it "doesn't let other users edit" do
       other_user = FactoryGirl.create(:user)
       post "/api/user/#{user.id}/android_apps", {
