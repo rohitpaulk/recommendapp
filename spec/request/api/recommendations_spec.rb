@@ -114,6 +114,23 @@ describe "API", :type => :request do
 
     include_examples "auth", :post, '/api/recommendations'
   end
+
+  describe "GET /recommendations/:id" do
+    before do
+      @user = FactoryGirl.create(:user)
+      @recommendation = FactoryGirl.create(:recommendation)
+    end
+
+    it "fetches details of a recommendation" do
+      get "/api/recommendations/#{@recommendation.id}", {
+        api_access_token: @user.api_access_token
+      }
+      expect(json['recommendee_id']).to eq(@recommendation.recommendee_id)
+    end
+
+    include_examples "auth", :get, '/api/recommendations/1'
+  end
+
 end
 
 

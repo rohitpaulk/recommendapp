@@ -34,5 +34,10 @@ module Api
         render json: { errors: reco.errors }, status: 409 and return
       end
     end
+
+    def show
+      reco = Recommendation.find(params[:id])
+      render :json => reco
+    end
   end
 end
