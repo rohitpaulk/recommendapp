@@ -39,7 +39,7 @@ describe "API", :type => :request do
     end
   end
 
-  describe "GET /user/:id/android_apps" do
+  describe "GET /users/:id/android_apps" do
     let(:user) {
       FactoryGirl.create(:user,
         :android_apps => [
@@ -50,16 +50,16 @@ describe "API", :type => :request do
     }
 
     it "returns all the users apps" do
-      get "/api/user/#{user.id}/android_apps", {
+      get "/api/users/#{user.id}/android_apps", {
         api_access_token: user.api_access_token
       }
       expect(json.size).to eq(2)
     end
 
-    include_examples "auth", :get, "/api/user/1/android_apps"
+    include_examples "auth", :get, "/api/users/1/android_apps"
   end
 
-  describe "POST /user/:id/android_apps" do
+  describe "POST /users/:id/android_apps" do
     let(:user) { FactoryGirl.create(:user) }
     let(:valid_params) {
       [
@@ -69,7 +69,7 @@ describe "API", :type => :request do
     }
 
     it "creates apps if they don't exist" do
-      post "/api/user/#{user.id}/android_apps", {
+      post "/api/users/#{user.id}/android_apps", {
         api_access_token: user.api_access_token,
         apps: valid_params
       }
@@ -81,7 +81,7 @@ describe "API", :type => :request do
         uid: valid_params[0][:uid],
         display_name: valid_params[0][:display_name]
       )
-      post "/api/user/#{user.id}/android_apps", {
+      post "/api/users/#{user.id}/android_apps", {
         api_access_token: user.api_access_token,
         apps: valid_params
       }
@@ -90,7 +90,7 @@ describe "API", :type => :request do
 
     it "returns same number of apps for two identical requests" do
       3.times do
-        post "/api/user/#{user.id}/android_apps", {
+        post "/api/users/#{user.id}/android_apps", {
           api_access_token: user.api_access_token,
           apps: valid_params
         }
@@ -100,21 +100,21 @@ describe "API", :type => :request do
 
     it "doesn't let other users edit" do
       other_user = FactoryGirl.create(:user)
-      post "/api/user/#{user.id}/android_apps", {
+      post "/api/users/#{user.id}/android_apps", {
         api_access_token: other_user.api_access_token,
         apps: valid_params
       }
       expect(response.status).to eq(401)
     end
 
-    include_examples "auth", :post, "/api/user/1/android_apps"
+    include_examples "auth", :post, "/api/users/1/android_apps"
   end
 
-  describe "PUT /user/:id" do
+  describe "PUT /users/:id" do
     let(:user) { FactoryGirl.create(:user) }
 
     it "updates push_id for user" do
-      put "/api/user/#{user.id}", {
+      put "/api/users/#{user.id}", {
         api_access_token: user.api_access_token,
         push_id: "abcd"
       }
@@ -125,14 +125,14 @@ describe "API", :type => :request do
     end
 
     it "doesn't let user change other user's ID" do
-      put "/api/user/#{user.id}", {
+      put "/api/users/#{user.id}", {
         api_access_token: FactoryGirl.create(:user).api_access_token,
         push_id: "abcd"
       }
       expect(response.status).to eq(401)
     end
 
-    include_examples "auth", :put, "/api/user/1"
+    include_examples "auth", :put, "/api/users/1"
   end
 end
 
