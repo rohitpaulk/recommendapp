@@ -7,6 +7,11 @@ module Api
       render :json => AndroidApp.all
     end
 
+    def show
+      app = AndroidApp.find(params[:id])
+      render :json => app.to_json
+    end
+
     # def create
     #   user_params = params.permit(
     #     :fb_uid,

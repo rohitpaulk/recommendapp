@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post 'api/user/:id/android_apps' => 'api/users#android_apps_create'
 
   get 'api/android_apps' => 'api/android_apps#index'
+  get 'api/android_apps/:id' => 'api/android_apps#show'
 
   get 'api/recommendations' => 'api/recommendations#index'
   post 'api/recommendations' => 'api/recommendations#create'
