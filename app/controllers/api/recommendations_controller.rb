@@ -37,7 +37,7 @@ module Api
 
     def show
       reco = Recommendation.find(params[:id])
-      render :json => reco
+      render :json => reco.to_json(include: ["recommender", "recommendee"])
     end
 
     def update

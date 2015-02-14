@@ -126,6 +126,7 @@ describe "API", :type => :request do
         api_access_token: @user.api_access_token
       }
       expect(json['recommendee_id']).to eq(@recommendation.recommendee_id)
+      expect(json['recommender']).to be_a(Hash)
     end
 
     include_examples "auth", :get, '/api/recommendations/1'
