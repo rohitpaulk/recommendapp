@@ -21,6 +21,14 @@ describe Recommendation do
     expect(reco.status).to eq('pending')
   end
 
+  it "isn't valid with an invalid status string" do
+    expect(FactoryGirl.build(:recommendation, :status => "pending")).to be_valid
+    expect(FactoryGirl.build(:recommendation, :status => "sent")).to be_valid
+    expect(FactoryGirl.build(:recommendation, :status => "seen")).to be_valid
+
+    expect(FactoryGirl.build(:recommendation, :status => "invalid")).to_not be_valid
+  end
+
   it "isn't valid with same recommender and recommendee" do
     user = FactoryGirl.create(:user)
     expect(FactoryGirl.build(:recommendation, :recommender => user, :recommendee => user)).to_not be_valid

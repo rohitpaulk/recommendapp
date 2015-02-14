@@ -7,6 +7,7 @@ class Recommendation < ActiveRecord::Base
   validates_presence_of :recommender
   validates_presence_of :item
   validates_presence_of :status
+  validates_inclusion_of :status, in: ["pending", "sent", "seen"]
 
   validates_uniqueness_of :item_id, scope: [:recommendee, :recommender, :item_type]
 
