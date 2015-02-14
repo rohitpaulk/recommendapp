@@ -2,8 +2,14 @@ module Api
   class UsersController < ApplicationController
 
     before_filter :require_auth, :except => :create
+
     def index
       render :json => User.all
+    end
+
+    def show
+      user = User.find(params[:id])
+      render :json => user.to_json(:include => :elsewheres)
     end
 
     def create

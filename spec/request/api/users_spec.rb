@@ -39,6 +39,21 @@ describe "API", :type => :request do
     end
   end
 
+  describe "GET /users/:id" do
+    before do
+      @user = FactoryGirl.create(:user)
+    end
+
+    it "fetches details for user" do
+      get "/api/users/#{@user.id}", {
+        api_access_token: FactoryGirl.create(:user).api_access_token
+      }
+      expect(json["id"]).to eq(@user.id)
+    end
+
+    include_examples "auth", :get, "/api/users/1"
+  end
+
   describe "GET /users/:id/android_apps" do
     let(:user) {
       FactoryGirl.create(:user,
