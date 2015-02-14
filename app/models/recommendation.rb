@@ -30,6 +30,6 @@ class Recommendation < ActiveRecord::Base
   end
 
   def send_notification
-    recommendee.send_notification(self.attributes)
+    recommendee.send_notification(self.serializable_hash(:include => ["recommender", "recommendee"]))
   end
 end
