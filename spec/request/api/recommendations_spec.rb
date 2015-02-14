@@ -131,6 +131,25 @@ describe "API", :type => :request do
     include_examples "auth", :get, '/api/recommendations/1'
   end
 
+  describe "PUT /recommendations/:id" do
+    before do
+      @user = FactoryGirl.create(:user)
+      @recommendation = FactoryGirl.create(:recommendation)
+    end
+
+    it "modifies a recommendation" do
+      put "/api/recommendations/#{@recommendation.id}", {
+        api_access_token: @user.api_access_token,
+        status: "seen"
+      }
+      expect(json['status']).to eq("seen")
+      @recommendation.reload
+      expect(@recommendation.status).to eq("seen")
+    end
+
+    include_examples "auth", :put, '/api/recommendations/1'
+  end
+
 end
 
 

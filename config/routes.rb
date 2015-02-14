@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'api/recommendations' => 'api/recommendations#index'
   post 'api/recommendations' => 'api/recommendations#create'
   get 'api/recommendations/:id' => 'api/recommendations#show'
+  put 'api/recommendations/:id' => 'api/recommendations#update'
 
   # post 'api/users/upsert' => 'api#users_upsert', as: :users_upsert
   # post 'api/user/apps/upsert' => 'api#user_apps_upsert', as: :user_apps_upsert

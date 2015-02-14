@@ -39,5 +39,19 @@ module Api
       reco = Recommendation.find(params[:id])
       render :json => reco
     end
+
+    def update
+      reco = Recommendation.find(params[:id])
+
+      reco_params = params.permit(
+        :status
+      )
+      if reco.update(reco_params)
+        render :json => reco
+      else
+        render :json => { errors: reco.errors }, status: 409
+      end
+    end
+
   end
 end
