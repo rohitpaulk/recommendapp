@@ -48,9 +48,9 @@ module Api
       user = User.find(params[:id])
       render plain: "Unauthorized", status: 401 and return unless user == @user
 
-      user.update_apps(params['apps'])
+      updated_apps = user.update_apps(params['apps'])
 
-      render :json => user.android_apps.to_json
+      render :json => updated_apps.to_json
     end
   end
 end

@@ -89,6 +89,7 @@ describe "API", :type => :request do
         apps: valid_params
       }
       expect(json.size).to eq(2)
+      expect(AndroidApp.count).to eq(2)
     end
 
     it "doesn't create apps again if they exist" do
@@ -100,17 +101,21 @@ describe "API", :type => :request do
         api_access_token: user.api_access_token,
         apps: valid_params
       }
-      expect(json.size).to eq(2)
+      expect(AndroidApp.count).to eq(2)
     end
 
-    it "returns same number of apps for two identical requests" do
-      3.times do
-        post "/api/users/#{user.id}/android_apps", {
-          api_access_token: user.api_access_token,
-          apps: valid_params
-        }
-        expect(json.size).to eq(2)
-      end
+    it "returns only the number of apps updated" do
+      app = FactoryGirl.create(:android_app,
+        uid: valid_params[0][:uid],
+        display_name: valid_params[0][:display_name]
+      )
+      user.android_apps = [app]
+      user.save!
+      post "/api/users/#{user.id}/android_apps", {
+        api_access_token: user.api_access_token,
+        apps: valid_params
+      }
+      expect(json.size).to eq(1)
     end
 
     it "doesn't let other users edit" do
