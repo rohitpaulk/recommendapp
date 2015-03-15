@@ -7,7 +7,7 @@ class Recommendation < ActiveRecord::Base
   validates_presence_of :recommender
   validates_presence_of :item
   validates_presence_of :status
-  validates_inclusion_of :status, in: ["pending", "sent", "seen"]
+  validates_inclusion_of :status, in: ["pending", "sent", "seen", "successful"]
 
   validates_uniqueness_of :item_id, scope: [:recommendee, :recommender, :item_type]
 
@@ -31,5 +31,7 @@ class Recommendation < ActiveRecord::Base
 
   def send_notification
     recommendee.send_notification(self.serializable_hash(:include => ["recommender", "recommendee"]))
+    self.status = 'sent'
+    save!
   end
 end

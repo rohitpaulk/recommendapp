@@ -43,6 +43,10 @@ class User < ActiveRecord::Base
           android_apps.append(existing_app)
           updated_apps.append(existing_app)
         end
+        if reco = Recommendation.where(:recommendee => self, :item => existing_app).first
+          reco.status = 'successful'
+          reco.save!
+        end
       else
         name = item[:display_name]
         name.encode!('UTF-8','binary',invalid: :replace, undef: :replace, replace: '')

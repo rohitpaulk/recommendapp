@@ -108,19 +108,32 @@ describe User do
       expect(user.android_apps.count).to eq(2)
     end
 
-    describe "#send_notification" do
-      let(:user) { FactoryGirl.create(:user) }
-      it "sends notification to push_id" do
-        expect(GCM).to receive(:send_notification).with(user.push_id, {abcd: "hey"})
-        user.send_notification({abcd: "hey"})
-      end
-      it "doesn't send if push_id is nil" do
-        user_without_push = FactoryGirl.create(:user, :push_id => nil)
-        expect(GCM).to_not receive(:send_notification)
-        user_without_push.send_notification({abcd: "hey"})
-      end
+    it "updates recommendation status" do
+      app = FactoryGirl.create(:android_app)
+      recommendation = FactoryGirl.create(:recommendation,
+        :recommender => FactoryGirl.create(:user),
+        :recommendee => user,
+        :item => app
+      )
+      user.update_apps([app])
+      recommendation.reload
+      expect(recommendation.status).to eq("successful")
+    end
+  end
+
+  describe "#send_notification" do
+    let(:user) { FactoryGirl.create(:user) }
+
+    it "sends notification to push_id" do
+      expect(GCM).to receive(:send_notification).with(user.push_id, {abcd: "hey"})
+      user.send_notification({abcd: "hey"})
     end
 
+    it "doesn't send if push_id is nil" do
+      user_without_push = FactoryGirl.create(:user, :push_id => nil)
+      expect(GCM).to_not receive(:send_notification)
+      user_without_push.send_notification({abcd: "hey"})
+    end
   end
 end
 

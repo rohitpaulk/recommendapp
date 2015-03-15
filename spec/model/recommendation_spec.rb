@@ -25,6 +25,7 @@ describe Recommendation do
     expect(FactoryGirl.build(:recommendation, :status => "pending")).to be_valid
     expect(FactoryGirl.build(:recommendation, :status => "sent")).to be_valid
     expect(FactoryGirl.build(:recommendation, :status => "seen")).to be_valid
+    expect(FactoryGirl.build(:recommendation, :status => "successful")).to be_valid
 
     expect(FactoryGirl.build(:recommendation, :status => "invalid")).to_not be_valid
   end
@@ -54,6 +55,19 @@ describe Recommendation do
       :recommendee => user,
       :item        => app
     )
+  end
+
+  it "sets status to sent after sending notification" do
+    app = FactoryGirl.create(:android_app)
+    user = FactoryGirl.create(:user)
+
+    reco = FactoryGirl.create(:recommendation,
+      :recommender => FactoryGirl.create(:user),
+      :recommendee => user,
+      :item        => app
+    )
+
+    expect(reco.status).to eq("sent")
   end
 
 end
