@@ -48,6 +48,8 @@ module Api
       user = User.find(params[:id])
       render plain: "Unauthorized", status: 401 and return unless user == @user
 
+      render plain: "Send me an array, dumbass", status: 400 and return unless params[:apps].is_a?(Array)
+
       updated_apps = user.update_apps(params['apps'])
 
       render :json => updated_apps.to_json

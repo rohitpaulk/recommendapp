@@ -83,6 +83,13 @@ describe "API", :type => :request do
       ]
     }
 
+    it "returns an error if apps array isn't provided" do
+      post "/api/users/#{user.id}/android_apps", {
+        api_access_token: user.api_access_token
+      }
+      expect(response.status).to eq(400)
+    end
+
     it "creates apps if they don't exist" do
       post "/api/users/#{user.id}/android_apps", {
         api_access_token: user.api_access_token,
