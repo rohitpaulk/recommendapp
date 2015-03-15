@@ -137,6 +137,28 @@ describe "API", :type => :request do
     include_examples "auth", :post, "/api/users/1/android_apps"
   end
 
+  describe "DELETE /users/:id/android_apps" do
+    let(:user) { FactoryGirl.create(:user) }
+
+    before do
+      user.android_apps.append(FactoryGirl.create(:android_app))
+      user.save!
+    end
+
+    it "should delete the app from users#android_apps" do
+      delete "/api/users/#{user.id}/android_apps", {
+        api_access_token: user.api_access_token,
+        app_uid: user.android_apps.first.uid
+      }
+
+      expect(response.status).to eq(200)
+      expect(user.android_apps.count).to eq(0)
+      expect(AndroidApp.count).to eq(1)
+    end
+
+    include_examples "auth", :delete, "/api/users/1/android_apps"
+  end
+
   describe "PUT /users/:id" do
     let(:user) { FactoryGirl.create(:user) }
 

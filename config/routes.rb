@@ -2,20 +2,21 @@ Rails.application.routes.draw do
 
   root 'pages#home'
 
-  get 'api/users'                   => 'api/users#index'
-  post 'api/users'                  => 'api/users#create'
-  get 'api/users/:id'               => 'api/users#show'
-  put 'api/users/:id'               => 'api/users#update'
-  get 'api/users/:id/android_apps'  => 'api/users#android_apps_index'
-  post 'api/users/:id/android_apps' => 'api/users#android_apps_create'
+  get 'api/users'                     => 'api/users#index'
+  post 'api/users'                    => 'api/users#create'
+  get 'api/users/:id'                 => 'api/users#show'
+  put 'api/users/:id'                 => 'api/users#update'
+  get 'api/users/:id/android_apps'    => 'api/users#android_apps_index'
+  post 'api/users/:id/android_apps'   => 'api/users#android_apps_create'
+  delete 'api/users/:id/android_apps' => 'api/users#android_apps_delete'
 
-  get 'api/android_apps'            => 'api/android_apps#index'
-  get 'api/android_apps/:id'        => 'api/android_apps#show'
+  get 'api/android_apps'              => 'api/android_apps#index'
+  get 'api/android_apps/:id'          => 'api/android_apps#show'
 
-  get 'api/recommendations'         => 'api/recommendations#index'
-  post 'api/recommendations'        => 'api/recommendations#create'
-  get 'api/recommendations/:id'     => 'api/recommendations#show'
-  put 'api/recommendations/:id'     => 'api/recommendations#update'
+  get 'api/recommendations'           => 'api/recommendations#index'
+  post 'api/recommendations'          => 'api/recommendations#create'
+  get 'api/recommendations/:id'       => 'api/recommendations#show'
+  put 'api/recommendations/:id'       => 'api/recommendations#update'
 
   # post 'api/users/upsert' => 'api#users_upsert', as: :users_upsert
   # post 'api/user/apps/upsert' => 'api#user_apps_upsert', as: :user_apps_upsert
