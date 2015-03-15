@@ -59,9 +59,9 @@ module Api
       user = User.find(params[:id])
 
       render plain: "Unauthorized", status: 401 and return unless user == @user
-      render plain: "Send me a app_uid param, dumbass!", status: 400 and return unless params[:app_uid]
+      render plain: "Send me a uid param, dumbass!", status: 400 and return unless params[:uid]
 
-      app = AndroidApp.find_by_uid(params[:app_uid])
+      app = AndroidApp.find_by_uid(params[:uid])
       if user.android_apps.include?(app)
         user.android_apps.delete(app)
       end

@@ -148,7 +148,7 @@ describe "API", :type => :request do
     it "should delete the app from users#android_apps" do
       delete "/api/users/#{user.id}/android_apps", {
         api_access_token: user.api_access_token,
-        app_uid: user.android_apps.first.uid
+        uid: user.android_apps.first.uid
       }
 
       expect(response.status).to eq(200)
