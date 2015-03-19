@@ -24,7 +24,7 @@ module Api
       item_class = Kernel.const_get(params['item_type'])
       item = item_class.find(params['item_id'])
       reco = Recommendation.new(
-        :recommender => @user,
+        :recommender => @api_user,
         :recommendee => recommendee,
         :item => item
       )
