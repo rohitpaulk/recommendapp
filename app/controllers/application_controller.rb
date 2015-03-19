@@ -11,20 +11,4 @@ class ApplicationController < ActionController::Base
       render plain: "Unauthorized", status: 401 and return
     end
   end
-
-  def sign_in(user)
-  	session[:current_user] = user.id
-  end
-
-  def signed_in?
-  	session[:current_user]
-  end
-
-  def sign_out
-  	session[:current_user] = nil
-  end
-
-  def current_user
-  	User.find(session[:current_user])
-  end
 end
