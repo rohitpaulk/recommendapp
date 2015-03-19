@@ -135,5 +135,45 @@ describe User do
       user_without_push.send_notification({abcd: "hey"})
     end
   end
+
+  describe "#fetch_facebook_friends" do
+    let(:user) { FactoryGirl.create(:user) }
+    let(:bill) { FactoryGirl.create(:user) }
+    let(:dorothy) { FactoryGirl.create(:user) }
+
+    before do
+      user.elsewheres.delete_all
+      bill.elsewheres.delete_all
+      dorothy.elsewheres.delete_all
+
+      # Create Jennifer
+      FactoryGirl.create(:elsewhere,
+        user: user,
+        provider: 'facebook',
+        uid: '1379083422415077',
+        access_token: 'CAALBlziETAYBAE10TuJiQsZAdd8GeMD5BGxrhypPXpr1nPbZBWZCBZCzjImCGGzaQEBOv2YrZC0CZA8J6c3DqxZBRzyx3kQgoJnHzYaKbiMm88jZBIgr2JHXMUZBRQv5Mp4S1yuAWPIyYUILA1mwxvm4YGvxydeZCwwoQtEQ8WBZAtc4qdFb3clL2BCmzjeGibW9V7Lqw3i9PIFh9fZBPoxc56gu'
+      )
+      # Create Bill
+      FactoryGirl.create(:elsewhere,
+        user: bill,
+        provider: 'facebook',
+        uid: '1382918175363337',
+        access_token: 'dummy'
+      )
+      # Create Dorothy
+      FactoryGirl.create(:elsewhere,
+        user: dorothy,
+        provider: 'facebook',
+        uid: '1384583518529366',
+        access_token: 'dummy'
+      )
+    end
+
+    it "lists facebook friends for a user" do
+      response = user.fetch_facebook_friends
+      expect(response.size).to eq(2)
+      expect(response).to match_array([bill, dorothy])
+    end
+  end
 end
 
