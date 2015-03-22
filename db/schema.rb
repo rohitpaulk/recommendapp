@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150212191621) do
+ActiveRecord::Schema.define(version: 20150322111806) do
 
   create_table "android_apps", force: :cascade do |t|
     t.string   "uid"
@@ -37,6 +37,16 @@ ActiveRecord::Schema.define(version: 20150212191621) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "user_followers", force: :cascade do |t|
+    t.integer  "follower_id"
+    t.integer  "following_id"
+    t.string   "derived_from"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "user_followers", ["follower_id", "following_id"], name: "index_user_followers_on_follower_id_and_following_id", unique: true
 
   create_table "user_items", force: :cascade do |t|
     t.integer  "user_id"

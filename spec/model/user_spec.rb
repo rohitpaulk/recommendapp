@@ -176,5 +176,16 @@ describe User do
       end
     end
   end
+
+  describe "#following" do
+    let(:user1) { FactoryGirl.create(:user) }
+    let(:user2) { FactoryGirl.create(:user) }
+
+    it "Lists users one follows" do
+      expect(user1.following).to be_empty
+      user1.following << user2
+      expect(user1.following).to eq([user2])
+    end
+  end
 end
 
