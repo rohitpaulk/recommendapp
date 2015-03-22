@@ -38,12 +38,17 @@ class User < ActiveRecord::Base
 
   def fetch_facebook_friends
     facebook_elsewhere = elsewheres.where(provider: 'facebook').first
+    return unless facebook_elsewhere
     user = FbGraph::User.me(facebook_elsewhere.access_token)
 
     user.friends.map do |fb_friend|
       fb_uid = fb_friend.raw_attributes['id']
       Elsewhere.where(provider: 'facebook', uid: fb_uid).first.user
     end
+  end
+
+  def update_facebook_friends
+    self.following << fetch_facebook_friends
   end
 
   def update_apps(apps)

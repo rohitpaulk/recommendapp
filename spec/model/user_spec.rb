@@ -168,11 +168,21 @@ describe User do
       )
     end
 
-    it "lists facebook friends for a user" do
-      VCR.use_cassette("facebook") do
-        response = user.fetch_facebook_friends
-        expect(response.size).to eq(2)
-        expect(response).to match_array([bill, dorothy])
+    describe "#fetch_facebook_friends" do
+      it "lists facebook friends for a user" do
+        VCR.use_cassette("facebook") do
+          response = user.fetch_facebook_friends
+          expect(response.size).to eq(2)
+          expect(response).to match_array([bill, dorothy])
+        end
+      end
+    end
+
+    describe "#update_facebook_friends" do
+      it "Updates the user's friends" do
+        expect(user).to receive(:fetch_facebook_friends).and_return([bill, dorothy])
+        user.update_facebook_friends
+        expect(user.following).to match_array([bill, dorothy])
       end
     end
   end

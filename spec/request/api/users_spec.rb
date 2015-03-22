@@ -16,6 +16,7 @@ describe "API", :type => :request do
 
   describe "POST /users" do
     it "creates user" do
+      expect_any_instance_of(User).to receive(:fetch_facebook_friends).and_return([])
       post '/api/users', {
         fb_uid: "uid1",
         fb_access_token: "access_token1",
@@ -26,7 +27,38 @@ describe "API", :type => :request do
       expect(json["elsewheres"].size).to eq(1)
     end
 
+    it "fetches friends from facebook if possible" do
+      bill = FactoryGirl.create(:user)
+      dorothy = FactoryGirl.create(:user)
+      expect_any_instance_of(User).to receive(:fetch_facebook_friends).and_return([bill, dorothy])
+      # bill.elsewheres.delete_all
+      # dorothy.elsewheres.delete_all
+      # # Create Bill
+      # FactoryGirl.create(:elsewhere,
+      #   user: bill,
+      #   provider: 'facebook',
+      #   uid: '1382918175363337',
+      #   access_token: 'dummy'
+      # )
+      # # Create Dorothy
+      # FactoryGirl.create(:elsewhere,
+      #   user: dorothy,
+      #   provider: 'facebook',
+      #   uid: '1384583518529366',
+      #   access_token: 'dummy'
+      # )
+      post '/api/users', {
+        fb_uid: '1379083422415077',
+        fb_access_token: 'CAALBlziETAYBABFddZCvhWGCY6sDAGIk89Ey8v8K1aaDCsb3SR1r8U19wbQl5ZCuLCqKo2p8PkaDHueUfrJqZC8AFKn8RyTYgrrAYnjKq9rFsKjHQs7kKyJoFhZBL9bnzOdWbezrba9yZAA24Emya8gUrmEj8e8ivI7wTJcsWR5sRBk963aOyzZC7ThUvx0Qc3bMwLe20Soldd9DdtaqZBw',
+        email: "abcd@gmail.com",
+        name: "Rohit Paul"
+      }
+      expect(User.count).to eq(3)
+      expect(User.find(3).following.size).to eq(2)
+    end
+
     it "doesn't create user if elsewhere exists" do
+      expect_any_instance_of(User).to receive(:fetch_facebook_friends).and_return([])
       user = FactoryGirl.create(:user)
       post '/api/users', {
         fb_uid: user.elsewheres.first.uid,
