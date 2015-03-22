@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://graph.facebook.com/me/friends?access_token=CAALBlziETAYBABFddZCvhWGCY6sDAGIk89Ey8v8K1aaDCsb3SR1r8U19wbQl5ZCuLCqKo2p8PkaDHueUfrJqZC8AFKn8RyTYgrrAYnjKq9rFsKjHQs7kKyJoFhZBL9bnzOdWbezrba9yZAA24Emya8gUrmEj8e8ivI7wTJcsWR5sRBk963aOyzZC7ThUvx0Qc3bMwLe20Soldd9DdtaqZBw
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - FbGraph (2.7.17) (2.6.0.1, ruby 2.1.0 (2013-12-25))
+      Accept:
+      - "*/*"
+      Date:
+      - Sun, 22 Mar 2015 11:08:01 GMT
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Fb-Rev:
+      - '1653508'
+      Etag:
+      - "\"e7e1b529f476f9a6832a9cca050df1c34603e402\""
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Facebook-Api-Version:
+      - v2.2
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      X-Fb-Debug:
+      - jNR04WxuOJQZZapI3NQ7lasbzargQ66vO8nSM3I2tD+Nh7zGqSnFqPAUaaDfBkz2lafhfgjjBcEmzP80lVuS7A==
+      Date:
+      - Sun, 22 Mar 2015 11:08:02 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '608'
+    body:
+      encoding: UTF-8
+      string: "{\"data\":[{\"name\":\"Dorothy Amiccaibifjb Sidhuescu\",\"id\":\"1384583518529366\"},{\"name\":\"Bill
+        Amiceejbhcab Smithman\",\"id\":\"1382918175363337\"}],\"paging\":{\"next\":\"https:\\/\\/graph.facebook.com\\/v2.2\\/1379083422415077\\/friends?access_token=CAALBlziETAYBABFddZCvhWGCY6sDAGIk89Ey8v8K1aaDCsb3SR1r8U19wbQl5ZCuLCqKo2p8PkaDHueUfrJqZC8AFKn8RyTYgrrAYnjKq9rFsKjHQs7kKyJoFhZBL9bnzOdWbezrba9yZAA24Emya8gUrmEj8e8ivI7wTJcsWR5sRBk963aOyzZC7ThUvx0Qc3bMwLe20Soldd9DdtaqZBw&limit=25&offset=25&__after_id=enc_AdDLB4BhhDZAG99fNVmpfZACZB4l6No4ln3LpKBE0CFsOaErR1lV6Ki1USZBOhNF5ZCrmHZCWheIPCFufAoOl6CXtE3YZCB\"},\"summary\":{\"total_count\":2}}"
+    http_version: 
+  recorded_at: Sun, 22 Mar 2015 11:08:04 GMT
+recorded_with: VCR 2.9.3

@@ -145,13 +145,12 @@ describe User do
       user.elsewheres.delete_all
       bill.elsewheres.delete_all
       dorothy.elsewheres.delete_all
-
       # Create Jennifer
       FactoryGirl.create(:elsewhere,
         user: user,
         provider: 'facebook',
         uid: '1379083422415077',
-        access_token: 'CAALBlziETAYBAE10TuJiQsZAdd8GeMD5BGxrhypPXpr1nPbZBWZCBZCzjImCGGzaQEBOv2YrZC0CZA8J6c3DqxZBRzyx3kQgoJnHzYaKbiMm88jZBIgr2JHXMUZBRQv5Mp4S1yuAWPIyYUILA1mwxvm4YGvxydeZCwwoQtEQ8WBZAtc4qdFb3clL2BCmzjeGibW9V7Lqw3i9PIFh9fZBPoxc56gu'
+        access_token: 'CAALBlziETAYBABFddZCvhWGCY6sDAGIk89Ey8v8K1aaDCsb3SR1r8U19wbQl5ZCuLCqKo2p8PkaDHueUfrJqZC8AFKn8RyTYgrrAYnjKq9rFsKjHQs7kKyJoFhZBL9bnzOdWbezrba9yZAA24Emya8gUrmEj8e8ivI7wTJcsWR5sRBk963aOyzZC7ThUvx0Qc3bMwLe20Soldd9DdtaqZBw'
       )
       # Create Bill
       FactoryGirl.create(:elsewhere,
@@ -170,9 +169,11 @@ describe User do
     end
 
     it "lists facebook friends for a user" do
-      response = user.fetch_facebook_friends
-      expect(response.size).to eq(2)
-      expect(response).to match_array([bill, dorothy])
+      VCR.use_cassette("facebook") do
+        response = user.fetch_facebook_friends
+        expect(response.size).to eq(2)
+        expect(response).to match_array([bill, dorothy])
+      end
     end
   end
 end
