@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   post 'api/users'                    => 'api/users#create'
   get 'api/users/:id'                 => 'api/users#show'
   put 'api/users/:id'                 => 'api/users#update'
+  get 'api/users/:id/friends'         => 'api/users#friends_index'
   get 'api/users/:id/android_apps'    => 'api/users#android_apps_index'
   post 'api/users/:id/android_apps'   => 'api/users#android_apps_create'
   delete 'api/users/:id/android_apps' => 'api/users#android_apps_delete'

@@ -31,22 +31,6 @@ describe "API", :type => :request do
       bill = FactoryGirl.create(:user)
       dorothy = FactoryGirl.create(:user)
       expect_any_instance_of(User).to receive(:fetch_facebook_friends).and_return([bill, dorothy])
-      # bill.elsewheres.delete_all
-      # dorothy.elsewheres.delete_all
-      # # Create Bill
-      # FactoryGirl.create(:elsewhere,
-      #   user: bill,
-      #   provider: 'facebook',
-      #   uid: '1382918175363337',
-      #   access_token: 'dummy'
-      # )
-      # # Create Dorothy
-      # FactoryGirl.create(:elsewhere,
-      #   user: dorothy,
-      #   provider: 'facebook',
-      #   uid: '1384583518529366',
-      #   access_token: 'dummy'
-      # )
       post '/api/users', {
         fb_uid: '1379083422415077',
         fb_access_token: 'CAALBlziETAYBABFddZCvhWGCY6sDAGIk89Ey8v8K1aaDCsb3SR1r8U19wbQl5ZCuLCqKo2p8PkaDHueUfrJqZC8AFKn8RyTYgrrAYnjKq9rFsKjHQs7kKyJoFhZBL9bnzOdWbezrba9yZAA24Emya8gUrmEj8e8ivI7wTJcsWR5sRBk963aOyzZC7ThUvx0Qc3bMwLe20Soldd9DdtaqZBw',
@@ -84,6 +68,25 @@ describe "API", :type => :request do
     end
 
     include_examples "auth", :get, "/api/users/1"
+  end
+
+  describe "GET /users/:id/friends" do
+    before do
+      user1 = FactoryGirl.create(:user)
+      user2 = FactoryGirl.create(:user)
+
+      @user = FactoryGirl.create(:user)
+      @user.following += [user1, user2]
+    end
+
+    it "fetches friends for user" do
+      get "/api/users/#{@user.id}/friends", {
+        api_access_token: @user.api_access_token
+      }
+      expect(json.size).to eq(2)
+    end
+
+    include_examples "auth", :get, "/api/users/3/friends"
   end
 
   describe "GET /users/:id/android_apps" do

@@ -41,6 +41,11 @@ module Api
       end
     end
 
+    def friends_index
+      user = User.find(params[:id])
+      render :json => user.following
+    end
+
     def android_apps_index
       user = User.find(params[:id])
       render :json => user.android_apps.to_json
