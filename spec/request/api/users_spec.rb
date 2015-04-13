@@ -166,6 +166,25 @@ describe "API", :type => :request do
     include_examples "auth", :get, "/api/users/1/android_apps"
   end
 
+  describe "GET /users/:id/movies" do
+    let(:user) {
+      FactoryGirl.create(:user)
+    }
+
+    it "returns 5 sample movies" do
+      movie = FactoryGirl.create(:movie, title: "Terminator")
+      expect(Movie).to receive(:from_title).exactly(5).times.and_return(movie)
+      get "/api/users/#{user.id}/movies", {
+        api_access_token: user.api_access_token
+      }
+      expect(json.size).to eq(5)
+      expect(json.first["title"]).to eq('Terminator')
+    end
+
+    include_examples "auth", :get, "/api/users/1/movies"
+  end
+
+
   describe "POST /users/:id/android_apps" do
     let(:user) { FactoryGirl.create(:user) }
     let(:valid_params) {

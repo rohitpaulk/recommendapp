@@ -68,6 +68,17 @@ module Api
       render :json => result
     end
 
+    def movies_index
+      movies = []
+      movies << Movie.from_title('Terminator')
+      movies << Movie.from_title('Titanic')
+      movies << Movie.from_title('Social Network')
+      movies << Movie.from_title('Inception')
+      movies << Movie.from_title('The Dark Knight')
+
+      render json: movies.to_json
+    end
+
     def android_apps_index
       user = User.find(params[:id])
       render :json => user.android_apps.to_json
