@@ -41,10 +41,11 @@ class User < ActiveRecord::Base
     return unless facebook_elsewhere
     user = FbGraph::User.me(facebook_elsewhere.access_token)
 
-    user.friends.map do |fb_friend|
+    user.friends.map { |fb_friend|
       fb_uid = fb_friend.raw_attributes['id']
-      Elsewhere.where(provider: 'facebook', uid: fb_uid).first.user
-    end
+      elsewhere = Elsewhere.where(provider: 'facebook', uid: fb_uid).first
+      if elsewhere then elsewhere.user else nil end
+    }.compact
   end
 
   def update_facebook_friends
