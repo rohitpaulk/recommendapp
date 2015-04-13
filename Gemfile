@@ -33,6 +33,9 @@ gem 'pushmeup'
 # Facebook
 gem 'fb_graph', '~> 2.7.17'
 
+# Movies
+gem 'omdb', '~> 1.0.4'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

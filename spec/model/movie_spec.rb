@@ -26,4 +26,21 @@ describe Movie do
     user2 = FactoryGirl.create(:user, :movies => [movie])
     expect(movie.users.count).to eq(2)
   end
+
+  describe "class methods" do
+    describe "::from_title" do
+      it "returns object if exists" do
+        movie = FactoryGirl.create(:movie, :title => "Movie Exists")
+        expect(Movie.from_title("Movie Exists")).to eq(movie)
+      end
+
+      it "fetches from omdb if doesn't exist" do
+        VCR.use_cassette('omdb') do
+          movie = Movie.from_title("Terminator")
+          expect(Movie.count).to eq(1)
+          expect(movie.year).to eq("2001")
+        end
+      end
+    end
+  end
 end
