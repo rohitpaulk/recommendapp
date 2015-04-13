@@ -21,6 +21,10 @@ class User < ActiveRecord::Base
 
   def self.create_or_find_by_uid(uid, params)
     if Elsewhere.exists?(:uid => uid, :provider => 'facebook')
+      elsewhere = Elsewhere.where(:uid => uid, :provider => 'facebook').first
+      # Store the new access token
+      elsewhere.access_token = params[:fb_access_token]
+      elsewhere.save!
       return Elsewhere.where(:uid => uid, :provider => 'facebook').first.user
     else
       user = User.new

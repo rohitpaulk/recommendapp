@@ -53,6 +53,18 @@ describe "API", :type => :request do
       expect(User.count).to eq(1)
       expect(json["elsewheres"][0]["uid"]).to eq(user.elsewheres.first.uid)
     end
+
+    it "rewrites access_token if elsewhere exists" do
+      expect_any_instance_of(User).to receive(:fetch_facebook_friends).and_return([])
+      user = FactoryGirl.create(:user)
+      post '/api/users', {
+        fb_uid: user.elsewheres.first.uid,
+        fb_access_token: 'new-access-token',
+        email: "abcd@gmail.com",
+        name: "Rohit Paul"
+      }
+      expect(User.first.elsewheres.first.access_token).to eq('new-access-token')
+    end
   end
 
   describe "GET /users/:id" do
