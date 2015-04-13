@@ -23,11 +23,20 @@ describe User do
     end
   end
 
-  it "can have many android apps" do
-    app1 = FactoryGirl.create(:android_app)
-    app2 = FactoryGirl.create(:android_app)
-    user = FactoryGirl.create(:user, :android_apps => [app1, app2])
-    expect(user.android_apps.count).to eq(2)
+  describe "associations" do
+    it "can have many android apps" do
+      movie1 = FactoryGirl.create(:movie)
+      movie2 = FactoryGirl.create(:movie)
+      user = FactoryGirl.create(:user, :movies => [movie1, movie2])
+      expect(user.movies.count).to eq(2)
+    end
+
+    it "can have many movies" do
+      app1 = FactoryGirl.create(:android_app)
+      app2 = FactoryGirl.create(:android_app)
+      user = FactoryGirl.create(:user, :android_apps => [app1, app2])
+      expect(user.android_apps.count).to eq(2)
+    end
   end
 
   describe "#create_or_find_by_uid" do
@@ -136,7 +145,29 @@ describe User do
     end
   end
 
-  describe "#fetch_facebook_friends" do
+  describe "#fetch_facebook_movies" do
+    let(:user) { FactoryGirl.create(:user) }
+
+    before do
+      user.elsewheres.delete_all
+      FactoryGirl.create(:elsewhere,
+        user: user,
+        provider: 'facebook',
+        uid: '10202390662768085',
+        access_token: 'CAALBlziETAYBAAhOerbeSJ187pLVSfDQUlnZAaTL4RDbbSpnahlGO2ZADDaqUkRZAOozRmiC2DUq6wJBbywEIlG1WOkQZBim8BClpYJwywNZAE5fAa4J9ooDsaG8ILXDLxppZB73fbOBjJ6RxsAjmfXrZBY8KYHPWfr8BJUH1T7qjyizkCUfyp0ZBlm6uNoB2wboKjIhrohkjZAJaZBcadbriiXVhezBBdgZBcXCgH8ST8mxrqEqD1QAFZB7'
+      )
+    end
+
+    it "lists facebook movies for a user" do
+      VCR.use_cassette("facebook-movies") do
+        response = user.fetch_facebook_movies
+        expect(response.size).to eq(25)
+        expect(response.first.category).to eq("Movie")
+      end
+    end
+  end
+
+  describe "Facebook friends" do
     let(:user) { FactoryGirl.create(:user) }
     let(:bill) { FactoryGirl.create(:user) }
     let(:dorothy) { FactoryGirl.create(:user) }

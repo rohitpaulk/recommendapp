@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
 
   has_many :user_items
   has_many :android_apps, :through => :user_items, :source => :item, :source_type => "AndroidApp"
+  has_many :movies, :through => :user_items, :source => :item, :source_type => "Movie"
 
   has_many :recommendations, :foreign_key => :recommender_id
   has_many :recommended_android_apps, :through => :recommendations, :source => :item, :source_type => "AndroidApp"
@@ -38,6 +39,15 @@ class User < ActiveRecord::Base
       user.save!
       return user
     end
+  end
+
+  def fetch_facebook_movies
+    facebook_elsewhere = elsewheres.where(provider: 'facebook').first
+    return unless facebook_elsewhere
+
+    user = FbGraph::User.me(facebook_elsewhere.access_token)
+
+    return user.movies
   end
 
   def fetch_facebook_friends

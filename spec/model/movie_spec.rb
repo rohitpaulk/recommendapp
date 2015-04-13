@@ -20,10 +20,10 @@ describe Movie do
     end
   end
 
-  # it "can have many users" do
-  #   app = FactoryGirl.create(:android_app)
-  #   user1 = FactoryGirl.create(:user, :android_apps => [app])
-  #   user2 = FactoryGirl.create(:user, :android_apps => [app])
-  #   expect(app.users.count).to eq(2)
-  # end
+  it "can have many users" do
+    movie = FactoryGirl.create(:movie)
+    user1 = FactoryGirl.create(:user, :movies => [movie])
+    user2 = FactoryGirl.create(:user, :movies => [movie])
+    expect(movie.users.count).to eq(2)
+  end
 end

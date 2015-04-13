@@ -1,0 +1,72 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://graph.facebook.com/me/movies?access_token=CAALBlziETAYBAAhOerbeSJ187pLVSfDQUlnZAaTL4RDbbSpnahlGO2ZADDaqUkRZAOozRmiC2DUq6wJBbywEIlG1WOkQZBim8BClpYJwywNZAE5fAa4J9ooDsaG8ILXDLxppZB73fbOBjJ6RxsAjmfXrZBY8KYHPWfr8BJUH1T7qjyizkCUfyp0ZBlm6uNoB2wboKjIhrohkjZAJaZBcadbriiXVhezBBdgZBcXCgH8ST8mxrqEqD1QAFZB7
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - FbGraph (2.7.17) (2.6.0.1, ruby 2.1.0 (2013-12-25))
+      Accept:
+      - "*/*"
+      Date:
+      - Mon, 13 Apr 2015 17:36:26 GMT
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Fb-Rev:
+      - '1687493'
+      Etag:
+      - "\"abf808a7a2b402371e667f9ec70948e4c22676f0\""
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Facebook-Api-Version:
+      - v2.2
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Vary:
+      - Accept-Encoding
+      X-Fb-Debug:
+      - v82Ph0BPYRq1+LYwGgUGjj6Z/kavG0w5TzGSx2XvOSpJhqZW29CX3CH+GQ8EdExyLURFvyej5ogxdxjcvebFCw==
+      Date:
+      - Mon, 13 Apr 2015 17:36:29 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '3388'
+    body:
+      encoding: UTF-8
+      string: "{\"data\":[{\"category\":\"Movie\",\"name\":\"Superman vs. The Elite\",\"id\":\"110635222387355\",\"created_time\":\"2015-04-12T05:13:00+0000\"},{\"category\":\"Movie\",\"name\":\"The
+        Transporter\",\"id\":\"792619774128590\",\"created_time\":\"2015-02-23T21:56:31+0000\"},{\"category\":\"Movie\",\"name\":\"The
+        Robert Langdon Series (Inferno, Da Vinci Code, Angels and Demons)\",\"id\":\"362436247253412\",\"created_time\":\"2014-12-19T16:45:26+0000\"},{\"category\":\"Movie\",\"name\":\"Ice
+        Age Movies\",\"id\":\"129577537128630\",\"created_time\":\"2014-08-18T21:57:29+0000\"},{\"category\":\"Media\\/news\\/publishing\",\"category_list\":[{\"id\":\"2233\",\"name\":\"Media\\/News\\/Publishing\"}],\"name\":\"Filmygyan\",\"id\":\"334718749959224\",\"created_time\":\"2014-06-19T05:06:07+0000\"},{\"category\":\"Movie\",\"name\":\"The
+        Internship\",\"id\":\"351655284898721\",\"created_time\":\"2014-02-19T09:29:44+0000\"},{\"category\":\"Movie\",\"name\":\"The
+        Second Circle\",\"id\":\"230825710387560\",\"created_time\":\"2013-02-07T13:49:03+0000\"},{\"category\":\"Movie\",\"name\":\"Guns,
+        Girls and Gambling the Movie\",\"id\":\"445269125535034\",\"created_time\":\"2013-02-07T05:39:10+0000\"},{\"category\":\"Movie\",\"name\":\"Untitled
+        Batman Project (2011)\",\"id\":\"110938028945139\",\"created_time\":\"2012-08-11T08:00:19+0000\"},{\"category\":\"Movie\",\"name\":\"Pyar
+        Ka Punchnama\",\"id\":\"204519969569580\",\"created_time\":\"2012-07-05T06:21:59+0000\"},{\"category\":\"Movie\",\"name\":\"Ice
+        Age: Continental Drift (2012)\",\"id\":\"116239778420951\",\"created_time\":\"2012-06-15T08:43:25+0000\"},{\"category\":\"Movie\",\"name\":\"Ice
+        Age 4\",\"id\":\"251072531576389\",\"created_time\":\"2012-06-13T04:09:51+0000\"},{\"category\":\"Movie\",\"name\":\"Men
+        In Black 3\",\"id\":\"343655272338275\",\"created_time\":\"2012-06-13T04:07:29+0000\"},{\"category\":\"Movie\",\"name\":\"Prometheus\",\"id\":\"319196071428582\",\"created_time\":\"2012-06-13T04:05:21+0000\"},{\"category\":\"Movie\",\"name\":\"3
+        Idiots Movie\",\"id\":\"441170255909978\",\"created_time\":\"2012-05-22T02:11:27+0000\"},{\"category\":\"Movie\",\"name\":\"The
+        Terminator\",\"id\":\"181221288646788\",\"created_time\":\"2012-04-07T11:34:45+0000\"},{\"category\":\"Movie\",\"name\":\"Avengers\",\"id\":\"126757470715601\",\"created_time\":\"2012-01-05T00:44:30+0000\"},{\"category\":\"Movie\",\"name\":\"Madagascar\",\"id\":\"149800431712088\",\"created_time\":\"2011-12-30T06:57:32+0000\"},{\"category\":\"Tv\",\"name\":\"big
+        bang theory\",\"id\":\"104813126228732\",\"created_time\":\"2011-12-17T00:27:13+0000\"},{\"category\":\"Movie\",\"name\":\"Due
+        Date\",\"id\":\"140786973315\",\"created_time\":\"2011-12-15T15:58:09+0000\"},{\"category\":\"Movie\",\"name\":\"The
+        Italian Job\",\"id\":\"108034322558363\",\"created_time\":\"2011-12-10T12:07:38+0000\"},{\"category\":\"Movie\",\"name\":\"Fast
+        & Furious\",\"id\":\"24098842630\",\"created_time\":\"2011-12-02T10:42:53+0000\"},{\"category\":\"Movie\",\"name\":\"8
+        Mile\",\"id\":\"162564747125805\",\"created_time\":\"2011-12-01T13:29:25+0000\"},{\"category\":\"Movie\",\"name\":\"The
+        Minority Report\",\"id\":\"104291359602094\",\"created_time\":\"2011-11-23T17:51:58+0000\"},{\"category\":\"Movie\",\"name\":\"Minority
+        Report\",\"id\":\"112241738862440\",\"created_time\":\"2011-11-23T17:51:44+0000\"}],\"paging\":{\"cursors\":{\"before\":\"MTEwNjM1MjIyMzg3MzU1\",\"after\":\"MTEyMjQxNzM4ODYyNDQw\"},\"next\":\"https:\\/\\/graph.facebook.com\\/v2.2\\/10202390662768085\\/movies?access_token=CAALBlziETAYBAAhOerbeSJ187pLVSfDQUlnZAaTL4RDbbSpnahlGO2ZADDaqUkRZAOozRmiC2DUq6wJBbywEIlG1WOkQZBim8BClpYJwywNZAE5fAa4J9ooDsaG8ILXDLxppZB73fbOBjJ6RxsAjmfXrZBY8KYHPWfr8BJUH1T7qjyizkCUfyp0ZBlm6uNoB2wboKjIhrohkjZAJaZBcadbriiXVhezBBdgZBcXCgH8ST8mxrqEqD1QAFZB7&limit=25&after=MTEyMjQxNzM4ODYyNDQw\"}}"
+    http_version: 
+  recorded_at: Mon, 13 Apr 2015 17:36:30 GMT
+recorded_with: VCR 2.9.3
