@@ -22,6 +22,7 @@ module Api
       user = User.create_or_find_by_uid(user_params.delete(:fb_uid), user_params)
 
       user.update_facebook_friends
+      user.update_facebook_avatar
 
       render :json => user.to_json(:include => :elsewheres)
     end
@@ -110,3 +111,4 @@ module Api
     end
    end
 end
+
