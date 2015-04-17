@@ -41,6 +41,17 @@ describe "API", :type => :request do
       expect(User.find(3).following.size).to eq(2)
     end
 
+    it "updates avatar for facebook user" do
+      post '/api/users', {
+        fb_uid: '1379083422415077',
+        fb_access_token: 'CAALBlziETAYBABFddZCvhWGCY6sDAGIk89Ey8v8K1aaDCsb3SR1r8U19wbQl5ZCuLCqKo2p8PkaDHueUfrJqZC8AFKn8RyTYgrrAYnjKq9rFsKjHQs7kKyJoFhZBL9bnzOdWbezrba9yZAA24Emya8gUrmEj8e8ivI7wTJcsWR5sRBk963aOyzZC7ThUvx0Qc3bMwLe20Soldd9DdtaqZBw',
+        email: "abcd@gmail.com",
+        name: "Rohit Paul"
+      }
+      expect(User.count).to eq(1)
+      expect(User.find(1).avatar_url).not_to be_nil
+    end
+
     it "doesn't create user if elsewhere exists" do
       expect_any_instance_of(User).to receive(:fetch_facebook_friends).and_return([])
       user = FactoryGirl.create(:user)

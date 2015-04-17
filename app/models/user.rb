@@ -70,7 +70,7 @@ class User < ActiveRecord::Base
     facebook_elsewhere = elsewheres.where(provider: 'facebook').first
     return unless facebook_elsewhere
 
-    user = FbGraph::User.me(facebook_elsewhere.access_token)
+    user = FbGraph::User.me(facebook_elsewhere.access_token).fetch
     self.avatar_url = user.picture
     self.save!
   end

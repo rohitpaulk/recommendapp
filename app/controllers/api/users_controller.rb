@@ -73,7 +73,7 @@ module Api
       movies = []
       movies << Movie.from_title('Terminator')
       movies << Movie.from_title('Titanic')
-      movies << Movie.from_title('Social Network')
+      movies << Movie.from_title('The Social Network')
       movies << Movie.from_title('Inception')
       movies << Movie.from_title('The Dark Knight')
 
