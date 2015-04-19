@@ -1,0 +1,72 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://graph.facebook.com/me?access_token=CAALBlziETAYBAAhOerbeSJ187pLVSfDQUlnZAaTL4RDbbSpnahlGO2ZADDaqUkRZAOozRmiC2DUq6wJBbywEIlG1WOkQZBim8BClpYJwywNZAE5fAa4J9ooDsaG8ILXDLxppZB73fbOBjJ6RxsAjmfXrZBY8KYHPWfr8BJUH1T7qjyizkCUfyp0ZBlm6uNoB2wboKjIhrohkjZAJaZBcadbriiXVhezBBdgZBcXCgH8ST8mxrqEqD1QAFZB7
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - FbGraph (2.7.17) (2.6.0.1, ruby 2.1.0 (2013-12-25))
+      Accept:
+      - "*/*"
+      Date:
+      - Sun, 19 Apr 2015 09:05:35 GMT
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Last-Modified:
+      - '2015-03-15T10:38:52+0000'
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Fb-Rev:
+      - '1696458'
+      Etag:
+      - "\"7632ec6d07c6674c983cb6385a72930ff5390f13\""
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Facebook-Api-Version:
+      - v2.2
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Vary:
+      - Accept-Encoding
+      X-Fb-Debug:
+      - 12msfD8499j5DZnR1niB8NUvIK1v4IXxtoymlrc9lfspVf9Hja9W7YFUlbvstYUSNzNpvhVmNRmEZbi6sg8/DA==
+      Date:
+      - Sun, 19 Apr 2015 09:05:36 GMT
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: "{\"id\":\"10202390662768085\",\"email\":\"abhishekraj10\\u0040yahoo.com\",\"favorite_athletes\":[{\"id\":\"245323855526590\",\"name\":\"Wayne
+        Rooney\"},{\"id\":\"130561483625985\",\"name\":\"Virender Sehwag\"},{\"id\":\"176063032413299\",\"name\":\"Leo
+        Messi\"},{\"id\":\"108091589212371\",\"name\":\"Albie Morkel\"},{\"id\":\"81221197163\",\"name\":\"Cristiano
+        Ronaldo\"},{\"id\":\"429409600496\",\"name\":\"Kieron Pollard\"},{\"id\":\"9899376497\",\"name\":\"John
+        Cena - WWE Universe\"},{\"id\":\"201246173223850\",\"name\":\"Harsha Bhogle
+        - The Greatest Cricket Commentator\"},{\"id\":\"344128252278047\",\"name\":\"Sachin
+        Tendulkar\"},{\"id\":\"112433562103235\",\"name\":\"Billy Bowden\"},{\"id\":\"118306468218564\",\"name\":\"MS
+        Dhoni\"},{\"id\":\"102167793157780\",\"name\":\"Vishwanathan Anand\"},{\"id\":\"104358599601495\",\"name\":\"Chris
+        Gayle\"},{\"id\":\"93888071365\",\"name\":\"Chris Gayle\"}],\"favorite_teams\":[{\"id\":\"110315722325192\",\"name\":\"Indian
+        Cricket Team\"},{\"id\":\"107844962567241\",\"name\":\"Chennai Super Kings\"},{\"id\":\"88795929350\",\"name\":\"Cricket
+        South Africa\"},{\"id\":\"197394889304\",\"name\":\"FC Barcelona\"},{\"id\":\"7724542745\",\"name\":\"Manchester
+        United\"},{\"id\":\"208411345454\",\"name\":\"Manchester City FC\"},{\"id\":\"190313434323691\",\"name\":\"Indian
+        Cricket Team\"}],\"first_name\":\"Abhishek\",\"gender\":\"male\",\"inspirational_people\":[{\"id\":\"118306468218564\",\"name\":\"MS
+        Dhoni\"},{\"id\":\"45309870078\",\"name\":\"Eminem\"}],\"languages\":[{\"id\":\"106059522759137\",\"name\":\"English\"},{\"id\":\"112969428713061\",\"name\":\"Hindi\"},{\"id\":\"112264595467201\",\"name\":\"Fran\\u00e7ais\"},{\"id\":\"109675115725009\",\"name\":\"Bhojpuri\"},{\"id\":\"106050936093461\",\"name\":\"Hinglish\"},{\"id\":\"108224912538348\",\"name\":\"French\"},{\"id\":\"108106272550772\",\"name\":\"French\"}],\"last_name\":\"Raj\",\"link\":\"https:\\/\\/www.facebook.com\\/app_scoped_user_id\\/10202390662768085\\/\",\"locale\":\"en_GB\",\"name\":\"Abhishek
+        Raj\",\"sports\":[{\"id\":\"103992339636529\",\"description\":\"Best time
+        i ever have!\",\"name\":\"Cricket\",\"with\":[{\"id\":\"10200498999834840\",\"name\":\"Sandeep
+        Verma\"},{\"id\":\"1059886567359583\",\"name\":\"Syed Azam\"},{\"id\":\"811867288895212\",\"name\":\"Amit
+        Yadav\"}]},{\"id\":\"103154896390858\",\"name\":\"Chess\"}],\"quotes\":\"It's
+        not who I am underneath but what I do that defines me\",\"timezone\":5.5,\"updated_time\":\"2015-03-15T10:38:52+0000\",\"verified\":true}"
+    http_version: 
+  recorded_at: Sun, 19 Apr 2015 09:05:37 GMT
+recorded_with: VCR 2.9.3
