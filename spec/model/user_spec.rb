@@ -178,12 +178,14 @@ describe User do
         uid: '10202390662768085',
         access_token: 'CAALBlziETAYBAAhOerbeSJ187pLVSfDQUlnZAaTL4RDbbSpnahlGO2ZADDaqUkRZAOozRmiC2DUq6wJBbywEIlG1WOkQZBim8BClpYJwywNZAE5fAa4J9ooDsaG8ILXDLxppZB73fbOBjJ6RxsAjmfXrZBY8KYHPWfr8BJUH1T7qjyizkCUfyp0ZBlm6uNoB2wboKjIhrohkjZAJaZBcadbriiXVhezBBdgZBcXCgH8ST8mxrqEqD1QAFZB7'
       )
+      # Make sure that elsewheres are loaded on the user object
+      user.reload
     end
-        
+
     it "Updates the user's facebook avatar" do
       VCR.use_cassette("facebook-avatar") do
         user.update_facebook_avatar
-        expect(user.avatar_url).not_to be_nil
+        expect(user.avatar_url).to eq('https://graph.facebook.com/10202390662768085/picture')
       end
     end
   end
