@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://www.omdbapi.com/?t=Terminator&year=
+    uri: http://www.omdbapi.com/?plot=short&t=Terminator&tomatoes=false&y=
     body:
       encoding: US-ASCII
       string: ''
@@ -23,9 +23,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Expires:
-      - Mon, 13 Apr 2015 19:07:43 GMT
+      - Sun, 19 Apr 2015 10:04:19 GMT
       Last-Modified:
-      - Mon, 13 Apr 2015 18:07:43 GMT
+      - Sun, 19 Apr 2015 09:04:19 GMT
       Vary:
       - "*"
       Server:
@@ -37,7 +37,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Date:
-      - Mon, 13 Apr 2015 18:07:43 GMT
+      - Sun, 19 Apr 2015 09:04:19 GMT
       Content-Length:
       - '379'
     body:
@@ -46,5 +46,5 @@ http_interactions:
         Apr 2001\",\"Runtime\":\"N/A\",\"Genre\":\"Short, Action\",\"Director\":\"Ryan
         McDonald\",\"Writer\":\"Ryan McDonald\",\"Actors\":\"Joshua Miller\",\"Plot\":\"N/A\",\"Language\":\"English\",\"Country\":\"USA\",\"Awards\":\"N/A\",\"Poster\":\"N/A\",\"Metascore\":\"N/A\",\"imdbRating\":\"3.8\",\"imdbVotes\":\"12\",\"imdbID\":\"tt1994570\",\"Type\":\"movie\",\"Response\":\"True\"}"
     http_version: 
-  recorded_at: Mon, 13 Apr 2015 18:06:57 GMT
+  recorded_at: Sun, 19 Apr 2015 09:04:20 GMT
 recorded_with: VCR 2.9.3
