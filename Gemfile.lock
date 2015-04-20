@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/jvanbaarsen/omdb.git
+  revision: d345d7350f101a6053e5e677ff9c563ead7bab18
+  specs:
+    omdb (1.0.4)
+      json
+      rest-client
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -36,7 +44,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    addressable (2.3.7)
+    addressable (2.3.8)
     arel (6.0.0)
     attr_required (1.0.0)
     binding_of_caller (0.7.2)
@@ -65,7 +73,7 @@ GEM
     debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
     diff-lcs (1.2.5)
-    domain_name (0.5.23)
+    domain_name (0.5.24)
       unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
     execjs (2.2.2)
@@ -111,9 +119,6 @@ GEM
     netrc (0.10.3)
     nokogiri (1.6.5)
       mini_portile (~> 0.6.0)
-    omdb (1.0.4)
-      json
-      rest-client
     pg (0.18.1)
     pushmeup (0.3.0)
       httparty
@@ -221,7 +226,7 @@ GEM
       binding_of_caller (>= 0.7.2)
       railties (~> 4.0)
       sprockets-rails (>= 2.0, < 4.0)
-    webmock (1.20.4)
+    webmock (1.21.0)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
     xpath (2.0.0)
@@ -239,7 +244,7 @@ DEPENDENCIES
   haml (~> 4.0.5)
   jbuilder (~> 2.0)
   jquery-rails
-  omdb (~> 1.0.4)
+  omdb!
   pg
   pushmeup
   rails (= 4.2.0)

@@ -15,8 +15,12 @@ describe "API", :type => :request do
   end
 
   describe "POST /users" do
+    before do
+      allow_any_instance_of(User).to receive(:fetch_facebook_friends).and_return([])
+      allow_any_instance_of(User).to receive(:update_facebook_avatar).and_return(nil)
+    end
+
     it "creates user" do
-      expect_any_instance_of(User).to receive(:fetch_facebook_friends).and_return([])
       post '/api/users', {
         fb_uid: "uid1",
         fb_access_token: "access_token1",
@@ -30,6 +34,7 @@ describe "API", :type => :request do
     it "fetches friends from facebook if possible" do
       bill = FactoryGirl.create(:user)
       dorothy = FactoryGirl.create(:user)
+      User.any_instance.unstub(:fetch_facebook_friends)
       expect_any_instance_of(User).to receive(:fetch_facebook_friends).and_return([bill, dorothy])
       post '/api/users', {
         fb_uid: '1379083422415077',
@@ -41,8 +46,21 @@ describe "API", :type => :request do
       expect(User.find(3).following.size).to eq(2)
     end
 
+    it "calls update_facebook_avatar" do
+      User.any_instance.unstub(:update_facebook_avatar)
+      expect_any_instance_of(User).to receive(:update_facebook_avatar).once
+
+      post '/api/users', {
+        fb_uid: '1379083422415077',
+        fb_access_token: 'CAALBlziETAYBABFddZCvhWGCY6sDAGIk89Ey8v8K1aaDCsb3SR1r8U19wbQl5ZCuLCqKo2p8PkaDHueUfrJqZC8AFKn8RyTYgrrAYnjKq9rFsKjHQs7kKyJoFhZBL9bnzOdWbezrba9yZAA24Emya8gUrmEj8e8ivI7wTJcsWR5sRBk963aOyzZC7ThUvx0Qc3bMwLe20Soldd9DdtaqZBw',
+        email: "abcd@gmail.com",
+        name: "Rohit Paul"
+      }
+
+      expect(User.count).to eq(1)
+    end
+
     it "doesn't create user if elsewhere exists" do
-      expect_any_instance_of(User).to receive(:fetch_facebook_friends).and_return([])
       user = FactoryGirl.create(:user)
       post '/api/users', {
         fb_uid: user.elsewheres.first.uid,
@@ -55,7 +73,6 @@ describe "API", :type => :request do
     end
 
     it "rewrites access_token if elsewhere exists" do
-      expect_any_instance_of(User).to receive(:fetch_facebook_friends).and_return([])
       user = FactoryGirl.create(:user)
       post '/api/users', {
         fb_uid: user.elsewheres.first.uid,

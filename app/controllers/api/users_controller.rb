@@ -22,6 +22,7 @@ module Api
       user = User.create_or_find_by_uid(user_params.delete(:fb_uid), user_params)
 
       user.update_facebook_friends
+      user.update_facebook_avatar
 
       render :json => user.to_json(:include => :elsewheres)
     end
@@ -72,7 +73,7 @@ module Api
       movies = []
       movies << Movie.from_title('Terminator')
       movies << Movie.from_title('Titanic')
-      movies << Movie.from_title('Social Network')
+      movies << Movie.from_title('The Social Network')
       movies << Movie.from_title('Inception')
       movies << Movie.from_title('The Dark Knight')
 
@@ -110,3 +111,4 @@ module Api
     end
    end
 end
+
