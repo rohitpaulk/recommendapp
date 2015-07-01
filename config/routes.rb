@@ -2,10 +2,11 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   namespace 'api' do
-    resources :users
+    resources :users do
+      resources :friends, only: :index
+    end
   end
 
-  get 'api/users/:id/friends'         => 'api/users#friends_index'
   get 'api/users/:id/movies'          => 'api/users#movies_index'
   get 'api/users/:id/android_apps'    => 'api/users#android_apps_index'
   post 'api/users/:id/android_apps'   => 'api/users#android_apps_create'
