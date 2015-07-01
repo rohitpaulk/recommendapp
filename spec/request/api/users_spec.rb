@@ -16,6 +16,7 @@ describe "API", :type => :request do
 
   describe "POST /users" do
     before do
+      allow_any_instance_of(User).to receive(:update_movies_from_facebook).and_return([])
       allow_any_instance_of(User).to receive(:fetch_facebook_friends).and_return([])
       allow_any_instance_of(User).to receive(:update_facebook_avatar).and_return(nil)
     end

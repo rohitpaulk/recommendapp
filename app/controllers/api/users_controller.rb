@@ -76,7 +76,7 @@ module Api
       movies = user.movies
 
       if movies.size < 5
-        movies << *Movie.popular_movies.take(5 - movies.size)
+        movies += Movie.popular_movies.take(5 - movies.size)
       end
 
       render json: movies.to_json
