@@ -1,5 +1,5 @@
 class Elsewhere < ActiveRecord::Base
-	belongs_to :user
+  belongs_to :user
 
   validates_presence_of :uid
   validates_presence_of :access_token
