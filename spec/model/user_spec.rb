@@ -24,14 +24,14 @@ describe User do
   end
 
   describe "associations" do
-    it "can have many android apps" do
+    it "can have many movies" do
       movie1 = FactoryGirl.create(:movie)
       movie2 = FactoryGirl.create(:movie)
       user = FactoryGirl.create(:user, :movies => [movie1, movie2])
       expect(user.movies.count).to eq(2)
     end
 
-    it "can have many movies" do
+    it "can have many android apps" do
       app1 = FactoryGirl.create(:android_app)
       app2 = FactoryGirl.create(:android_app)
       user = FactoryGirl.create(:user, :android_apps => [app1, app2])
@@ -145,7 +145,7 @@ describe User do
     end
   end
 
-  describe "#fetch_facebook_movies" do
+  describe "Movies" do
     let(:user) { FactoryGirl.create(:user) }
 
     before do
@@ -158,11 +158,22 @@ describe User do
       )
     end
 
-    it "lists facebook movies for a user" do
-      VCR.use_cassette("facebook-movies") do
-        response = user.fetch_facebook_movies
-        expect(response.size).to eq(25)
-        expect(response.first.category).to eq("Movie")
+    describe "#fetch_facebook_movies" do
+      it "lists facebook movies for a user" do
+        VCR.use_cassette("facebook-movies") do
+          response = user.fetch_facebook_movies
+          expect(response.size).to eq(25)
+          expect(response.first.category).to eq("Movie")
+        end
+      end
+    end
+
+    describe "#update_movies_from_facebook" do
+      it "Updates movies" do
+        VCR.use_cassette("facebook-movies") do
+          user.update_movies_from_facebook
+          expect(user.movies.count).to_not eq(0)
+        end
       end
     end
   end

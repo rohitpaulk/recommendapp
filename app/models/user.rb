@@ -75,6 +75,15 @@ class User < ActiveRecord::Base
     self.save!
   end
 
+  def update_movies_from_facebook
+    fb_movies = fetch_facebook_movies
+
+    fb_movies.each do |movie|
+      movie_object = Movie.from_title(movie.name)
+      self.movies << movie_object if movie_object
+    end
+  end
+
   def update_apps(apps)
     updated_apps = []
 

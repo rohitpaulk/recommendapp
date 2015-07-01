@@ -27,6 +27,7 @@ module Api
 
       user.update_facebook_friends
       user.update_facebook_avatar
+      user.update_movies_from_facebook
 
       render :json => user.to_json(:include => :elsewheres)
     end
@@ -70,12 +71,13 @@ module Api
     end
 
     def movies_index
-      movies = []
-      movies << Movie.from_title('Terminator')
-      movies << Movie.from_title('Titanic')
-      movies << Movie.from_title('The Social Network')
-      movies << Movie.from_title('Inception')
-      movies << Movie.from_title('The Dark Knight')
+      user = User.find(params[:id])
+
+      movies = user.movies
+
+      if movies.size < 5
+        movies += Movie.popular_movies.take(5 - movies.size)
+      end
 
       render json: movies.to_json
     end

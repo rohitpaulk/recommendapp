@@ -42,5 +42,12 @@ describe Movie do
         end
       end
     end
+
+    describe "::popular_movies" do
+      it "yields values" do
+        movie = FactoryGirl.create(:movie, :title => "Terminator")
+        expect(Movie.popular_movies.first.title).to eq("Terminator")
+      end
+    end
   end
 end

@@ -10,6 +10,7 @@ class Movie < ActiveRecord::Base
       Movie.find_by_title(title)
     else
       response = Omdb::Api.new.fetch(title)[:movie]
+      return nil unless response
       movie = Movie.create!(
         title:       response.title,
         year:        response.year,
@@ -18,7 +19,14 @@ class Movie < ActiveRecord::Base
         imdb_rating: response.imdb_rating,
         poster_url:  response.poster
       )
-      return movie
+    end
+  end
+
+  def self.popular_movies
+    Enumerator.new do |e|
+      ['Terminator', 'Interstellar', 'Dark Knight', 'Titanic', 'Spiderman'].each { |title|
+        e.yield Movie.from_title(title)
+      }
     end
   end
 end
