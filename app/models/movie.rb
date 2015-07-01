@@ -21,4 +21,12 @@ class Movie < ActiveRecord::Base
       )
     end
   end
+
+  def self.popular_movies
+    Enumerator.new do |e|
+      ['Terminator', 'Interstellar', 'Dark Knight', 'Titanic', 'Spiderman'].each { |title|
+        e.yield Movie.from_title(title)
+      }
+    end
+  end
 end
