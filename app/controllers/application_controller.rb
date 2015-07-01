@@ -11,4 +11,12 @@ class ApplicationController < ActionController::Base
       render plain: "Unauthorized", status: 401 and return
     end
   end
+
+  def require_correct_user
+    @user = User.find(params[:id])
+    unless @user == @api_user
+      render plain: "Unauthorized", status: 401
+      return
+    end
+  end
 end
