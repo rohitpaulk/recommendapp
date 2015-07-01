@@ -25,7 +25,7 @@ http_interactions:
       X-Fb-Rev:
       - '1687493'
       Etag:
-      - "\"abf808a7a2b402371e667f9ec70948e4c22676f0\""
+      - '"abf808a7a2b402371e667f9ec70948e4c22676f0"'
       Pragma:
       - no-cache
       Cache-Control:
@@ -46,27 +46,1267 @@ http_interactions:
       - '3388'
     body:
       encoding: UTF-8
-      string: "{\"data\":[{\"category\":\"Movie\",\"name\":\"Superman vs. The Elite\",\"id\":\"110635222387355\",\"created_time\":\"2015-04-12T05:13:00+0000\"},{\"category\":\"Movie\",\"name\":\"The
-        Transporter\",\"id\":\"792619774128590\",\"created_time\":\"2015-02-23T21:56:31+0000\"},{\"category\":\"Movie\",\"name\":\"The
-        Robert Langdon Series (Inferno, Da Vinci Code, Angels and Demons)\",\"id\":\"362436247253412\",\"created_time\":\"2014-12-19T16:45:26+0000\"},{\"category\":\"Movie\",\"name\":\"Ice
-        Age Movies\",\"id\":\"129577537128630\",\"created_time\":\"2014-08-18T21:57:29+0000\"},{\"category\":\"Media\\/news\\/publishing\",\"category_list\":[{\"id\":\"2233\",\"name\":\"Media\\/News\\/Publishing\"}],\"name\":\"Filmygyan\",\"id\":\"334718749959224\",\"created_time\":\"2014-06-19T05:06:07+0000\"},{\"category\":\"Movie\",\"name\":\"The
-        Internship\",\"id\":\"351655284898721\",\"created_time\":\"2014-02-19T09:29:44+0000\"},{\"category\":\"Movie\",\"name\":\"The
-        Second Circle\",\"id\":\"230825710387560\",\"created_time\":\"2013-02-07T13:49:03+0000\"},{\"category\":\"Movie\",\"name\":\"Guns,
-        Girls and Gambling the Movie\",\"id\":\"445269125535034\",\"created_time\":\"2013-02-07T05:39:10+0000\"},{\"category\":\"Movie\",\"name\":\"Untitled
-        Batman Project (2011)\",\"id\":\"110938028945139\",\"created_time\":\"2012-08-11T08:00:19+0000\"},{\"category\":\"Movie\",\"name\":\"Pyar
-        Ka Punchnama\",\"id\":\"204519969569580\",\"created_time\":\"2012-07-05T06:21:59+0000\"},{\"category\":\"Movie\",\"name\":\"Ice
-        Age: Continental Drift (2012)\",\"id\":\"116239778420951\",\"created_time\":\"2012-06-15T08:43:25+0000\"},{\"category\":\"Movie\",\"name\":\"Ice
-        Age 4\",\"id\":\"251072531576389\",\"created_time\":\"2012-06-13T04:09:51+0000\"},{\"category\":\"Movie\",\"name\":\"Men
-        In Black 3\",\"id\":\"343655272338275\",\"created_time\":\"2012-06-13T04:07:29+0000\"},{\"category\":\"Movie\",\"name\":\"Prometheus\",\"id\":\"319196071428582\",\"created_time\":\"2012-06-13T04:05:21+0000\"},{\"category\":\"Movie\",\"name\":\"3
-        Idiots Movie\",\"id\":\"441170255909978\",\"created_time\":\"2012-05-22T02:11:27+0000\"},{\"category\":\"Movie\",\"name\":\"The
-        Terminator\",\"id\":\"181221288646788\",\"created_time\":\"2012-04-07T11:34:45+0000\"},{\"category\":\"Movie\",\"name\":\"Avengers\",\"id\":\"126757470715601\",\"created_time\":\"2012-01-05T00:44:30+0000\"},{\"category\":\"Movie\",\"name\":\"Madagascar\",\"id\":\"149800431712088\",\"created_time\":\"2011-12-30T06:57:32+0000\"},{\"category\":\"Tv\",\"name\":\"big
-        bang theory\",\"id\":\"104813126228732\",\"created_time\":\"2011-12-17T00:27:13+0000\"},{\"category\":\"Movie\",\"name\":\"Due
-        Date\",\"id\":\"140786973315\",\"created_time\":\"2011-12-15T15:58:09+0000\"},{\"category\":\"Movie\",\"name\":\"The
-        Italian Job\",\"id\":\"108034322558363\",\"created_time\":\"2011-12-10T12:07:38+0000\"},{\"category\":\"Movie\",\"name\":\"Fast
-        & Furious\",\"id\":\"24098842630\",\"created_time\":\"2011-12-02T10:42:53+0000\"},{\"category\":\"Movie\",\"name\":\"8
-        Mile\",\"id\":\"162564747125805\",\"created_time\":\"2011-12-01T13:29:25+0000\"},{\"category\":\"Movie\",\"name\":\"The
-        Minority Report\",\"id\":\"104291359602094\",\"created_time\":\"2011-11-23T17:51:58+0000\"},{\"category\":\"Movie\",\"name\":\"Minority
-        Report\",\"id\":\"112241738862440\",\"created_time\":\"2011-11-23T17:51:44+0000\"}],\"paging\":{\"cursors\":{\"before\":\"MTEwNjM1MjIyMzg3MzU1\",\"after\":\"MTEyMjQxNzM4ODYyNDQw\"},\"next\":\"https:\\/\\/graph.facebook.com\\/v2.2\\/10202390662768085\\/movies?access_token=CAALBlziETAYBAAhOerbeSJ187pLVSfDQUlnZAaTL4RDbbSpnahlGO2ZADDaqUkRZAOozRmiC2DUq6wJBbywEIlG1WOkQZBim8BClpYJwywNZAE5fAa4J9ooDsaG8ILXDLxppZB73fbOBjJ6RxsAjmfXrZBY8KYHPWfr8BJUH1T7qjyizkCUfyp0ZBlm6uNoB2wboKjIhrohkjZAJaZBcadbriiXVhezBBdgZBcXCgH8ST8mxrqEqD1QAFZB7&limit=25&after=MTEyMjQxNzM4ODYyNDQw\"}}"
+      string: '{"data":[{"category":"Movie","name":"Superman vs. The Elite","id":"110635222387355","created_time":"2015-04-12T05:13:00+0000"},{"category":"Movie","name":"The
+        Transporter","id":"792619774128590","created_time":"2015-02-23T21:56:31+0000"},{"category":"Movie","name":"The
+        Robert Langdon Series (Inferno, Da Vinci Code, Angels and Demons)","id":"362436247253412","created_time":"2014-12-19T16:45:26+0000"},{"category":"Movie","name":"Ice
+        Age Movies","id":"129577537128630","created_time":"2014-08-18T21:57:29+0000"},{"category":"Media\/news\/publishing","category_list":[{"id":"2233","name":"Media\/News\/Publishing"}],"name":"Filmygyan","id":"334718749959224","created_time":"2014-06-19T05:06:07+0000"},{"category":"Movie","name":"The
+        Internship","id":"351655284898721","created_time":"2014-02-19T09:29:44+0000"},{"category":"Movie","name":"The
+        Second Circle","id":"230825710387560","created_time":"2013-02-07T13:49:03+0000"},{"category":"Movie","name":"Guns,
+        Girls and Gambling the Movie","id":"445269125535034","created_time":"2013-02-07T05:39:10+0000"},{"category":"Movie","name":"Untitled
+        Batman Project (2011)","id":"110938028945139","created_time":"2012-08-11T08:00:19+0000"},{"category":"Movie","name":"Pyar
+        Ka Punchnama","id":"204519969569580","created_time":"2012-07-05T06:21:59+0000"},{"category":"Movie","name":"Ice
+        Age: Continental Drift (2012)","id":"116239778420951","created_time":"2012-06-15T08:43:25+0000"},{"category":"Movie","name":"Ice
+        Age 4","id":"251072531576389","created_time":"2012-06-13T04:09:51+0000"},{"category":"Movie","name":"Men
+        In Black 3","id":"343655272338275","created_time":"2012-06-13T04:07:29+0000"},{"category":"Movie","name":"Prometheus","id":"319196071428582","created_time":"2012-06-13T04:05:21+0000"},{"category":"Movie","name":"3
+        Idiots Movie","id":"441170255909978","created_time":"2012-05-22T02:11:27+0000"},{"category":"Movie","name":"The
+        Terminator","id":"181221288646788","created_time":"2012-04-07T11:34:45+0000"},{"category":"Movie","name":"Avengers","id":"126757470715601","created_time":"2012-01-05T00:44:30+0000"},{"category":"Movie","name":"Madagascar","id":"149800431712088","created_time":"2011-12-30T06:57:32+0000"},{"category":"Tv","name":"big
+        bang theory","id":"104813126228732","created_time":"2011-12-17T00:27:13+0000"},{"category":"Movie","name":"Due
+        Date","id":"140786973315","created_time":"2011-12-15T15:58:09+0000"},{"category":"Movie","name":"The
+        Italian Job","id":"108034322558363","created_time":"2011-12-10T12:07:38+0000"},{"category":"Movie","name":"Fast
+        & Furious","id":"24098842630","created_time":"2011-12-02T10:42:53+0000"},{"category":"Movie","name":"8
+        Mile","id":"162564747125805","created_time":"2011-12-01T13:29:25+0000"},{"category":"Movie","name":"The
+        Minority Report","id":"104291359602094","created_time":"2011-11-23T17:51:58+0000"},{"category":"Movie","name":"Minority
+        Report","id":"112241738862440","created_time":"2011-11-23T17:51:44+0000"}],"paging":{"cursors":{"before":"MTEwNjM1MjIyMzg3MzU1","after":"MTEyMjQxNzM4ODYyNDQw"},"next":"https:\/\/graph.facebook.com\/v2.2\/10202390662768085\/movies?access_token=CAALBlziETAYBAAhOerbeSJ187pLVSfDQUlnZAaTL4RDbbSpnahlGO2ZADDaqUkRZAOozRmiC2DUq6wJBbywEIlG1WOkQZBim8BClpYJwywNZAE5fAa4J9ooDsaG8ILXDLxppZB73fbOBjJ6RxsAjmfXrZBY8KYHPWfr8BJUH1T7qjyizkCUfyp0ZBlm6uNoB2wboKjIhrohkjZAJaZBcadbriiXVhezBBdgZBcXCgH8ST8mxrqEqD1QAFZB7&limit=25&after=MTEyMjQxNzM4ODYyNDQw"}}'
     http_version: 
   recorded_at: Mon, 13 Apr 2015 17:36:30 GMT
+- request:
+    method: get
+    uri: http://www.omdbapi.com/?plot=short&t=Superman%20vs.%20The%20Elite&tomatoes=false&y=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - public, max-age=3600
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - Wed, 01 Jul 2015 18:24:46 GMT
+      Last-Modified:
+      - Wed, 01 Jul 2015 17:24:46 GMT
+      Vary:
+      - "*"
+      Server:
+      - Microsoft-IIS/7.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Wed, 01 Jul 2015 17:24:48 GMT
+      Content-Length:
+      - '802'
+    body:
+      encoding: UTF-8
+      string: '{"Title":"Superman vs. The Elite","Year":"2012","Rated":"PG-13","Released":"12
+        Jun 2012","Runtime":"76 min","Genre":"Animation, Sci-Fi","Director":"Michael
+        Chang","Writer":"Jerry Siegel (creator), Joe Shuster (creator), Joe Kelly
+        (story), Doug Mahnke (story), Lee Bermejo (story), Joe Kelly","Actors":"George
+        Newbern, Pauley Perrette, Robin Atkin Downes, Dee Bradley Baker","Plot":"The
+        Man of Steel finds himself outshone by a new team of ruthless superheroes
+        who hold his idealism in contempt.","Language":"English, French, Spanish","Country":"USA","Awards":"1
+        win & 3 nominations.","Poster":"http://ia.media-imdb.com/images/M/MV5BMjE0OTcwNTkyMl5BMl5BanBnXkFtZTcwOTczMzk4Nw@@._V1_SX300.jpg","Metascore":"N/A","imdbRating":"7.1","imdbVotes":"7040","imdbID":"tt2224455","Type":"movie","Response":"True"}'
+    http_version: 
+  recorded_at: Wed, 01 Jul 2015 17:23:53 GMT
+- request:
+    method: get
+    uri: http://www.omdbapi.com/?plot=short&t=The%20Transporter&tomatoes=false&y=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - public, max-age=3600
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - Wed, 01 Jul 2015 18:24:55 GMT
+      Last-Modified:
+      - Wed, 01 Jul 2015 17:24:55 GMT
+      Vary:
+      - "*"
+      Server:
+      - Microsoft-IIS/7.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Wed, 01 Jul 2015 17:24:55 GMT
+      Content-Length:
+      - '764'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJUaXRsZSI6IlRoZSBUcmFuc3BvcnRlciIsIlllYXIiOiIyMDAyIiwiUmF0
+        ZWQiOiJQRy0xMyIsIlJlbGVhc2VkIjoiMTEgT2N0IDIwMDIiLCJSdW50aW1l
+        IjoiOTIgbWluIiwiR2VucmUiOiJBY3Rpb24sIENyaW1lLCBUaHJpbGxlciIs
+        IkRpcmVjdG9yIjoiTG91aXMgTGV0ZXJyaWVyLCBDb3JleSBZdWVuIiwiV3Jp
+        dGVyIjoiTHVjIEJlc3NvbiwgUm9iZXJ0IE1hcmsgS2FtZW4iLCJBY3RvcnMi
+        OiJKYXNvbiBTdGF0aGFtLCBRaSBTaHUsIE1hdHQgU2NodWx6ZSwgRnJhbsOn
+        b2lzIEJlcmzDqWFuZCIsIlBsb3QiOiJGcmFuayBpcyBoaXJlZCB0byBcInRy
+        YW5zcG9ydFwiIHBhY2thZ2VzIGZvciB1bmtub3duIGNsaWVudHMgYW5kIGhh
+        cyBtYWRlIGEgdmVyeSBnb29kIGxpdmluZyBkb2luZyBzby4gQnV0IHdoZW4g
+        YXNrZWQgdG8gbW92ZSBhIHBhY2thZ2UgdGhhdCBiZWdpbnMgbW92aW5nLCBj
+        b21wbGljYXRpb25zIGFyaXNlLiIsIkxhbmd1YWdlIjoiRW5nbGlzaCwgRnJl
+        bmNoLCBNYW5kYXJpbiIsIkNvdW50cnkiOiJGcmFuY2UsIFVTQSIsIkF3YXJk
+        cyI6Ik4vQSIsIlBvc3RlciI6Imh0dHA6Ly9pYS5tZWRpYS1pbWRiLmNvbS9p
+        bWFnZXMvTS9NVjVCTVRrMk5EYzJNREF4TjE1Qk1sNUJhbkJuWGtGdFpUWXdO
+        RGMxTkRZMi5fVjFfU1gzMDAuanBnIiwiTWV0YXNjb3JlIjoiNTEiLCJpbWRi
+        UmF0aW5nIjoiNi44IiwiaW1kYlZvdGVzIjoiMjEyOTcyIiwiaW1kYklEIjoi
+        dHQwMjkzNjYyIiwiVHlwZSI6Im1vdmllIiwiUmVzcG9uc2UiOiJUcnVlIn0=
+    http_version: 
+  recorded_at: Wed, 01 Jul 2015 17:24:01 GMT
+- request:
+    method: get
+    uri: http://www.omdbapi.com/?plot=short&t=The%20Robert%20Langdon%20Series%20(Inferno,%20Da%20Vinci%20Code,%20Angels%20and%20Demons)&tomatoes=false&y=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - public, max-age=3600
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - Wed, 01 Jul 2015 18:24:59 GMT
+      Last-Modified:
+      - Wed, 01 Jul 2015 17:24:59 GMT
+      Vary:
+      - "*"
+      Server:
+      - Microsoft-IIS/7.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Wed, 01 Jul 2015 17:24:59 GMT
+      Content-Length:
+      - '47'
+    body:
+      encoding: UTF-8
+      string: '{"Response":"False","Error":"Movie not found!"}'
+    http_version: 
+  recorded_at: Wed, 01 Jul 2015 17:24:03 GMT
+- request:
+    method: get
+    uri: http://www.omdbapi.com/?plot=short&t=Ice%20Age%20Movies&tomatoes=false&y=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - public, max-age=3600
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - Wed, 01 Jul 2015 18:26:48 GMT
+      Last-Modified:
+      - Wed, 01 Jul 2015 17:26:48 GMT
+      Vary:
+      - "*"
+      Server:
+      - Microsoft-IIS/7.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Wed, 01 Jul 2015 17:26:48 GMT
+      Content-Length:
+      - '47'
+    body:
+      encoding: UTF-8
+      string: '{"Response":"False","Error":"Movie not found!"}'
+    http_version: 
+  recorded_at: Wed, 01 Jul 2015 17:25:52 GMT
+- request:
+    method: get
+    uri: http://www.omdbapi.com/?plot=short&t=Filmygyan&tomatoes=false&y=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - public, max-age=3600
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - Wed, 01 Jul 2015 18:26:49 GMT
+      Last-Modified:
+      - Wed, 01 Jul 2015 17:26:49 GMT
+      Vary:
+      - "*"
+      Server:
+      - Microsoft-IIS/7.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Wed, 01 Jul 2015 17:26:48 GMT
+      Content-Length:
+      - '47'
+    body:
+      encoding: UTF-8
+      string: '{"Response":"False","Error":"Movie not found!"}'
+    http_version: 
+  recorded_at: Wed, 01 Jul 2015 17:25:53 GMT
+- request:
+    method: get
+    uri: http://www.omdbapi.com/?plot=short&t=The%20Internship&tomatoes=false&y=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - public, max-age=3600
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - Wed, 01 Jul 2015 18:26:50 GMT
+      Last-Modified:
+      - Wed, 01 Jul 2015 17:26:50 GMT
+      Vary:
+      - "*"
+      Server:
+      - Microsoft-IIS/7.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Wed, 01 Jul 2015 17:26:49 GMT
+      Content-Length:
+      - '829'
+    body:
+      encoding: UTF-8
+      string: '{"Title":"The Internship","Year":"2013","Rated":"PG-13","Released":"7
+        Jun 2013","Runtime":"119 min","Genre":"Comedy","Director":"Shawn Levy","Writer":"Vince
+        Vaughn (screenplay), Jared Stern (screenplay), Vince Vaughn (story)","Actors":"Vince
+        Vaughn, Owen Wilson, Rose Byrne, Aasif Mandvi","Plot":"Two salesmen whose
+        careers have been torpedoed by the digital age find their way into a coveted
+        internship at Google, where they must compete with a group of young, tech-savvy
+        geniuses for a shot at employment.","Language":"English, Tagalog, Cantonese,
+        Mandarin, Spanish","Country":"USA","Awards":"1 nomination.","Poster":"http://ia.media-imdb.com/images/M/MV5BMjM1MzczMDgwOV5BMl5BanBnXkFtZTcwMDM4NjM2OQ@@._V1_SX300.jpg","Metascore":"42","imdbRating":"6.3","imdbVotes":"140701","imdbID":"tt2234155","Type":"movie","Response":"True"}'
+    http_version: 
+  recorded_at: Wed, 01 Jul 2015 17:25:54 GMT
+- request:
+    method: get
+    uri: http://www.omdbapi.com/?plot=short&t=The%20Second%20Circle&tomatoes=false&y=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - public, max-age=3600
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - Wed, 01 Jul 2015 18:26:50 GMT
+      Last-Modified:
+      - Wed, 01 Jul 2015 17:26:50 GMT
+      Vary:
+      - "*"
+      Server:
+      - Microsoft-IIS/7.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Wed, 01 Jul 2015 17:26:50 GMT
+      Content-Length:
+      - '693'
+    body:
+      encoding: UTF-8
+      string: '{"Title":"The Second Circle","Year":"1990","Rated":"N/A","Released":"25
+        Oct 1991","Runtime":"92 min","Genre":"Drama","Director":"Aleksandr Sokurov","Writer":"Yuriy
+        Arabov","Actors":"Pyotr Aleksandrov, Nadezhda Rodnova, Tamara Timofeeva, Aleksandr
+        Bystryakov","Plot":"A man tries to come to terms with his father''s death
+        and to deal with the mundane details of his burial in a society cut off from
+        spirituality.","Language":"Russian","Country":"Soviet Union","Awards":"1 win.","Poster":"http://ia.media-imdb.com/images/M/MV5BNzQ3MzE1Mjg1N15BMl5BanBnXkFtZTcwMDI0NzIzMQ@@._V1_SX300.jpg","Metascore":"N/A","imdbRating":"7.3","imdbVotes":"401","imdbID":"tt0100563","Type":"movie","Response":"True"}'
+    http_version: 
+  recorded_at: Wed, 01 Jul 2015 17:25:54 GMT
+- request:
+    method: get
+    uri: http://www.omdbapi.com/?plot=short&t=Guns,%20Girls%20and%20Gambling%20the%20Movie&tomatoes=false&y=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - public, max-age=3600
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - Wed, 01 Jul 2015 18:26:51 GMT
+      Last-Modified:
+      - Wed, 01 Jul 2015 17:26:51 GMT
+      Vary:
+      - "*"
+      Server:
+      - Microsoft-IIS/7.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Wed, 01 Jul 2015 17:26:51 GMT
+      Content-Length:
+      - '47'
+    body:
+      encoding: UTF-8
+      string: '{"Response":"False","Error":"Movie not found!"}'
+    http_version: 
+  recorded_at: Wed, 01 Jul 2015 17:25:55 GMT
+- request:
+    method: get
+    uri: http://www.omdbapi.com/?plot=short&t=Untitled%20Batman%20Project%20(2011)&tomatoes=false&y=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - public, max-age=3600
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - Wed, 01 Jul 2015 18:26:52 GMT
+      Last-Modified:
+      - Wed, 01 Jul 2015 17:26:52 GMT
+      Vary:
+      - "*"
+      Server:
+      - Microsoft-IIS/7.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Wed, 01 Jul 2015 17:26:51 GMT
+      Content-Length:
+      - '47'
+    body:
+      encoding: UTF-8
+      string: '{"Response":"False","Error":"Movie not found!"}'
+    http_version: 
+  recorded_at: Wed, 01 Jul 2015 17:25:56 GMT
+- request:
+    method: get
+    uri: http://www.omdbapi.com/?plot=short&t=Pyar%20Ka%20Punchnama&tomatoes=false&y=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - public, max-age=3600
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - Wed, 01 Jul 2015 18:26:53 GMT
+      Last-Modified:
+      - Wed, 01 Jul 2015 17:26:53 GMT
+      Vary:
+      - "*"
+      Server:
+      - Microsoft-IIS/7.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Wed, 01 Jul 2015 17:26:52 GMT
+      Content-Length:
+      - '47'
+    body:
+      encoding: UTF-8
+      string: '{"Response":"False","Error":"Movie not found!"}'
+    http_version: 
+  recorded_at: Wed, 01 Jul 2015 17:25:57 GMT
+- request:
+    method: get
+    uri: http://www.omdbapi.com/?plot=short&t=Ice%20Age:%20Continental%20Drift%20(2012)&tomatoes=false&y=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - public, max-age=3600
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - Wed, 01 Jul 2015 18:26:54 GMT
+      Last-Modified:
+      - Wed, 01 Jul 2015 17:26:54 GMT
+      Vary:
+      - "*"
+      Server:
+      - Microsoft-IIS/7.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Wed, 01 Jul 2015 17:26:53 GMT
+      Content-Length:
+      - '47'
+    body:
+      encoding: UTF-8
+      string: '{"Response":"False","Error":"Movie not found!"}'
+    http_version: 
+  recorded_at: Wed, 01 Jul 2015 17:25:58 GMT
+- request:
+    method: get
+    uri: http://www.omdbapi.com/?plot=short&t=Ice%20Age%204&tomatoes=false&y=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - public, max-age=3600
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - Wed, 01 Jul 2015 18:26:54 GMT
+      Last-Modified:
+      - Wed, 01 Jul 2015 17:26:54 GMT
+      Vary:
+      - "*"
+      Server:
+      - Microsoft-IIS/7.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Wed, 01 Jul 2015 17:26:54 GMT
+      Content-Length:
+      - '47'
+    body:
+      encoding: UTF-8
+      string: '{"Response":"False","Error":"Movie not found!"}'
+    http_version: 
+  recorded_at: Wed, 01 Jul 2015 17:25:58 GMT
+- request:
+    method: get
+    uri: http://www.omdbapi.com/?plot=short&t=Men%20In%20Black%203&tomatoes=false&y=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - public, max-age=3600
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - Wed, 01 Jul 2015 18:26:55 GMT
+      Last-Modified:
+      - Wed, 01 Jul 2015 17:26:55 GMT
+      Vary:
+      - "*"
+      Server:
+      - Microsoft-IIS/7.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Wed, 01 Jul 2015 17:26:54 GMT
+      Content-Length:
+      - '737'
+    body:
+      encoding: UTF-8
+      string: '{"Title":"Men in Black 3","Year":"2012","Rated":"PG-13","Released":"25
+        May 2012","Runtime":"106 min","Genre":"Action, Comedy, Sci-Fi","Director":"Barry
+        Sonnenfeld","Writer":"Etan Cohen, Lowell Cunningham (based on the Malibu comic
+        by)","Actors":"Will Smith, Tommy Lee Jones, Josh Brolin, Jemaine Clement","Plot":"Agent
+        J travels in time to M.I.B.''s early days in 1969 to stop an alien from assassinating
+        his friend Agent K and changing history.","Language":"English","Country":"USA","Awards":"1
+        win & 13 nominations.","Poster":"http://ia.media-imdb.com/images/M/MV5BMTU2NTYxODcwMF5BMl5BanBnXkFtZTcwNDk1NDY0Nw@@._V1_SX300.jpg","Metascore":"58","imdbRating":"6.9","imdbVotes":"234817","imdbID":"tt1409024","Type":"movie","Response":"True"}'
+    http_version: 
+  recorded_at: Wed, 01 Jul 2015 17:25:59 GMT
+- request:
+    method: get
+    uri: http://www.omdbapi.com/?plot=short&t=Prometheus&tomatoes=false&y=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - public, max-age=3600
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - Wed, 01 Jul 2015 18:26:56 GMT
+      Last-Modified:
+      - Wed, 01 Jul 2015 17:26:56 GMT
+      Vary:
+      - "*"
+      Server:
+      - Microsoft-IIS/7.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Wed, 01 Jul 2015 17:26:55 GMT
+      Content-Length:
+      - '913'
+    body:
+      encoding: UTF-8
+      string: '{"Title":"Prometheus","Year":"2012","Rated":"R","Released":"8 Jun 2012","Runtime":"124
+        min","Genre":"Adventure, Mystery, Sci-Fi","Director":"Ridley Scott","Writer":"Jon
+        Spaihts, Damon Lindelof, Dan O''Bannon (elements), Ronald Shusett (elements)","Actors":"Noomi
+        Rapace, Michael Fassbender, Charlize Theron, Idris Elba","Plot":"Following
+        clues to the origin of mankind a team journey across the universe and find
+        a structure on a distant planet containing a monolithic statue of a humanoid
+        head and stone cylinders of alien blood but they soon find they are not alone.","Language":"English,
+        Scottish Gaelic","Country":"USA, UK","Awards":"Nominated for 1 Oscar. Another
+        6 wins & 34 nominations.","Poster":"http://ia.media-imdb.com/images/M/MV5BMTY3NzIyNTA2NV5BMl5BanBnXkFtZTcwNzE2NjI4Nw@@._V1_SX300.jpg","Metascore":"65","imdbRating":"7.0","imdbVotes":"410072","imdbID":"tt1446714","Type":"movie","Response":"True"}'
+    http_version: 
+  recorded_at: Wed, 01 Jul 2015 17:26:00 GMT
+- request:
+    method: get
+    uri: http://www.omdbapi.com/?plot=short&t=3%20Idiots%20Movie&tomatoes=false&y=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - public, max-age=3600
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - Wed, 01 Jul 2015 18:26:57 GMT
+      Last-Modified:
+      - Wed, 01 Jul 2015 17:26:57 GMT
+      Vary:
+      - "*"
+      Server:
+      - Microsoft-IIS/7.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Wed, 01 Jul 2015 17:26:56 GMT
+      Content-Length:
+      - '47'
+    body:
+      encoding: UTF-8
+      string: '{"Response":"False","Error":"Movie not found!"}'
+    http_version: 
+  recorded_at: Wed, 01 Jul 2015 17:26:01 GMT
+- request:
+    method: get
+    uri: http://www.omdbapi.com/?plot=short&t=The%20Terminator&tomatoes=false&y=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - public, max-age=3600
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - Wed, 01 Jul 2015 18:26:58 GMT
+      Last-Modified:
+      - Wed, 01 Jul 2015 17:26:58 GMT
+      Vary:
+      - "*"
+      Server:
+      - Microsoft-IIS/7.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Wed, 01 Jul 2015 17:26:57 GMT
+      Content-Length:
+      - '849'
+    body:
+      encoding: UTF-8
+      string: '{"Title":"The Terminator","Year":"1984","Rated":"R","Released":"26
+        Oct 1984","Runtime":"107 min","Genre":"Action, Sci-Fi","Director":"James Cameron","Writer":"James
+        Cameron, Gale Anne Hurd, William Wisher Jr. (additional dialogue)","Actors":"Arnold
+        Schwarzenegger, Michael Biehn, Linda Hamilton, Paul Winfield","Plot":"A human-looking
+        indestructible cyborg is sent from 2029 to 1984 to assassinate a waitress,
+        whose unborn son will lead humanity in a war against the machines, while a
+        soldier from that war is sent to protect her at all costs.","Language":"English,
+        Spanish","Country":"UK, USA","Awards":"5 wins & 6 nominations.","Poster":"http://ia.media-imdb.com/images/M/MV5BODE1MDczNTUxOV5BMl5BanBnXkFtZTcwMTA0NDQyNA@@._V1_SX300.jpg","Metascore":"84","imdbRating":"8.1","imdbVotes":"507962","imdbID":"tt0088247","Type":"movie","Response":"True"}'
+    http_version: 
+  recorded_at: Wed, 01 Jul 2015 17:26:02 GMT
+- request:
+    method: get
+    uri: http://www.omdbapi.com/?plot=short&t=Avengers&tomatoes=false&y=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - public, max-age=3600
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - Wed, 01 Jul 2015 18:26:58 GMT
+      Last-Modified:
+      - Wed, 01 Jul 2015 17:26:58 GMT
+      Vary:
+      - "*"
+      Server:
+      - Microsoft-IIS/7.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Wed, 01 Jul 2015 17:26:58 GMT
+      Content-Length:
+      - '356'
+    body:
+      encoding: UTF-8
+      string: '{"Title":"Avengers","Year":"1987","Rated":"N/A","Released":"01 Feb
+        1987","Runtime":"N/A","Genre":"Action","Director":"Takashi Nishiyama","Writer":"N/A","Actors":"N/A","Plot":"N/A","Language":"English","Country":"Japan","Awards":"N/A","Poster":"N/A","Metascore":"N/A","imdbRating":"5.5","imdbVotes":"12","imdbID":"tt2164490","Type":"game","Response":"True"}'
+    http_version: 
+  recorded_at: Wed, 01 Jul 2015 17:26:02 GMT
+- request:
+    method: get
+    uri: http://www.omdbapi.com/?plot=short&t=Madagascar&tomatoes=false&y=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - public, max-age=3600
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - Wed, 01 Jul 2015 18:26:59 GMT
+      Last-Modified:
+      - Wed, 01 Jul 2015 17:26:59 GMT
+      Vary:
+      - "*"
+      Server:
+      - Microsoft-IIS/7.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Wed, 01 Jul 2015 17:26:58 GMT
+      Content-Length:
+      - '880'
+    body:
+      encoding: UTF-8
+      string: '{"Title":"Madagascar","Year":"2005","Rated":"PG","Released":"27 May
+        2005","Runtime":"86 min","Genre":"Animation, Adventure, Comedy","Director":"Eric
+        Darnell, Tom McGrath","Writer":"Mark Burton, Billy Frolick, Eric Darnell,
+        Tom McGrath","Actors":"Ben Stiller, Chris Rock, David Schwimmer, Jada Pinkett
+        Smith","Plot":"Spoiled by their upbringing with no idea what wild life is
+        really like, four animals from New York Central Zoo escape, unwittingly assisted
+        by four absconding penguins, and find themselves in Madagascar, among a bunch
+        of merry lemurs","Language":"English, Portuguese, Spanish, German, French","Country":"USA","Awards":"4
+        wins & 25 nominations.","Poster":"http://ia.media-imdb.com/images/M/MV5BMTY4NDUwMzQxMF5BMl5BanBnXkFtZTcwMDgwNjgyMQ@@._V1_SX300.jpg","Metascore":"57","imdbRating":"6.9","imdbVotes":"226835","imdbID":"tt0351283","Type":"movie","Response":"True"}'
+    http_version: 
+  recorded_at: Wed, 01 Jul 2015 17:26:03 GMT
+- request:
+    method: get
+    uri: http://www.omdbapi.com/?plot=short&t=big%20bang%20theory&tomatoes=false&y=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - public, max-age=3600
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - Wed, 01 Jul 2015 18:27:00 GMT
+      Last-Modified:
+      - Wed, 01 Jul 2015 17:27:00 GMT
+      Vary:
+      - "*"
+      Server:
+      - Microsoft-IIS/7.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Wed, 01 Jul 2015 17:26:59 GMT
+      Content-Length:
+      - '804'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJUaXRsZSI6IlRoZSBCaWcgQmFuZyBUaGVvcnkiLCJZZWFyIjoiMjAwN+KA
+        kyIsIlJhdGVkIjoiVFYtMTQiLCJSZWxlYXNlZCI6IjI0IFNlcCAyMDA3Iiwi
+        UnVudGltZSI6IjIyIG1pbiIsIkdlbnJlIjoiQ29tZWR5IiwiRGlyZWN0b3Ii
+        OiJOL0EiLCJXcml0ZXIiOiJDaHVjayBMb3JyZSwgQmlsbCBQcmFkeSIsIkFj
+        dG9ycyI6IkpvaG5ueSBHYWxlY2tpLCBKaW0gUGFyc29ucywgS2FsZXkgQ3Vv
+        Y28tU3dlZXRpbmcsIFNpbW9uIEhlbGJlcmciLCJQbG90IjoiQSB3b21hbiB3
+        aG8gbW92ZXMgaW50byBhbiBhcGFydG1lbnQgYWNyb3NzIHRoZSBoYWxsIGZy
+        b20gdHdvIGJyaWxsaWFudCBidXQgc29jaWFsbHkgYXdrd2FyZCBwaHlzaWNp
+        c3RzIHNob3dzIHRoZW0gaG93IGxpdHRsZSB0aGV5IGtub3cgYWJvdXQgbGlm
+        ZSBvdXRzaWRlIG9mIHRoZSBsYWJvcmF0b3J5LiIsIkxhbmd1YWdlIjoiRW5n
+        bGlzaCwgSGluZGksIEl0YWxpYW4sIFJ1c3NpYW4sIE1hbmRhcmluLCBLbGlu
+        Z29uIiwiQ291bnRyeSI6IlVTQSIsIkF3YXJkcyI6IldvbiAxIEdvbGRlbiBH
+        bG9iZS4gQW5vdGhlciA0NCB3aW5zICYgMTQxIG5vbWluYXRpb25zLiIsIlBv
+        c3RlciI6Imh0dHA6Ly9pYS5tZWRpYS1pbWRiLmNvbS9pbWFnZXMvTS9NVjVC
+        TWpJMU16YzRNRFV3Tmw1Qk1sNUJhbkJuWGtGdFpUZ3dNREF6T1RJeE1qRUAu
+        X1YxX1NYMzAwLmpwZyIsIk1ldGFzY29yZSI6Ik4vQSIsImltZGJSYXRpbmci
+        OiI4LjUiLCJpbWRiVm90ZXMiOiI0NDgsNzI1IiwiaW1kYklEIjoidHQwODk4
+        MjY2IiwiVHlwZSI6InNlcmllcyIsIlJlc3BvbnNlIjoiVHJ1ZSJ9
+    http_version: 
+  recorded_at: Wed, 01 Jul 2015 17:26:04 GMT
+- request:
+    method: get
+    uri: http://www.omdbapi.com/?plot=short&t=Due%20Date&tomatoes=false&y=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - public, max-age=3600
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - Wed, 01 Jul 2015 18:27:01 GMT
+      Last-Modified:
+      - Wed, 01 Jul 2015 17:27:01 GMT
+      Vary:
+      - "*"
+      Server:
+      - Microsoft-IIS/7.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Wed, 01 Jul 2015 17:27:00 GMT
+      Content-Length:
+      - '847'
+    body:
+      encoding: UTF-8
+      string: '{"Title":"Due Date","Year":"2010","Rated":"R","Released":"5 Nov 2010","Runtime":"95
+        min","Genre":"Comedy","Director":"Todd Phillips","Writer":"Alan R. Cohen (screenplay),
+        Alan Freedland (screenplay), Adam Sztykiel (screenplay), Todd Phillips (screenplay),
+        Alan R. Cohen (story), Alan Freedland (story)","Actors":"Robert Downey Jr.,
+        Zach Galifianakis, Michelle Monaghan, Jamie Foxx","Plot":"High-strung father-to-be
+        Peter Highman is forced to hitch a ride with aspiring actor Ethan Tremblay
+        on a road trip in order to make it to his child''s birth on time.","Language":"English,
+        Spanish","Country":"USA","Awards":"6 nominations.","Poster":"http://ia.media-imdb.com/images/M/MV5BMTU5MTgxODM3Nl5BMl5BanBnXkFtZTcwMjMxNDEwNA@@._V1_SX300.jpg","Metascore":"51","imdbRating":"6.6","imdbVotes":"252622","imdbID":"tt1231583","Type":"movie","Response":"True"}'
+    http_version: 
+  recorded_at: Wed, 01 Jul 2015 17:26:04 GMT
+- request:
+    method: get
+    uri: http://www.omdbapi.com/?plot=short&t=The%20Italian%20Job&tomatoes=false&y=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - public, max-age=3600
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - Wed, 01 Jul 2015 18:27:01 GMT
+      Last-Modified:
+      - Wed, 01 Jul 2015 17:27:01 GMT
+      Vary:
+      - "*"
+      Server:
+      - Microsoft-IIS/7.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Wed, 01 Jul 2015 17:27:00 GMT
+      Content-Length:
+      - '786'
+    body:
+      encoding: UTF-8
+      string: '{"Title":"The Italian Job","Year":"2003","Rated":"PG-13","Released":"30
+        May 2003","Runtime":"111 min","Genre":"Action, Crime, Thriller","Director":"F.
+        Gary Gray","Writer":"Troy Kennedy-Martin, Donna Powers (screenplay), Wayne
+        Powers (screenplay)","Actors":"Mark Wahlberg, Charlize Theron, Donald Sutherland,
+        Jason Statham","Plot":"After being betrayed and left for dead in Italy, Charlie
+        Croker and his team plan an elaborate gold heist against their former ally.","Language":"English,
+        Russian, Italian","Country":"USA, France, UK","Awards":"7 wins & 7 nominations.","Poster":"http://ia.media-imdb.com/images/M/MV5BMTQ4Mjc4NDAwN15BMl5BanBnXkFtZTgwMjgzMzk5MDE@._V1_SX300.jpg","Metascore":"68","imdbRating":"7.0","imdbVotes":"260503","imdbID":"tt0317740","Type":"movie","Response":"True"}'
+    http_version: 
+  recorded_at: Wed, 01 Jul 2015 17:26:05 GMT
+- request:
+    method: get
+    uri: http://www.omdbapi.com/?plot=short&t=Fast%20%26%20Furious&tomatoes=false&y=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - public, max-age=3600
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - Wed, 01 Jul 2015 18:27:02 GMT
+      Last-Modified:
+      - Wed, 01 Jul 2015 17:27:02 GMT
+      Vary:
+      - "*"
+      Server:
+      - Microsoft-IIS/7.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Wed, 01 Jul 2015 17:27:01 GMT
+      Content-Length:
+      - '733'
+    body:
+      encoding: UTF-8
+      string: '{"Title":"Fast & Furious","Year":"2009","Rated":"PG-13","Released":"3
+        Apr 2009","Runtime":"107 min","Genre":"Action, Crime, Drama","Director":"Justin
+        Lin","Writer":"Chris Morgan, Gary Scott Thompson (characters)","Actors":"Vin
+        Diesel, Paul Walker, Jordana Brewster, Michelle Rodriguez","Plot":"Brian O''Conner,
+        now working for the FBI in LA, teams up with Dominic Toretto to bring down
+        a heroin importer by infiltrating his operation.","Language":"English","Country":"USA,
+        Japan","Awards":"4 wins & 2 nominations.","Poster":"http://ia.media-imdb.com/images/M/MV5BMTQwNDA2MTg3Nl5BMl5BanBnXkFtZTcwNTg3MzIyMg@@._V1_SX300.jpg","Metascore":"45","imdbRating":"6.6","imdbVotes":"171642","imdbID":"tt1013752","Type":"movie","Response":"True"}'
+    http_version: 
+  recorded_at: Wed, 01 Jul 2015 17:26:06 GMT
+- request:
+    method: get
+    uri: http://www.omdbapi.com/?plot=short&t=8%20Mile&tomatoes=false&y=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - public, max-age=3600
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - Wed, 01 Jul 2015 18:27:03 GMT
+      Last-Modified:
+      - Wed, 01 Jul 2015 17:27:03 GMT
+      Vary:
+      - "*"
+      Server:
+      - Microsoft-IIS/7.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Wed, 01 Jul 2015 17:27:02 GMT
+      Content-Length:
+      - '715'
+    body:
+      encoding: UTF-8
+      string: '{"Title":"8 Mile","Year":"2002","Rated":"R","Released":"8 Nov 2002","Runtime":"110
+        min","Genre":"Drama, Music","Director":"Curtis Hanson","Writer":"Scott Silver","Actors":"Eminem,
+        Kim Basinger, Mekhi Phifer, Brittany Murphy","Plot":"A young rapper, struggling
+        with every aspect of his life, wants to make the most of what could be his
+        final opportunity but his problems around gives him doubts.","Language":"English","Country":"USA,
+        Germany","Awards":"Won 1 Oscar. Another 10 wins & 19 nominations.","Poster":"http://ia.media-imdb.com/images/M/MV5BMTU2MTgyOTk3MF5BMl5BanBnXkFtZTYwOTg2NTI5._V1_SX300.jpg","Metascore":"77","imdbRating":"6.9","imdbVotes":"159549","imdbID":"tt0298203","Type":"movie","Response":"True"}'
+    http_version: 
+  recorded_at: Wed, 01 Jul 2015 17:26:07 GMT
+- request:
+    method: get
+    uri: http://www.omdbapi.com/?plot=short&t=The%20Minority%20Report&tomatoes=false&y=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - public, max-age=3600
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - Wed, 01 Jul 2015 18:27:03 GMT
+      Last-Modified:
+      - Wed, 01 Jul 2015 17:27:03 GMT
+      Vary:
+      - "*"
+      Server:
+      - Microsoft-IIS/7.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Wed, 01 Jul 2015 17:27:02 GMT
+      Content-Length:
+      - '47'
+    body:
+      encoding: UTF-8
+      string: '{"Response":"False","Error":"Movie not found!"}'
+    http_version: 
+  recorded_at: Wed, 01 Jul 2015 17:26:07 GMT
+- request:
+    method: get
+    uri: http://www.omdbapi.com/?plot=short&t=Minority%20Report&tomatoes=false&y=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - public, max-age=3600
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - Wed, 01 Jul 2015 18:27:04 GMT
+      Last-Modified:
+      - Wed, 01 Jul 2015 17:27:04 GMT
+      Vary:
+      - "*"
+      Server:
+      - Microsoft-IIS/7.5
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Wed, 01 Jul 2015 17:27:03 GMT
+      Content-Length:
+      - '827'
+    body:
+      encoding: UTF-8
+      string: '{"Title":"Minority Report","Year":"2002","Rated":"PG-13","Released":"21
+        Jun 2002","Runtime":"145 min","Genre":"Action, Mystery, Sci-Fi","Director":"Steven
+        Spielberg","Writer":"Philip K. Dick (short story), Scott Frank (screenplay),
+        Jon Cohen (screenplay)","Actors":"Tom Cruise, Max von Sydow, Steve Harris,
+        Neal McDonough","Plot":"In a future where a special police unit is able to
+        arrest murderers before they commit their crimes, an officer from that unit
+        is himself accused of a future murder.","Language":"English, Swedish","Country":"USA","Awards":"Nominated
+        for 1 Oscar. Another 17 wins & 66 nominations.","Poster":"http://ia.media-imdb.com/images/M/MV5BMTc1NDI5NzQyNF5BMl5BanBnXkFtZTYwMjc4NTE5._V1_SX300.jpg","Metascore":"80","imdbRating":"7.7","imdbVotes":"358921","imdbID":"tt0181689","Type":"movie","Response":"True"}'
+    http_version: 
+  recorded_at: Wed, 01 Jul 2015 17:26:08 GMT
 recorded_with: VCR 2.9.3
