@@ -27,6 +27,7 @@ module Api
 
       user.update_facebook_friends
       user.update_facebook_avatar
+      user.update_movies_from_facebook
 
       render :json => user.to_json(:include => :elsewheres)
     end
@@ -70,14 +71,9 @@ module Api
     end
 
     def movies_index
-      movies = []
-      movies << Movie.from_title('Terminator')
-      movies << Movie.from_title('Titanic')
-      movies << Movie.from_title('The Social Network')
-      movies << Movie.from_title('Inception')
-      movies << Movie.from_title('The Dark Knight')
+      user = User.find(params[:id])
 
-      render json: movies.to_json
+      render json: user.movies.to_json
     end
 
     def android_apps_index
