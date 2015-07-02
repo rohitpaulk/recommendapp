@@ -43,18 +43,6 @@ module Api
       end
     end
 
-    def movies_index
-      user = User.find(params[:id])
-
-      movies = user.movies
-
-      if movies.size < 5
-        movies += Movie.popular_movies.take(5 - movies.size)
-      end
-
-      render json: movies.to_json
-    end
-
     def android_apps_index
       user = User.find(params[:id])
       render :json => user.android_apps.to_json

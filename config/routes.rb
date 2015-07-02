@@ -4,10 +4,10 @@ Rails.application.routes.draw do
   namespace 'api' do
     resources :users do
       resources :friends, only: :index
+      resources :movies, only: :index
     end
   end
 
-  get 'api/users/:id/movies'          => 'api/users#movies_index'
   get 'api/users/:id/android_apps'    => 'api/users#android_apps_index'
   post 'api/users/:id/android_apps'   => 'api/users#android_apps_create'
   delete 'api/users/:id/android_apps' => 'api/users#android_apps_delete'
