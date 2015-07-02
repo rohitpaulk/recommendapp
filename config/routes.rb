@@ -12,23 +12,8 @@ Rails.application.routes.draw do
       end
     end
     resources :android_apps, only: [:index, :show]
+    resources :recommendations
   end
-
-
-
-  get 'api/recommendations'           => 'api/recommendations#index'
-  post 'api/recommendations'          => 'api/recommendations#create'
-  get 'api/recommendations/:id'       => 'api/recommendations#show'
-  put 'api/recommendations/:id'       => 'api/recommendations#update'
-
-  # post 'api/users/upsert' => 'api#users_upsert', as: :users_upsert
-  # post 'api/user/apps/upsert' => 'api#user_apps_upsert', as: :user_apps_upsert
-
-  # post 'api/recommendations/create' => 'api#recommendations_create', as: :recommendations_create
-
-
-  # get 'api/recommendations/list' => 'api#recommendations_list', as: :recommendations_list
-
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
