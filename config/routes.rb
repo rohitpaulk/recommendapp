@@ -5,15 +5,16 @@ Rails.application.routes.draw do
     resources :users do
       resources :friends, only: :index
       resources :movies, only: :index
+      resources :android_apps, only: [:index, :create] do
+        collection do
+          delete '/' => 'android_apps#batch_delete'
+        end
+      end
     end
+    resources :android_apps, only: [:index, :show]
   end
 
-  get 'api/users/:id/android_apps'    => 'api/users#android_apps_index'
-  post 'api/users/:id/android_apps'   => 'api/users#android_apps_create'
-  delete 'api/users/:id/android_apps' => 'api/users#android_apps_delete'
 
-  get 'api/android_apps'              => 'api/android_apps#index'
-  get 'api/android_apps/:id'          => 'api/android_apps#show'
 
   get 'api/recommendations'           => 'api/recommendations#index'
   post 'api/recommendations'          => 'api/recommendations#create'
