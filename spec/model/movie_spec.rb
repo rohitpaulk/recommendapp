@@ -34,11 +34,11 @@ describe Movie do
         expect(Movie.from_title("Movie Exists")).to eq(movie)
       end
 
-      it "fetches from omdb if doesn't exist" do
-        VCR.use_cassette('omdb') do
-          movie = Movie.from_title("Terminator")
+      it "fetches from tmdb if doesn't exist" do
+        VCR.use_cassette('tmdb') do
+          movie = Movie.from_title("The Terminator")
           expect(Movie.count).to eq(1)
-          expect(movie.year).to eq("2001")
+          expect(movie.year).to eq("1984")
         end
       end
     end
