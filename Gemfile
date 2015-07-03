@@ -34,16 +34,7 @@ gem 'pushmeup'
 gem 'fb_graph', '~> 2.7.17'
 
 # Movies
-gem 'omdb', github: 'jvanbaarsen/omdb'
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use Unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+gem 'enceladus', '~> 0.0.7'
 
 group :production do
   gem 'rails_12factor'
