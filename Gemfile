@@ -34,7 +34,7 @@ gem 'pushmeup'
 gem 'fb_graph', '~> 2.7.17'
 
 # Movies
-gem 'omdb', github: 'jvanbaarsen/omdb'
+gem 'enceladus'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -54,7 +54,7 @@ group :development, :test do
   gem 'sqlite3'
 
   gem 'vcr'
-  gem 'webmock'
+  # gem 'webmock'
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

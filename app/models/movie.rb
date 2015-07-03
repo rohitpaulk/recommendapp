@@ -9,24 +9,50 @@ class Movie < ActiveRecord::Base
     if Movie.exists?(title: title)
       Movie.find_by_title(title)
     else
-      response = Omdb::Api.new.fetch(title)[:movie]
-      return nil unless response
-      movie = Movie.create!(
-        title:       response.title,
-        year:        response.year,
-        plot:        response.plot,
-        imdb_id:     response.imdb_id,
-        imdb_rating: response.imdb_rating,
-        poster_url:  response.poster
-      )
+      Enceladus.connect("eace344fe11061cf0a80c99ddd40c34a",
+        {
+          include_image_language: "en",
+          language: "en,null",
+          include_adult: true
+        })
+      Enceladus::Configuration::Image.instance.setup!
+      api_movie = Enceladus::Movie.find_by_title(title).first
+      return nil unless api_movie
+      create_movie_from_api(api_movie)
     end
   end
 
   def self.popular_movies
+    Enceladus.connect("eace344fe11061cf0a80c99ddd40c34a",
+      {
+        include_image_language: "en",
+        language: "en,null",
+        include_adult: true
+      })
+    Enceladus::Configuration::Image.instance.setup!
+
+    collection = Enceladus::Movie.popular
+    api_movies = collection.results_per_page[0]
     Enumerator.new do |e|
-      ['Terminator', 'Interstellar', 'Dark Knight', 'Titanic', 'Spiderman'].each { |title|
-        e.yield Movie.from_title(title)
+      api_movies.each { |api_movie|
+        movie = Movie.find_by_title(api_movie.original_title)
+        unless movie
+          movie = create_movie_from_api(api_movie)
+        end
+        e.yield movie
       }
     end
+  end
+
+  def self.create_movie_from_api(api_movie)
+      movie = Movie.create!(
+        title:       api_movie.original_title,
+        year:        api_movie.release_date,
+        plot:        api_movie.overview,
+        imdb_id:     api_movie.id,  #This isn't imdb id. TODO
+        imdb_rating: api_movie.vote_average,  #Not imdb rating. TODO
+        poster_url:  Enceladus::Configuration::Image.instance.url_for(
+          "logo", api_movie.poster_path)[1] #TODO
+      )
   end
 end
