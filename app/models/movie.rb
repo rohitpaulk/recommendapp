@@ -15,7 +15,6 @@ class Movie < ActiveRecord::Base
           language: "en,null",
           include_adult: true
         })
-      Enceladus::Configuration::Image.instance.setup!
       api_movie = Enceladus::Movie.find_by_title(title).first
       return nil unless api_movie
       create_movie_from_api(api_movie)
@@ -29,7 +28,6 @@ class Movie < ActiveRecord::Base
         language: "en,null",
         include_adult: true
       })
-    Enceladus::Configuration::Image.instance.setup!
 
     collection = Enceladus::Movie.popular
     api_movies = collection.results_per_page[0]
@@ -51,8 +49,7 @@ class Movie < ActiveRecord::Base
         plot:        api_movie.overview,
         imdb_id:     api_movie.id,  #This isn't imdb id. TODO
         imdb_rating: api_movie.vote_average,  #Not imdb rating. TODO
-        poster_url:  Enceladus::Configuration::Image.instance.url_for(
-          "logo", api_movie.poster_path)[1] #TODO
+        poster_url:  api_movie.poster_urls[1] #TODO
       )
   end
 end
