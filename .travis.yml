@@ -5,3 +5,5 @@ branches:
   only:
     - master
 script: bundle exec rspec
+notifications:
+  slack: recommendteam:FRaoc2hSlRngwOfdfDT5CUuh
