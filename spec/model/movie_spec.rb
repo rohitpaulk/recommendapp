@@ -45,8 +45,9 @@ describe Movie do
 
     describe "::popular_movies" do
       it "yields values" do
-        movie = FactoryGirl.create(:movie, :title => "Terminator")
-        expect(Movie.popular_movies.first.title).to eq("Terminator")
+        VCR.use_cassette('popular_movies_tmdb') do
+          expect(Movie.popular_movies.first.title).to eq("Jurassic World")
+        end
       end
     end
   end

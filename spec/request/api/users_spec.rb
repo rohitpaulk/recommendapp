@@ -190,8 +190,8 @@ describe "API", :type => :request do
     }
 
     it "returns 5 sample movies" do
-      movie = FactoryGirl.create(:movie, title: "Terminator")
-      expect(Movie).to receive(:from_title).exactly(5).times.and_return(movie)
+      movies = 5.times.map { FactoryGirl.create(:movie, title: "Terminator") }
+      expect(Movie).to receive(:popular_movies).once.and_return(movies)
       get "/api/users/#{user.id}/movies", {
         api_access_token: user.api_access_token
       }
