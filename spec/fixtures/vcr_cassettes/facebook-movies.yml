@@ -1309,4 +1309,3781 @@ http_interactions:
         for 1 Oscar. Another 17 wins & 66 nominations.","Poster":"http://ia.media-imdb.com/images/M/MV5BMTc1NDI5NzQyNF5BMl5BanBnXkFtZTYwMjc4NTE5._V1_SX300.jpg","Metascore":"80","imdbRating":"7.7","imdbVotes":"358921","imdbID":"tt0181689","Type":"movie","Response":"True"}'
     http_version: 
   recorded_at: Wed, 01 Jul 2015 17:26:08 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/configuration?api_key=eace344fe11061cf0a80c99ddd40c34a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=36000
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:05:20 GMT
+      Etag:
+      - W/"acd3a349fca1f788ac931639278ad061"
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '39'
+      X-Ratelimit-Reset:
+      - '1436378730'
+      Content-Length:
+      - '501'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA3WS227bMAyG30XXQdO1ydblVYpCkC3GESJLAkU5yIq++0ja
+        WZ11u+LB5E/ys95NGN0A1RzeTecq2IbRHMyJqBy2W/32QKPvHjIOW9qWrdmY
+        Cn1DsH+V1//Wd64/e8zF1vBLJr2ay/PjIwtdfryo+fakNmMYQnLRvG1MzENe
+        1e/2UvfzSav3OzUvmluU9iq4Vii5EuBK45/dO5Wcu5d17kQwH0OEL5vMw0/f
+        n6V93VApxPh16HrXz/KPjelPLg1gz3BVMM63SCzpAlrvCMSNNdtzypdkXdWY
+        z0qOwgSWAkUmujFdyAO6crqqj3TyTt3mBxC93lU1gBSOoefunKSPx6PrhVNy
+        oyr1CDzX2076Obiw8ZxaFKGEmr3stXg2tbEDXCWwJV5slJojAugzCX4djRoO
+        kAD5b6uHOnxoUMlWcijRKY9Q+AGyuzxScXw3q0UG1/TpbowsLwbokvHM3szY
+        9rklQrnkBl3vXMeKUBIT4BT03OKQRLVE14PNR6tENZFJfhUP8VqA2bdeWPIk
+        hXKXGYtLQfe7S8tKcxohAtORCoQJUhMJxrfQq/wxJ07NzifpJUYYWnSCvpZ8
+        hmTXSBgiNVEmN8SQRPl2KqFLNf55AzTdkNKEDHTGS9ciPVPwkG+2mreP3/zj
+        iUMxBAAA
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:05:20 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=eace344fe11061cf0a80c99ddd40c34a&append_to_response=releases,trailers&include_adult=true&include_image_language=en&language=en&page=1&query=Superman%20vs.%20The%20Elite
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=10800
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:05:21 GMT
+      Etag:
+      - '"d3e9297a23d5921676ab90c77cd7d131"'
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      X-Memc:
+      - MISS, STORE
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '10800'
+      X-Memc-Key:
+      - 7de7f2aad1dd853c47d7232e8548593f
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '38'
+      X-Ratelimit-Reset:
+      - '1436378730'
+      Content-Length:
+      - '529'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/9fRNgX2bI6f27sxFEFuCPNYY4Lv.jpg","genre_ids":[28,16],"id":103269,"original_language":"en","original_title":"Superman
+        vs. The Elite","overview":"The Man of Steel finds himself outshone by a new
+        team of ruthless superheroes who hold his idealism in contempt.","release_date":"2012-06-12","poster_path":"/cilpU63HE0nsbqMytvO3Mlltotw.jpg","popularity":0.879909,"title":"Superman
+        vs. The Elite","video":false,"vote_average":6.4,"vote_count":29}],"total_pages":1,"total_results":1}'
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:05:22 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/configuration?api_key=eace344fe11061cf0a80c99ddd40c34a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=36000
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:05:23 GMT
+      Etag:
+      - W/"acd3a349fca1f788ac931639278ad061"
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '37'
+      X-Ratelimit-Reset:
+      - '1436378730'
+      Content-Length:
+      - '501'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA3WS227bMAyG30XXQdO1ydblVYpCkC3GESJLAkU5yIq++0ja
+        WZ11u+LB5E/ys95NGN0A1RzeTecq2IbRHMyJqBy2W/32QKPvHjIOW9qWrdmY
+        Cn1DsH+V1//Wd64/e8zF1vBLJr2ay/PjIwtdfryo+fakNmMYQnLRvG1MzENe
+        1e/2UvfzSav3OzUvmluU9iq4Vii5EuBK45/dO5Wcu5d17kQwH0OEL5vMw0/f
+        n6V93VApxPh16HrXz/KPjelPLg1gz3BVMM63SCzpAlrvCMSNNdtzypdkXdWY
+        z0qOwgSWAkUmujFdyAO6crqqj3TyTt3mBxC93lU1gBSOoefunKSPx6PrhVNy
+        oyr1CDzX2076Obiw8ZxaFKGEmr3stXg2tbEDXCWwJV5slJojAugzCX4djRoO
+        kAD5b6uHOnxoUMlWcijRKY9Q+AGyuzxScXw3q0UG1/TpbowsLwbokvHM3szY
+        9rklQrnkBl3vXMeKUBIT4BT03OKQRLVE14PNR6tENZFJfhUP8VqA2bdeWPIk
+        hXKXGYtLQfe7S8tKcxohAtORCoQJUhMJxrfQq/wxJ07NzifpJUYYWnSCvpZ8
+        hmTXSBgiNVEmN8SQRPl2KqFLNf55AzTdkNKEDHTGS9ciPVPwkG+2mreP3/zj
+        iUMxBAAA
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:05:23 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=eace344fe11061cf0a80c99ddd40c34a&append_to_response=releases,trailers&include_adult=true&include_image_language=en&language=en&page=1&query=The%20Transporter
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=10800
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:05:25 GMT
+      Etag:
+      - W/"43013b1cb654f27254b2529f1e33ccd9"
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      X-Memc:
+      - MISS, STORE
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '10800'
+      X-Memc-Key:
+      - 31dcb4f70f4eab80256f3f4ddc365465
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '36'
+      X-Ratelimit-Reset:
+      - '1436378730'
+      Content-Length:
+      - '1622'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        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
+        AAA=
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:05:25 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/configuration?api_key=eace344fe11061cf0a80c99ddd40c34a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=36000
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:05:26 GMT
+      Etag:
+      - W/"acd3a349fca1f788ac931639278ad061"
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '35'
+      X-Ratelimit-Reset:
+      - '1436378730'
+      Content-Length:
+      - '501'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA3WS227bMAyG30XXQdO1ydblVYpCkC3GESJLAkU5yIq++0ja
+        WZ11u+LB5E/ys95NGN0A1RzeTecq2IbRHMyJqBy2W/32QKPvHjIOW9qWrdmY
+        Cn1DsH+V1//Wd64/e8zF1vBLJr2ay/PjIwtdfryo+fakNmMYQnLRvG1MzENe
+        1e/2UvfzSav3OzUvmluU9iq4Vii5EuBK45/dO5Wcu5d17kQwH0OEL5vMw0/f
+        n6V93VApxPh16HrXz/KPjelPLg1gz3BVMM63SCzpAlrvCMSNNdtzypdkXdWY
+        z0qOwgSWAkUmujFdyAO6crqqj3TyTt3mBxC93lU1gBSOoefunKSPx6PrhVNy
+        oyr1CDzX2076Obiw8ZxaFKGEmr3stXg2tbEDXCWwJV5slJojAugzCX4djRoO
+        kAD5b6uHOnxoUMlWcijRKY9Q+AGyuzxScXw3q0UG1/TpbowsLwbokvHM3szY
+        9rklQrnkBl3vXMeKUBIT4BT03OKQRLVE14PNR6tENZFJfhUP8VqA2bdeWPIk
+        hXKXGYtLQfe7S8tKcxohAtORCoQJUhMJxrfQq/wxJ07NzifpJUYYWnSCvpZ8
+        hmTXSBgiNVEmN8SQRPl2KqFLNf55AzTdkNKEDHTGS9ciPVPwkG+2mreP3/zj
+        iUMxBAAA
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:05:26 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=eace344fe11061cf0a80c99ddd40c34a&append_to_response=releases,trailers&include_adult=true&include_image_language=en&language=en&page=1&query=The%20Robert%20Langdon%20Series%20(Inferno,%20Da%20Vinci%20Code,%20Angels%20and%20Demons)
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=10800
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:05:28 GMT
+      Etag:
+      - '"c9c5e585a4d81ca208adb93d0d87ee42"'
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      X-Memc:
+      - MISS, STORE
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '10800'
+      X-Memc-Key:
+      - 6782dbac2310c92fb127e40264d000fa
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '34'
+      X-Ratelimit-Reset:
+      - '1436378730'
+      Content-Length:
+      - '57'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"page":1,"results":[],"total_pages":1,"total_results":0}'
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:05:28 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/configuration?api_key=eace344fe11061cf0a80c99ddd40c34a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=36000
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:05:29 GMT
+      Etag:
+      - W/"acd3a349fca1f788ac931639278ad061"
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '33'
+      X-Ratelimit-Reset:
+      - '1436378730'
+      Content-Length:
+      - '501'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA3WS227bMAyG30XXQdO1ydblVYpCkC3GESJLAkU5yIq++0ja
+        WZ11u+LB5E/ys95NGN0A1RzeTecq2IbRHMyJqBy2W/32QKPvHjIOW9qWrdmY
+        Cn1DsH+V1//Wd64/e8zF1vBLJr2ay/PjIwtdfryo+fakNmMYQnLRvG1MzENe
+        1e/2UvfzSav3OzUvmluU9iq4Vii5EuBK45/dO5Wcu5d17kQwH0OEL5vMw0/f
+        n6V93VApxPh16HrXz/KPjelPLg1gz3BVMM63SCzpAlrvCMSNNdtzypdkXdWY
+        z0qOwgSWAkUmujFdyAO6crqqj3TyTt3mBxC93lU1gBSOoefunKSPx6PrhVNy
+        oyr1CDzX2076Obiw8ZxaFKGEmr3stXg2tbEDXCWwJV5slJojAugzCX4djRoO
+        kAD5b6uHOnxoUMlWcijRKY9Q+AGyuzxScXw3q0UG1/TpbowsLwbokvHM3szY
+        9rklQrnkBl3vXMeKUBIT4BT03OKQRLVE14PNR6tENZFJfhUP8VqA2bdeWPIk
+        hXKXGYtLQfe7S8tKcxohAtORCoQJUhMJxrfQq/wxJ07NzifpJUYYWnSCvpZ8
+        hmTXSBgiNVEmN8SQRPl2KqFLNf55AzTdkNKEDHTGS9ciPVPwkG+2mreP3/zj
+        iUMxBAAA
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:05:29 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=eace344fe11061cf0a80c99ddd40c34a&append_to_response=releases,trailers&include_adult=true&include_image_language=en&language=en&page=1&query=Ice%20Age%20Movies
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=10800
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:05:31 GMT
+      Etag:
+      - '"c9c5e585a4d81ca208adb93d0d87ee42"'
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      X-Memc:
+      - MISS, STORE
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '10800'
+      X-Memc-Key:
+      - bda2ecdd3e31411637f3ae50a9708f2a
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '39'
+      X-Ratelimit-Reset:
+      - '1436378741'
+      Content-Length:
+      - '57'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"page":1,"results":[],"total_pages":1,"total_results":0}'
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:05:31 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/configuration?api_key=eace344fe11061cf0a80c99ddd40c34a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=36000
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:05:32 GMT
+      Etag:
+      - W/"acd3a349fca1f788ac931639278ad061"
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '38'
+      X-Ratelimit-Reset:
+      - '1436378741'
+      Content-Length:
+      - '501'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA3WS227bMAyG30XXQdO1ydblVYpCkC3GESJLAkU5yIq++0ja
+        WZ11u+LB5E/ys95NGN0A1RzeTecq2IbRHMyJqBy2W/32QKPvHjIOW9qWrdmY
+        Cn1DsH+V1//Wd64/e8zF1vBLJr2ay/PjIwtdfryo+fakNmMYQnLRvG1MzENe
+        1e/2UvfzSav3OzUvmluU9iq4Vii5EuBK45/dO5Wcu5d17kQwH0OEL5vMw0/f
+        n6V93VApxPh16HrXz/KPjelPLg1gz3BVMM63SCzpAlrvCMSNNdtzypdkXdWY
+        z0qOwgSWAkUmujFdyAO6crqqj3TyTt3mBxC93lU1gBSOoefunKSPx6PrhVNy
+        oyr1CDzX2076Obiw8ZxaFKGEmr3stXg2tbEDXCWwJV5slJojAugzCX4djRoO
+        kAD5b6uHOnxoUMlWcijRKY9Q+AGyuzxScXw3q0UG1/TpbowsLwbokvHM3szY
+        9rklQrnkBl3vXMeKUBIT4BT03OKQRLVE14PNR6tENZFJfhUP8VqA2bdeWPIk
+        hXKXGYtLQfe7S8tKcxohAtORCoQJUhMJxrfQq/wxJ07NzifpJUYYWnSCvpZ8
+        hmTXSBgiNVEmN8SQRPl2KqFLNf55AzTdkNKEDHTGS9ciPVPwkG+2mreP3/zj
+        iUMxBAAA
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:05:32 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=eace344fe11061cf0a80c99ddd40c34a&append_to_response=releases,trailers&include_adult=true&include_image_language=en&language=en&page=1&query=Filmygyan
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=10800
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:05:34 GMT
+      Etag:
+      - '"c9c5e585a4d81ca208adb93d0d87ee42"'
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      X-Memc:
+      - MISS, STORE
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '10800'
+      X-Memc-Key:
+      - 4f7e17a8f06553b7535d92731825ce14
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '37'
+      X-Ratelimit-Reset:
+      - '1436378741'
+      Content-Length:
+      - '57'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"page":1,"results":[],"total_pages":1,"total_results":0}'
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:05:34 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/configuration?api_key=eace344fe11061cf0a80c99ddd40c34a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=36000
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:05:35 GMT
+      Etag:
+      - W/"acd3a349fca1f788ac931639278ad061"
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '36'
+      X-Ratelimit-Reset:
+      - '1436378741'
+      Content-Length:
+      - '501'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA3WS227bMAyG30XXQdO1ydblVYpCkC3GESJLAkU5yIq++0ja
+        WZ11u+LB5E/ys95NGN0A1RzeTecq2IbRHMyJqBy2W/32QKPvHjIOW9qWrdmY
+        Cn1DsH+V1//Wd64/e8zF1vBLJr2ay/PjIwtdfryo+fakNmMYQnLRvG1MzENe
+        1e/2UvfzSav3OzUvmluU9iq4Vii5EuBK45/dO5Wcu5d17kQwH0OEL5vMw0/f
+        n6V93VApxPh16HrXz/KPjelPLg1gz3BVMM63SCzpAlrvCMSNNdtzypdkXdWY
+        z0qOwgSWAkUmujFdyAO6crqqj3TyTt3mBxC93lU1gBSOoefunKSPx6PrhVNy
+        oyr1CDzX2076Obiw8ZxaFKGEmr3stXg2tbEDXCWwJV5slJojAugzCX4djRoO
+        kAD5b6uHOnxoUMlWcijRKY9Q+AGyuzxScXw3q0UG1/TpbowsLwbokvHM3szY
+        9rklQrnkBl3vXMeKUBIT4BT03OKQRLVE14PNR6tENZFJfhUP8VqA2bdeWPIk
+        hXKXGYtLQfe7S8tKcxohAtORCoQJUhMJxrfQq/wxJ07NzifpJUYYWnSCvpZ8
+        hmTXSBgiNVEmN8SQRPl2KqFLNf55AzTdkNKEDHTGS9ciPVPwkG+2mreP3/zj
+        iUMxBAAA
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:05:35 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=eace344fe11061cf0a80c99ddd40c34a&append_to_response=releases,trailers&include_adult=true&include_image_language=en&language=en&page=1&query=The%20Internship
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=10800
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:05:36 GMT
+      Etag:
+      - '"5e0fd2729d60483a6a0c511a826846e1"'
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      X-Memc:
+      - HIT
+      X-Memc-Age:
+      - '7452'
+      X-Memc-Expires:
+      - '3348'
+      X-Memc-Key:
+      - 590679e4513d5cf64e76e874fb3f93cf
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '35'
+      X-Ratelimit-Reset:
+      - '1436378741'
+      Content-Length:
+      - '535'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/dmnaqPsvJuBSoDtbd8BkDZzPGzi.jpg","genre_ids":[35],"id":116741,"original_language":"en","original_title":"The
+        Internship","overview":"Two recently laid-off men in their 40s try to make
+        it as interns at a successful Internet company where their managers are in
+        their 20s.","release_date":"2013-06-07","poster_path":"/xxOKDTQbQo7h1h7TyrQIW7u8KcJ.jpg","popularity":2.442914,"title":"The
+        Internship","video":false,"vote_average":6.1,"vote_count":651}],"total_pages":1,"total_results":1}'
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:05:37 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/configuration?api_key=eace344fe11061cf0a80c99ddd40c34a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=36000
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:05:38 GMT
+      Etag:
+      - W/"acd3a349fca1f788ac931639278ad061"
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '34'
+      X-Ratelimit-Reset:
+      - '1436378741'
+      Content-Length:
+      - '501'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA3WS227bMAyG30XXQdO1ydblVYpCkC3GESJLAkU5yIq++0ja
+        WZ11u+LB5E/ys95NGN0A1RzeTecq2IbRHMyJqBy2W/32QKPvHjIOW9qWrdmY
+        Cn1DsH+V1//Wd64/e8zF1vBLJr2ay/PjIwtdfryo+fakNmMYQnLRvG1MzENe
+        1e/2UvfzSav3OzUvmluU9iq4Vii5EuBK45/dO5Wcu5d17kQwH0OEL5vMw0/f
+        n6V93VApxPh16HrXz/KPjelPLg1gz3BVMM63SCzpAlrvCMSNNdtzypdkXdWY
+        z0qOwgSWAkUmujFdyAO6crqqj3TyTt3mBxC93lU1gBSOoefunKSPx6PrhVNy
+        oyr1CDzX2076Obiw8ZxaFKGEmr3stXg2tbEDXCWwJV5slJojAugzCX4djRoO
+        kAD5b6uHOnxoUMlWcijRKY9Q+AGyuzxScXw3q0UG1/TpbowsLwbokvHM3szY
+        9rklQrnkBl3vXMeKUBIT4BT03OKQRLVE14PNR6tENZFJfhUP8VqA2bdeWPIk
+        hXKXGYtLQfe7S8tKcxohAtORCoQJUhMJxrfQq/wxJ07NzifpJUYYWnSCvpZ8
+        hmTXSBgiNVEmN8SQRPl2KqFLNf55AzTdkNKEDHTGS9ciPVPwkG+2mreP3/zj
+        iUMxBAAA
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:05:38 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=eace344fe11061cf0a80c99ddd40c34a&append_to_response=releases,trailers&include_adult=true&include_image_language=en&language=en&page=1&query=The%20Second%20Circle
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=10800
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:05:39 GMT
+      Etag:
+      - '"3fcb305f6be76221e39c091737cd0f29"'
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      X-Memc:
+      - MISS, STORE
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '10800'
+      X-Memc-Key:
+      - a3a1ee9af72c04a48936868a59eab8ec
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '33'
+      X-Ratelimit-Reset:
+      - '1436378741'
+      Content-Length:
+      - '509'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"page":1,"results":[{"adult":false,"backdrop_path":null,"genre_ids":[],"id":145147,"original_language":"en","original_title":"Krug
+        vtoroy","overview":"A man tries to come to terms with his father''s death
+        and to deal with the mundane details of his burial in a society cut off from
+        spirituality.","release_date":"1990-01-01","poster_path":"/zeO3nBqQTWFwxYOtvzM2gr8eUwW.jpg","popularity":1.000036,"title":"The
+        Second Circle","video":false,"vote_average":10.0,"vote_count":1}],"total_pages":1,"total_results":1}'
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:05:40 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/configuration?api_key=eace344fe11061cf0a80c99ddd40c34a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=36000
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:05:41 GMT
+      Etag:
+      - W/"acd3a349fca1f788ac931639278ad061"
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '39'
+      X-Ratelimit-Reset:
+      - '1436378751'
+      Content-Length:
+      - '501'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA3WS227bMAyG30XXQdO1ydblVYpCkC3GESJLAkU5yIq++0ja
+        WZ11u+LB5E/ys95NGN0A1RzeTecq2IbRHMyJqBy2W/32QKPvHjIOW9qWrdmY
+        Cn1DsH+V1//Wd64/e8zF1vBLJr2ay/PjIwtdfryo+fakNmMYQnLRvG1MzENe
+        1e/2UvfzSav3OzUvmluU9iq4Vii5EuBK45/dO5Wcu5d17kQwH0OEL5vMw0/f
+        n6V93VApxPh16HrXz/KPjelPLg1gz3BVMM63SCzpAlrvCMSNNdtzypdkXdWY
+        z0qOwgSWAkUmujFdyAO6crqqj3TyTt3mBxC93lU1gBSOoefunKSPx6PrhVNy
+        oyr1CDzX2076Obiw8ZxaFKGEmr3stXg2tbEDXCWwJV5slJojAugzCX4djRoO
+        kAD5b6uHOnxoUMlWcijRKY9Q+AGyuzxScXw3q0UG1/TpbowsLwbokvHM3szY
+        9rklQrnkBl3vXMeKUBIT4BT03OKQRLVE14PNR6tENZFJfhUP8VqA2bdeWPIk
+        hXKXGYtLQfe7S8tKcxohAtORCoQJUhMJxrfQq/wxJ07NzifpJUYYWnSCvpZ8
+        hmTXSBgiNVEmN8SQRPl2KqFLNf55AzTdkNKEDHTGS9ciPVPwkG+2mreP3/zj
+        iUMxBAAA
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:05:41 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=eace344fe11061cf0a80c99ddd40c34a&append_to_response=releases,trailers&include_adult=true&include_image_language=en&language=en&page=1&query=Guns,%20Girls%20and%20Gambling%20the%20Movie
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=10800
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:05:42 GMT
+      Etag:
+      - '"c9c5e585a4d81ca208adb93d0d87ee42"'
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      X-Memc:
+      - MISS, STORE
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '10800'
+      X-Memc-Key:
+      - cdbaa5e2028f2e7e651a6e548c51687f
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '38'
+      X-Ratelimit-Reset:
+      - '1436378751'
+      Content-Length:
+      - '57'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"page":1,"results":[],"total_pages":1,"total_results":0}'
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:05:43 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/configuration?api_key=eace344fe11061cf0a80c99ddd40c34a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=36000
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:05:44 GMT
+      Etag:
+      - W/"acd3a349fca1f788ac931639278ad061"
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '37'
+      X-Ratelimit-Reset:
+      - '1436378751'
+      Content-Length:
+      - '501'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA3WS227bMAyG30XXQdO1ydblVYpCkC3GESJLAkU5yIq++0ja
+        WZ11u+LB5E/ys95NGN0A1RzeTecq2IbRHMyJqBy2W/32QKPvHjIOW9qWrdmY
+        Cn1DsH+V1//Wd64/e8zF1vBLJr2ay/PjIwtdfryo+fakNmMYQnLRvG1MzENe
+        1e/2UvfzSav3OzUvmluU9iq4Vii5EuBK45/dO5Wcu5d17kQwH0OEL5vMw0/f
+        n6V93VApxPh16HrXz/KPjelPLg1gz3BVMM63SCzpAlrvCMSNNdtzypdkXdWY
+        z0qOwgSWAkUmujFdyAO6crqqj3TyTt3mBxC93lU1gBSOoefunKSPx6PrhVNy
+        oyr1CDzX2076Obiw8ZxaFKGEmr3stXg2tbEDXCWwJV5slJojAugzCX4djRoO
+        kAD5b6uHOnxoUMlWcijRKY9Q+AGyuzxScXw3q0UG1/TpbowsLwbokvHM3szY
+        9rklQrnkBl3vXMeKUBIT4BT03OKQRLVE14PNR6tENZFJfhUP8VqA2bdeWPIk
+        hXKXGYtLQfe7S8tKcxohAtORCoQJUhMJxrfQq/wxJ07NzifpJUYYWnSCvpZ8
+        hmTXSBgiNVEmN8SQRPl2KqFLNf55AzTdkNKEDHTGS9ciPVPwkG+2mreP3/zj
+        iUMxBAAA
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:05:44 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=eace344fe11061cf0a80c99ddd40c34a&append_to_response=releases,trailers&include_adult=true&include_image_language=en&language=en&page=1&query=Untitled%20Batman%20Project%20(2011)
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=10800
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:05:46 GMT
+      Etag:
+      - '"c9c5e585a4d81ca208adb93d0d87ee42"'
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      X-Memc:
+      - MISS, STORE
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '10800'
+      X-Memc-Key:
+      - 2a980d3c62d8f824c946f2ea417b40bc
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '36'
+      X-Ratelimit-Reset:
+      - '1436378751'
+      Content-Length:
+      - '57'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"page":1,"results":[],"total_pages":1,"total_results":0}'
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:05:46 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/configuration?api_key=eace344fe11061cf0a80c99ddd40c34a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=36000
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:05:47 GMT
+      Etag:
+      - W/"acd3a349fca1f788ac931639278ad061"
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '35'
+      X-Ratelimit-Reset:
+      - '1436378751'
+      Content-Length:
+      - '501'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA3WS227bMAyG30XXQdO1ydblVYpCkC3GESJLAkU5yIq++0ja
+        WZ11u+LB5E/ys95NGN0A1RzeTecq2IbRHMyJqBy2W/32QKPvHjIOW9qWrdmY
+        Cn1DsH+V1//Wd64/e8zF1vBLJr2ay/PjIwtdfryo+fakNmMYQnLRvG1MzENe
+        1e/2UvfzSav3OzUvmluU9iq4Vii5EuBK45/dO5Wcu5d17kQwH0OEL5vMw0/f
+        n6V93VApxPh16HrXz/KPjelPLg1gz3BVMM63SCzpAlrvCMSNNdtzypdkXdWY
+        z0qOwgSWAkUmujFdyAO6crqqj3TyTt3mBxC93lU1gBSOoefunKSPx6PrhVNy
+        oyr1CDzX2076Obiw8ZxaFKGEmr3stXg2tbEDXCWwJV5slJojAugzCX4djRoO
+        kAD5b6uHOnxoUMlWcijRKY9Q+AGyuzxScXw3q0UG1/TpbowsLwbokvHM3szY
+        9rklQrnkBl3vXMeKUBIT4BT03OKQRLVE14PNR6tENZFJfhUP8VqA2bdeWPIk
+        hXKXGYtLQfe7S8tKcxohAtORCoQJUhMJxrfQq/wxJ07NzifpJUYYWnSCvpZ8
+        hmTXSBgiNVEmN8SQRPl2KqFLNf55AzTdkNKEDHTGS9ciPVPwkG+2mreP3/zj
+        iUMxBAAA
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:05:47 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=eace344fe11061cf0a80c99ddd40c34a&append_to_response=releases,trailers&include_adult=true&include_image_language=en&language=en&page=1&query=Pyar%20Ka%20Punchnama
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=10800
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:05:48 GMT
+      Etag:
+      - '"c9c5e585a4d81ca208adb93d0d87ee42"'
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      X-Memc:
+      - MISS, STORE
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '10800'
+      X-Memc-Key:
+      - 0c86a5b9cb901facb05e1b4fa8681e82
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '34'
+      X-Ratelimit-Reset:
+      - '1436378751'
+      Content-Length:
+      - '57'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"page":1,"results":[],"total_pages":1,"total_results":0}'
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:05:49 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/configuration?api_key=eace344fe11061cf0a80c99ddd40c34a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=36000
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:05:50 GMT
+      Etag:
+      - W/"acd3a349fca1f788ac931639278ad061"
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '33'
+      X-Ratelimit-Reset:
+      - '1436378751'
+      Content-Length:
+      - '501'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA3WS227bMAyG30XXQdO1ydblVYpCkC3GESJLAkU5yIq++0ja
+        WZ11u+LB5E/ys95NGN0A1RzeTecq2IbRHMyJqBy2W/32QKPvHjIOW9qWrdmY
+        Cn1DsH+V1//Wd64/e8zF1vBLJr2ay/PjIwtdfryo+fakNmMYQnLRvG1MzENe
+        1e/2UvfzSav3OzUvmluU9iq4Vii5EuBK45/dO5Wcu5d17kQwH0OEL5vMw0/f
+        n6V93VApxPh16HrXz/KPjelPLg1gz3BVMM63SCzpAlrvCMSNNdtzypdkXdWY
+        z0qOwgSWAkUmujFdyAO6crqqj3TyTt3mBxC93lU1gBSOoefunKSPx6PrhVNy
+        oyr1CDzX2076Obiw8ZxaFKGEmr3stXg2tbEDXCWwJV5slJojAugzCX4djRoO
+        kAD5b6uHOnxoUMlWcijRKY9Q+AGyuzxScXw3q0UG1/TpbowsLwbokvHM3szY
+        9rklQrnkBl3vXMeKUBIT4BT03OKQRLVE14PNR6tENZFJfhUP8VqA2bdeWPIk
+        hXKXGYtLQfe7S8tKcxohAtORCoQJUhMJxrfQq/wxJ07NzifpJUYYWnSCvpZ8
+        hmTXSBgiNVEmN8SQRPl2KqFLNf55AzTdkNKEDHTGS9ciPVPwkG+2mreP3/zj
+        iUMxBAAA
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:05:50 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=eace344fe11061cf0a80c99ddd40c34a&append_to_response=releases,trailers&include_adult=true&include_image_language=en&language=en&page=1&query=Ice%20Age:%20Continental%20Drift%20(2012)
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=10800
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:05:51 GMT
+      Etag:
+      - '"c9c5e585a4d81ca208adb93d0d87ee42"'
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      X-Memc:
+      - MISS, STORE
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '10800'
+      X-Memc-Key:
+      - f5f00c3732c9208e39b8c8145739309b
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '39'
+      X-Ratelimit-Reset:
+      - '1436378761'
+      Content-Length:
+      - '57'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"page":1,"results":[],"total_pages":1,"total_results":0}'
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:05:52 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/configuration?api_key=eace344fe11061cf0a80c99ddd40c34a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=36000
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:05:53 GMT
+      Etag:
+      - W/"acd3a349fca1f788ac931639278ad061"
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '38'
+      X-Ratelimit-Reset:
+      - '1436378761'
+      Content-Length:
+      - '501'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA3WS227bMAyG30XXQdO1ydblVYpCkC3GESJLAkU5yIq++0ja
+        WZ11u+LB5E/ys95NGN0A1RzeTecq2IbRHMyJqBy2W/32QKPvHjIOW9qWrdmY
+        Cn1DsH+V1//Wd64/e8zF1vBLJr2ay/PjIwtdfryo+fakNmMYQnLRvG1MzENe
+        1e/2UvfzSav3OzUvmluU9iq4Vii5EuBK45/dO5Wcu5d17kQwH0OEL5vMw0/f
+        n6V93VApxPh16HrXz/KPjelPLg1gz3BVMM63SCzpAlrvCMSNNdtzypdkXdWY
+        z0qOwgSWAkUmujFdyAO6crqqj3TyTt3mBxC93lU1gBSOoefunKSPx6PrhVNy
+        oyr1CDzX2076Obiw8ZxaFKGEmr3stXg2tbEDXCWwJV5slJojAugzCX4djRoO
+        kAD5b6uHOnxoUMlWcijRKY9Q+AGyuzxScXw3q0UG1/TpbowsLwbokvHM3szY
+        9rklQrnkBl3vXMeKUBIT4BT03OKQRLVE14PNR6tENZFJfhUP8VqA2bdeWPIk
+        hXKXGYtLQfe7S8tKcxohAtORCoQJUhMJxrfQq/wxJ07NzifpJUYYWnSCvpZ8
+        hmTXSBgiNVEmN8SQRPl2KqFLNf55AzTdkNKEDHTGS9ciPVPwkG+2mreP3/zj
+        iUMxBAAA
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:05:53 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=eace344fe11061cf0a80c99ddd40c34a&append_to_response=releases,trailers&include_adult=true&include_image_language=en&language=en&page=1&query=Ice%20Age%204
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=10800
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:05:54 GMT
+      Etag:
+      - '"a4518f043f45df6cb3e28feea8f3783b"'
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      X-Memc:
+      - HIT
+      X-Memc-Age:
+      - '622'
+      X-Memc-Expires:
+      - '10178'
+      X-Memc-Key:
+      - 02c5a742c5f715139216baeee170b277
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '37'
+      X-Ratelimit-Reset:
+      - '1436378761'
+      Content-Length:
+      - '628'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/tZGKKeWGejt63jiSdi7MTAjCFE9.jpg","genre_ids":[16,35,12,10751],"id":57800,"original_language":"en","original_title":"Ice
+        Age: Continental Drift","overview":"Manny, Diego, and Sid embark upon another
+        adventure after their continent is set adrift. Using an iceberg as a ship,
+        they encounter sea creatures and battle pirates as they explore a new world.","release_date":"2012-07-13","poster_path":"/u30xsZd3mijrdBKA6CeDsozx48g.jpg","popularity":3.270808,"title":"Ice
+        Age: Continental Drift","video":false,"vote_average":6.1,"vote_count":1397}],"total_pages":1,"total_results":1}'
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:05:55 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/configuration?api_key=eace344fe11061cf0a80c99ddd40c34a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=36000
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:05:56 GMT
+      Etag:
+      - W/"acd3a349fca1f788ac931639278ad061"
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '36'
+      X-Ratelimit-Reset:
+      - '1436378761'
+      Content-Length:
+      - '501'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA3WS227bMAyG30XXQdO1ydblVYpCkC3GESJLAkU5yIq++0ja
+        WZ11u+LB5E/ys95NGN0A1RzeTecq2IbRHMyJqBy2W/32QKPvHjIOW9qWrdmY
+        Cn1DsH+V1//Wd64/e8zF1vBLJr2ay/PjIwtdfryo+fakNmMYQnLRvG1MzENe
+        1e/2UvfzSav3OzUvmluU9iq4Vii5EuBK45/dO5Wcu5d17kQwH0OEL5vMw0/f
+        n6V93VApxPh16HrXz/KPjelPLg1gz3BVMM63SCzpAlrvCMSNNdtzypdkXdWY
+        z0qOwgSWAkUmujFdyAO6crqqj3TyTt3mBxC93lU1gBSOoefunKSPx6PrhVNy
+        oyr1CDzX2076Obiw8ZxaFKGEmr3stXg2tbEDXCWwJV5slJojAugzCX4djRoO
+        kAD5b6uHOnxoUMlWcijRKY9Q+AGyuzxScXw3q0UG1/TpbowsLwbokvHM3szY
+        9rklQrnkBl3vXMeKUBIT4BT03OKQRLVE14PNR6tENZFJfhUP8VqA2bdeWPIk
+        hXKXGYtLQfe7S8tKcxohAtORCoQJUhMJxrfQq/wxJ07NzifpJUYYWnSCvpZ8
+        hmTXSBgiNVEmN8SQRPl2KqFLNf55AzTdkNKEDHTGS9ciPVPwkG+2mreP3/zj
+        iUMxBAAA
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:05:56 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=eace344fe11061cf0a80c99ddd40c34a&append_to_response=releases,trailers&include_adult=true&include_image_language=en&language=en&page=1&query=Men%20In%20Black%203
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=10800
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:05:57 GMT
+      Etag:
+      - W/"4c900b1bb703200dd13875da9d2a4063"
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      X-Memc:
+      - HIT
+      X-Memc-Age:
+      - '5178'
+      X-Memc-Expires:
+      - '5622'
+      X-Memc-Key:
+      - b66a95db8d10a900845f0e9086f35008
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '35'
+      X-Ratelimit-Reset:
+      - '1436378761'
+      Content-Length:
+      - '892'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA5VVaW8bNxD9KwP2QxJgtd1Da8n6ZhttITl2glbp4aYQqN2R
+        lhaX3PDQkcD/PcOVIB9xjAYQIC7Jud68N/zCWr5ENkojZtB66Swb/fuF8YqW
+        bLTg0mLE5rxcVUa3s5a7mo3YzwOff9jh7cW8vspv/y5vhifbz2enk8l2ifFt
+        u2QRW6IyOBNVcJcNo7yIhoPhfxETFRv107ToR0wbsRSKy5nkaum7LBgqsj0e
+        OOFk2L1CBULBuaQ8IA831mjWAjd0dkaRnIUJvP5LSAl/NMLVb4CrCi7h9VQ3
+        zQ7eIsJEK7S0bxBCNXEck0MnGozJtOYWLFIQqxukSLhtpSj5XCK4WqilDdFr
+        YSEtYIfcWNhQFDpDeJhaBHPvQOnOJgoLwDV55VKgshG0aFqJW7TkqwGK2fiy
+        Dv/B9cbsIjDoREn1QMuNU2hiOCePm5qcXL6yIMUCu9JC5AV3CHrRrVuCEF1X
+        XUsG3IF1fIURdOhQhZuATc3XVJAGZ2ghOxxCYQGFsB0sD+VSZ2oXkKmELQPY
+        lk7IK8WiECGMxZKSpW1yRwl4JcKtgBdduwRFhRs6lFVXa+/+fjjvsjF0hctg
+        3ViUa0IlIEEekDcWfHuP8U57tTyUQk2daFvDudFSqDchvg1lBQgPoEVdRsQn
+        VRKkR7i885Q3AVb7hquVUFVMTDIokVucVYQmsSlL0qyXFL2soLNWW4fmSHo7
+        9grHuwazd/mnf7a/3Ez/vN5Nkl+TtxcH0re69ZIb4XZslMeDIusPIvZdEq9F
+        hfqosbV2OKNKTCeEk5gE2W2VVDwpMcv66V10FKYz/ltdKi/lY+UdBFekeXry
+        I4LbK424TaRLMxgr4umF9HP46Yn6phpudeBQwL8MN6hZR6I1BG0A3bcxXGla
+        EDtIDtBo7+qFl9Gj21KsED6yhdZOahLdR9axk3o598o+26yk30tS+n3bLLzu
+        T9//Lq6bd6vJvDHjs5sPJU9kpT5fP9OsNE6SJBs+6NbLCLzUuiJOHrfuYd+e
+        H6jfbVyWFtng9Ec6934/OLqJNSVhj2AaphQnvi8D+a/G508n6G8a5kgjaz9W
+        LM2foEX61Hv0LU2WYElDaHwcws+2g7STpr3s9Gk79vU9VEdCgA/zIruXx/9N
+        /CXoyetj6JM7UoDTjh6Z8MzRY0Sy2n8fX7v87isUPxzUBAcAAA==
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:05:58 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/configuration?api_key=eace344fe11061cf0a80c99ddd40c34a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=36000
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:05:59 GMT
+      Etag:
+      - W/"acd3a349fca1f788ac931639278ad061"
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '34'
+      X-Ratelimit-Reset:
+      - '1436378761'
+      Content-Length:
+      - '501'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA3WS227bMAyG30XXQdO1ydblVYpCkC3GESJLAkU5yIq++0ja
+        WZ11u+LB5E/ys95NGN0A1RzeTecq2IbRHMyJqBy2W/32QKPvHjIOW9qWrdmY
+        Cn1DsH+V1//Wd64/e8zF1vBLJr2ay/PjIwtdfryo+fakNmMYQnLRvG1MzENe
+        1e/2UvfzSav3OzUvmluU9iq4Vii5EuBK45/dO5Wcu5d17kQwH0OEL5vMw0/f
+        n6V93VApxPh16HrXz/KPjelPLg1gz3BVMM63SCzpAlrvCMSNNdtzypdkXdWY
+        z0qOwgSWAkUmujFdyAO6crqqj3TyTt3mBxC93lU1gBSOoefunKSPx6PrhVNy
+        oyr1CDzX2076Obiw8ZxaFKGEmr3stXg2tbEDXCWwJV5slJojAugzCX4djRoO
+        kAD5b6uHOnxoUMlWcijRKY9Q+AGyuzxScXw3q0UG1/TpbowsLwbokvHM3szY
+        9rklQrnkBl3vXMeKUBIT4BT03OKQRLVE14PNR6tENZFJfhUP8VqA2bdeWPIk
+        hXKXGYtLQfe7S8tKcxohAtORCoQJUhMJxrfQq/wxJ07NzifpJUYYWnSCvpZ8
+        hmTXSBgiNVEmN8SQRPl2KqFLNf55AzTdkNKEDHTGS9ciPVPwkG+2mreP3/zj
+        iUMxBAAA
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:05:59 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=eace344fe11061cf0a80c99ddd40c34a&append_to_response=releases,trailers&include_adult=true&include_image_language=en&language=en&page=1&query=Prometheus
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=10800
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:06:00 GMT
+      Etag:
+      - W/"42756d53028ba2af4c64cd0d3431e8a3"
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      X-Memc:
+      - HIT
+      X-Memc-Age:
+      - '4729'
+      X-Memc-Expires:
+      - '6071'
+      X-Memc-Key:
+      - 06d755d89d251907647bc1cbf7cf1606
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '33'
+      X-Ratelimit-Reset:
+      - '1436378761'
+      Content-Length:
+      - '3548'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        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
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:06:01 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/configuration?api_key=eace344fe11061cf0a80c99ddd40c34a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=36000
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:06:02 GMT
+      Etag:
+      - W/"acd3a349fca1f788ac931639278ad061"
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '39'
+      X-Ratelimit-Reset:
+      - '1436378772'
+      Content-Length:
+      - '501'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA3WS227bMAyG30XXQdO1ydblVYpCkC3GESJLAkU5yIq++0ja
+        WZ11u+LB5E/ys95NGN0A1RzeTecq2IbRHMyJqBy2W/32QKPvHjIOW9qWrdmY
+        Cn1DsH+V1//Wd64/e8zF1vBLJr2ay/PjIwtdfryo+fakNmMYQnLRvG1MzENe
+        1e/2UvfzSav3OzUvmluU9iq4Vii5EuBK45/dO5Wcu5d17kQwH0OEL5vMw0/f
+        n6V93VApxPh16HrXz/KPjelPLg1gz3BVMM63SCzpAlrvCMSNNdtzypdkXdWY
+        z0qOwgSWAkUmujFdyAO6crqqj3TyTt3mBxC93lU1gBSOoefunKSPx6PrhVNy
+        oyr1CDzX2076Obiw8ZxaFKGEmr3stXg2tbEDXCWwJV5slJojAugzCX4djRoO
+        kAD5b6uHOnxoUMlWcijRKY9Q+AGyuzxScXw3q0UG1/TpbowsLwbokvHM3szY
+        9rklQrnkBl3vXMeKUBIT4BT03OKQRLVE14PNR6tENZFJfhUP8VqA2bdeWPIk
+        hXKXGYtLQfe7S8tKcxohAtORCoQJUhMJxrfQq/wxJ07NzifpJUYYWnSCvpZ8
+        hmTXSBgiNVEmN8SQRPl2KqFLNf55AzTdkNKEDHTGS9ciPVPwkG+2mreP3/zj
+        iUMxBAAA
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:06:02 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=eace344fe11061cf0a80c99ddd40c34a&append_to_response=releases,trailers&include_adult=true&include_image_language=en&language=en&page=1&query=3%20Idiots%20Movie
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=10800
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:06:03 GMT
+      Etag:
+      - '"c9c5e585a4d81ca208adb93d0d87ee42"'
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      X-Memc:
+      - MISS, STORE
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '10800'
+      X-Memc-Key:
+      - 596aa4ceb0e3ac8be52b9b9e0f40b7f9
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '38'
+      X-Ratelimit-Reset:
+      - '1436378772'
+      Content-Length:
+      - '57'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"page":1,"results":[],"total_pages":1,"total_results":0}'
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:06:04 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/configuration?api_key=eace344fe11061cf0a80c99ddd40c34a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=36000
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:06:05 GMT
+      Etag:
+      - W/"acd3a349fca1f788ac931639278ad061"
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '37'
+      X-Ratelimit-Reset:
+      - '1436378772'
+      Content-Length:
+      - '501'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA3WS227bMAyG30XXQdO1ydblVYpCkC3GESJLAkU5yIq++0ja
+        WZ11u+LB5E/ys95NGN0A1RzeTecq2IbRHMyJqBy2W/32QKPvHjIOW9qWrdmY
+        Cn1DsH+V1//Wd64/e8zF1vBLJr2ay/PjIwtdfryo+fakNmMYQnLRvG1MzENe
+        1e/2UvfzSav3OzUvmluU9iq4Vii5EuBK45/dO5Wcu5d17kQwH0OEL5vMw0/f
+        n6V93VApxPh16HrXz/KPjelPLg1gz3BVMM63SCzpAlrvCMSNNdtzypdkXdWY
+        z0qOwgSWAkUmujFdyAO6crqqj3TyTt3mBxC93lU1gBSOoefunKSPx6PrhVNy
+        oyr1CDzX2076Obiw8ZxaFKGEmr3stXg2tbEDXCWwJV5slJojAugzCX4djRoO
+        kAD5b6uHOnxoUMlWcijRKY9Q+AGyuzxScXw3q0UG1/TpbowsLwbokvHM3szY
+        9rklQrnkBl3vXMeKUBIT4BT03OKQRLVE14PNR6tENZFJfhUP8VqA2bdeWPIk
+        hXKXGYtLQfe7S8tKcxohAtORCoQJUhMJxrfQq/wxJ07NzifpJUYYWnSCvpZ8
+        hmTXSBgiNVEmN8SQRPl2KqFLNf55AzTdkNKEDHTGS9ciPVPwkG+2mreP3/zj
+        iUMxBAAA
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:06:05 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=eace344fe11061cf0a80c99ddd40c34a&append_to_response=releases,trailers&include_adult=true&include_image_language=en&language=en&page=1&query=The%20Terminator
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=10800
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:06:06 GMT
+      Etag:
+      - W/"45a0c285d97daae7f47e955cff0cf5e3"
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      X-Memc:
+      - HIT
+      X-Memc-Age:
+      - '8074'
+      X-Memc-Expires:
+      - '2726'
+      X-Memc-Key:
+      - 3c90be71204c5889364c89693d520367
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '36'
+      X-Ratelimit-Reset:
+      - '1436378772'
+      Content-Length:
+      - '2844'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA61Z7XLaSBZ9lS7+zB9gkAADnh9b2E7sxHYcB2LH3tlKNVJL
+        ahDdpLsFhqmp2qfZB5snmXNbfNgxcZKprUrFRki3W33PPefc6z8qM56KymFQ
+        rRhhi9zZyuG//6jwGL9WDhOeW1GtjHg0iY2efZ5xl1UOK78eLF/ri3fX6ev4
+        ZtTvDu8v4yS9mdnVVc7r41laqVZSoYz4LGMKF3ar7Wa12+n+p1qRceUwDLrV
+        ijYylYrnn3Ou0sLvoSIUntx+4aTL6eowE2wozBR3O23ojrkwcykW+O6NYg5f
+        z7R1NT7TEc+XMycjlhSuMKLKjJCpkiplbmm4UhI3MFvMhIn0dFY4YSxzIhcz
+        bRzjLFqOtEkZtxb/pGITpRcKH/0av1d2m/i9wuhMmNMs6HVb9HMi85wNuOEZ
+        O9ZKaVNli0xbwQqFoIpZrZi0LBbWSSVieiQXPGZS2cLgtJxlPOX45FgY4L8I
+        lwqzZFMRZbzceCZSMdVqWWeXgqtFJnO8IW0tK6Zc1ZA/aR1XkWBTHNEUAVgs
+        LXIWZQLRWa6VYAtujNSG1rc8ETh6E5f7rrNjrhjCWadnPu5cGlfwPF9il7Rx
+        U0ROjnLhX5ZOdcqjDG/zLyTF4Bi5FZ9j7ihpdCy1oFELD/AdpUeYLXq+dJPk
+        qHi4zu+uzsz8vZIX6fFoen7eupiv0TPTsyLnRrpl5bBTD9qtsAnIfBMQcxkL
+        vUXrXDvxmQMjHlQH9V614i9FulDAdHAQBn9Wvwtxd5nNZWZXs4vR1Xjcmb4d
+        DG87o/R69Cb6EYj3Dn4K4lt4s+Yh+yABG534FFyWJ2y/gr37xbKREIoFDbYU
+        HDAGXpH4tzpTa/whvXPg7BU3LmOJ0VP2tohTj4oTvqwyrmIkG3EAcpbLOeWz
+        QJoBDaxreMwBYeRNGPomQnYNbarAQigRtXTIfMoGk6USQCuQ4wyPRJ0NM+6A
+        9CqCOZkTnoTyR0/FNqx9wsrM6JGmMt1WmjZYuKyKRCppMxQPwgwBoUYDu8BL
+        iLjOTrVG5fiFyyLD9hNtpti0AuCB/7IgdpVapaLb1CqX9LSgN655htsc1V//
+        /R8bF6i6XE5QTiAUnBeyENefIztsNJq1xkGt2XiO7HzVeriLXweq0cuX8ji5
+        v3W3w1ZrcC9P9yK72WyF7c4jZP8IDl5Ce7uOaI/R3g06PwD2eTPLcpMeXMlB
+        44zbi1dXAPzYLY7Om/vBDjIHp2/4vIn3gID8BKXv3pPyMRCRVvFTiO9S6FNW
+        3kLJpE8zI6YSgKE8xURKINd1wbzjFoWbg6TA8oQNT4iRxhXcNwdjnhV2smRv
+        wd8Qg2EmQFimzvqbWBRIAexgPe5riy6AW/FblPmqMWIuLZYssWYjI2eOZCQv
+        Nwf6BG/jIc5GGkGozrDvtbhgxw47AQOjEiVYk8gVuFNE0bh1lhnQKCLxCcrb
+        161/45wvLQW9JerlUzbIcIOdYVeouVdgCR/jUQh/Vrsgm+SgXnKpUScLCV7Q
+        CutjSzgrVEWhcB2f/G8+VKQNXn2G7FDNgVNHeFFF+7PFaIz3IB0hgUqxC4hx
+        rOk+q8uj4YXLNKp+QaniJBy4m0dRYXDmWNiIyNDx+zfcHtujzIeHnrRKLfOs
+        5VUPD04hlbQUNMlHpQgLsIg/o0dnQ4dLKAAPJBBci41ruibBR8rtLe+gWQuC
+        WiN4Xt7h0b06n62agy+916svr4LzQNycjvr38/j9nvIO6mCKzgGEYCtc34D9
+        SxXdqjefVnT43XpWRZ4/dWDBQRUmLAg3BRuGQevnPNh254cwC/mc+5JD8awF
+        Sk45StRI8bVQlf7sjsoobGAb7MPOpSQyzVB77Cjn0myAbZmYjriZIJGwXvBL
+        PAZSQMZUcd61lIWIpOJrlxGA8MNrDoBGgCdceEsE/wCBiEVCkN3aKw82kSc1
+        Di+Ey8bJREYSZECgQHXBjRFlwPhAkdYCR8UgSXVzgcXAG9sDsXtB1OjVGu1a
+        0H0OouhosBiH0rxrXhZ3D+9uhtdHK+kuXHp9vhdEQeugFwIDz0H0A6l4CVnt
+        euP/gawNptqdsP1TpueIO+SIzS15hm9b/ObG4WTwM2wGy4CslG7nCIZUsFsO
+        CwI+Qk9AhqdMGPmaojQto5xbuGsUfb9ISeTBEL/0OuArMB3QAUtdmiCjwatr
+        soWpKS0S0aQuCGJEO18KULb3UECiB1bpKCQcPzn2LcggCtOSjaUiZyEjKE+5
+        0wwNhRVigr0akRSpoK1R+JGejpjNRE5F4SFdWjhSj1wm4jd/F44twknUGTvj
+        3rRZ+ggCLneywMsK9FQx0R7pli5MJMDreBTdQETNU6lTsHhSlzpFVQZizGOI
+        qs8G6gKLwneRS6NHUGsJvT5KA/3HazBpqYWjnCwZ7jWQRGymQOewZmM0DHVU
+        NVSG0jtA25MK8xu5P6nhGLVyRufQlExGZPbhF6Vjo0LClo0ENl/KwqarowJG
+        A5OWuoUgIpEOprA8NZ9jxLLI2hpXU9JHr7wLDhWOjAb5e1dZqodXCjrQj1iX
+        cIOXJd3VbAwRo9PDsZWr0V0E1VggM+hDS6OqRAHLm8tVuVH0PxHeCK0aejYF
+        K8xqOzuOY93nJINWrRHWwvA5S7SiRdq2sztx/WkRrq4H98cf3p7qVbMruntZ
+        otGFUQ53LPFScb1ECo2vSaHxXbmp/Do+7p/ctPqxOr+4v/1ok+PJsH1/M7qe
+        Ncf77WPYeTwOOIAL3u8eE9/ubyYF+/u/rxSnz+wUzA3PjxIondumK17rDfUD
+        DqMFn/zSlVFBABieYUrPtIHnGiOwX2CEvTkkpm/Vwj1Mn3ZO7tqd/FzPe/fv
+        7sb3708PphP56WR8szeFLdjo4DHRY3uPZAYn8VLiwnrrKZv3fiBxi4+xXbTH
+        c2VPP9ii3xOty8vB++bwJDzakziMbb4e5bSbWPUf+f6ti6AM7wY6faQuNTR2
+        AZOgDJ9NduAiutUnfe7UN27EYCVHb6cgyJ23AbvJCt2APhmegcgKviJGm4ex
+        EjHXVOYSfSbAggr2DSqE6QjMv8hgxC/h/gvLboHFDCw/I+NNpAp6EQ94prQM
+        WiWFN+9EGGvLArYve1V4VfijUjjWPEKxcS/MTxmXpAGTKbHz/eUgi9HABjGh
+        fo7Vat6abx71PXyC0IR3A94S34RpuxbuaVqzh5MEyHcP/bC/fOhc9Y7s9WV0
+        /yE+bezBabfebkLp9zetj5P6EljbdbjPJ0OZRuv7RPPc1669R6fXCn/Kerxh
+        Cad8I90gdWoW5xATUmwFS2AxxYOeMz4HLkE68ilEzyBTpAZ95cD2GtBQgAZE
+        z4A+qAfU7I3DIJJ+IRHymRtJ9CpYoM7OAA0haNyHhEHofOYsoiSSGkaI1An2
+        cEPjHLXSmPVReIP4I3TJmHEABBhWrnkJ40rY3FVpxymgRx5pJ36mtAo2QWPM
+        bcAndyw4zR0JxGM9gva63WoLmmfS0Ie8CVmRIoIeAp54cw9RXOPwMTgiaq+h
+        9c8FLuh1wlqji3/PBU5kH1WYv/r0+uOk9aqQLuneXenRSf/6+nYP6iBLjaDZ
+        3unbsfdXRziu7/DiPxC05zgLN6NrDA9bbWzjxynvrNBslcG4PAXRXTEh8F3Z
+        jFqnsrs/Qt9GthNzY4YpGEABM0gHruCXBGzebE0MGOXCDhIG1jYzIcdoaSpO
+        LTGdzLo9MpLvm2EFvR5mWEEt7DxPTG8iuwPVvAk/FSdB8aX/qfMwvGx/uFyZ
+        eE9iqMlFX/coM33YvCf9ESN78xIb7EkRCttpFBFmxil6SvrzRPl5+0eK3p9/
+        A0KFCw27GAAA
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:06:06 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/configuration?api_key=eace344fe11061cf0a80c99ddd40c34a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=36000
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:06:08 GMT
+      Etag:
+      - W/"acd3a349fca1f788ac931639278ad061"
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '35'
+      X-Ratelimit-Reset:
+      - '1436378772'
+      Content-Length:
+      - '501'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA3WS227bMAyG30XXQdO1ydblVYpCkC3GESJLAkU5yIq++0ja
+        WZ11u+LB5E/ys95NGN0A1RzeTecq2IbRHMyJqBy2W/32QKPvHjIOW9qWrdmY
+        Cn1DsH+V1//Wd64/e8zF1vBLJr2ay/PjIwtdfryo+fakNmMYQnLRvG1MzENe
+        1e/2UvfzSav3OzUvmluU9iq4Vii5EuBK45/dO5Wcu5d17kQwH0OEL5vMw0/f
+        n6V93VApxPh16HrXz/KPjelPLg1gz3BVMM63SCzpAlrvCMSNNdtzypdkXdWY
+        z0qOwgSWAkUmujFdyAO6crqqj3TyTt3mBxC93lU1gBSOoefunKSPx6PrhVNy
+        oyr1CDzX2076Obiw8ZxaFKGEmr3stXg2tbEDXCWwJV5slJojAugzCX4djRoO
+        kAD5b6uHOnxoUMlWcijRKY9Q+AGyuzxScXw3q0UG1/TpbowsLwbokvHM3szY
+        9rklQrnkBl3vXMeKUBIT4BT03OKQRLVE14PNR6tENZFJfhUP8VqA2bdeWPIk
+        hXKXGYtLQfe7S8tKcxohAtORCoQJUhMJxrfQq/wxJ07NzifpJUYYWnSCvpZ8
+        hmTXSBgiNVEmN8SQRPl2KqFLNf55AzTdkNKEDHTGS9ciPVPwkG+2mreP3/zj
+        iUMxBAAA
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:06:08 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=eace344fe11061cf0a80c99ddd40c34a&append_to_response=releases,trailers&include_adult=true&include_image_language=en&language=en&page=1&query=Avengers
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=10800
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:06:09 GMT
+      Etag:
+      - W/"76ea1514226319f8b8089eb08360a74f"
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      X-Memc:
+      - MISS, STORE
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '10800'
+      X-Memc-Key:
+      - 429f9ac38da887e6f896646a85ad501d
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '34'
+      X-Ratelimit-Reset:
+      - '1436378772'
+      Content-Length:
+      - '5307'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        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
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:06:09 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/configuration?api_key=eace344fe11061cf0a80c99ddd40c34a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=36000
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:06:11 GMT
+      Etag:
+      - W/"acd3a349fca1f788ac931639278ad061"
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '33'
+      X-Ratelimit-Reset:
+      - '1436378772'
+      Content-Length:
+      - '501'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA3WS227bMAyG30XXQdO1ydblVYpCkC3GESJLAkU5yIq++0ja
+        WZ11u+LB5E/ys95NGN0A1RzeTecq2IbRHMyJqBy2W/32QKPvHjIOW9qWrdmY
+        Cn1DsH+V1//Wd64/e8zF1vBLJr2ay/PjIwtdfryo+fakNmMYQnLRvG1MzENe
+        1e/2UvfzSav3OzUvmluU9iq4Vii5EuBK45/dO5Wcu5d17kQwH0OEL5vMw0/f
+        n6V93VApxPh16HrXz/KPjelPLg1gz3BVMM63SCzpAlrvCMSNNdtzypdkXdWY
+        z0qOwgSWAkUmujFdyAO6crqqj3TyTt3mBxC93lU1gBSOoefunKSPx6PrhVNy
+        oyr1CDzX2076Obiw8ZxaFKGEmr3stXg2tbEDXCWwJV5slJojAugzCX4djRoO
+        kAD5b6uHOnxoUMlWcijRKY9Q+AGyuzxScXw3q0UG1/TpbowsLwbokvHM3szY
+        9rklQrnkBl3vXMeKUBIT4BT03OKQRLVE14PNR6tENZFJfhUP8VqA2bdeWPIk
+        hXKXGYtLQfe7S8tKcxohAtORCoQJUhMJxrfQq/wxJ07NzifpJUYYWnSCvpZ8
+        hmTXSBgiNVEmN8SQRPl2KqFLNf55AzTdkNKEDHTGS9ciPVPwkG+2mreP3/zj
+        iUMxBAAA
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:06:11 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=eace344fe11061cf0a80c99ddd40c34a&append_to_response=releases,trailers&include_adult=true&include_image_language=en&language=en&page=1&query=Madagascar
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=10800
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:06:12 GMT
+      Etag:
+      - W/"06b18dd38abef7f814ffdb906eb95555"
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      X-Memc:
+      - HIT
+      X-Memc-Age:
+      - '10257'
+      X-Memc-Expires:
+      - '543'
+      X-Memc-Key:
+      - 8279d7102bb4d97997aee011667e522a
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '39'
+      X-Ratelimit-Reset:
+      - '1436378782'
+      Content-Length:
+      - '6108'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        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
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:06:12 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/configuration?api_key=eace344fe11061cf0a80c99ddd40c34a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=36000
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:06:14 GMT
+      Etag:
+      - W/"acd3a349fca1f788ac931639278ad061"
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '38'
+      X-Ratelimit-Reset:
+      - '1436378782'
+      Content-Length:
+      - '501'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA3WS227bMAyG30XXQdO1ydblVYpCkC3GESJLAkU5yIq++0ja
+        WZ11u+LB5E/ys95NGN0A1RzeTecq2IbRHMyJqBy2W/32QKPvHjIOW9qWrdmY
+        Cn1DsH+V1//Wd64/e8zF1vBLJr2ay/PjIwtdfryo+fakNmMYQnLRvG1MzENe
+        1e/2UvfzSav3OzUvmluU9iq4Vii5EuBK45/dO5Wcu5d17kQwH0OEL5vMw0/f
+        n6V93VApxPh16HrXz/KPjelPLg1gz3BVMM63SCzpAlrvCMSNNdtzypdkXdWY
+        z0qOwgSWAkUmujFdyAO6crqqj3TyTt3mBxC93lU1gBSOoefunKSPx6PrhVNy
+        oyr1CDzX2076Obiw8ZxaFKGEmr3stXg2tbEDXCWwJV5slJojAugzCX4djRoO
+        kAD5b6uHOnxoUMlWcijRKY9Q+AGyuzxScXw3q0UG1/TpbowsLwbokvHM3szY
+        9rklQrnkBl3vXMeKUBIT4BT03OKQRLVE14PNR6tENZFJfhUP8VqA2bdeWPIk
+        hXKXGYtLQfe7S8tKcxohAtORCoQJUhMJxrfQq/wxJ07NzifpJUYYWnSCvpZ8
+        hmTXSBgiNVEmN8SQRPl2KqFLNf55AzTdkNKEDHTGS9ciPVPwkG+2mreP3/zj
+        iUMxBAAA
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:06:14 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=eace344fe11061cf0a80c99ddd40c34a&append_to_response=releases,trailers&include_adult=true&include_image_language=en&language=en&page=1&query=big%20bang%20theory
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=10800
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:06:15 GMT
+      Etag:
+      - '"5b934944084ecc6f5258403e0e18efe0"'
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      X-Memc:
+      - MISS, STORE
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '10800'
+      X-Memc-Key:
+      - ca9e4e6796d924d4227152352927281a
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '37'
+      X-Ratelimit-Reset:
+      - '1436378782'
+      Content-Length:
+      - '662'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"page":1,"results":[{"adult":true,"backdrop_path":"/muI1Pzv6wGQgQlai3pCD0N1aiUB.jpg","genre_ids":[35],"id":36905,"original_language":"en","original_title":"The
+        Big Bang Theory: A XXX Parody","overview":"Nerdy roommates and their socially
+        inept friends apply the scientific method to their shared inability to attract
+        women. After much calculation their solution: Tell women what they want to
+        hear. The new plan is wildly successful.","release_date":"2010-04-05","poster_path":"/wHxxEfLlF52CIXR7eLfbXN7WGlr.jpg","popularity":1.140667,"title":"The
+        Big Bang Theory: A XXX Parody","video":false,"vote_average":7.2,"vote_count":3}],"total_pages":1,"total_results":1}'
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:06:15 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/configuration?api_key=eace344fe11061cf0a80c99ddd40c34a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=36000
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:06:17 GMT
+      Etag:
+      - W/"acd3a349fca1f788ac931639278ad061"
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '36'
+      X-Ratelimit-Reset:
+      - '1436378782'
+      Content-Length:
+      - '501'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA3WS227bMAyG30XXQdO1ydblVYpCkC3GESJLAkU5yIq++0ja
+        WZ11u+LB5E/ys95NGN0A1RzeTecq2IbRHMyJqBy2W/32QKPvHjIOW9qWrdmY
+        Cn1DsH+V1//Wd64/e8zF1vBLJr2ay/PjIwtdfryo+fakNmMYQnLRvG1MzENe
+        1e/2UvfzSav3OzUvmluU9iq4Vii5EuBK45/dO5Wcu5d17kQwH0OEL5vMw0/f
+        n6V93VApxPh16HrXz/KPjelPLg1gz3BVMM63SCzpAlrvCMSNNdtzypdkXdWY
+        z0qOwgSWAkUmujFdyAO6crqqj3TyTt3mBxC93lU1gBSOoefunKSPx6PrhVNy
+        oyr1CDzX2076Obiw8ZxaFKGEmr3stXg2tbEDXCWwJV5slJojAugzCX4djRoO
+        kAD5b6uHOnxoUMlWcijRKY9Q+AGyuzxScXw3q0UG1/TpbowsLwbokvHM3szY
+        9rklQrnkBl3vXMeKUBIT4BT03OKQRLVE14PNR6tENZFJfhUP8VqA2bdeWPIk
+        hXKXGYtLQfe7S8tKcxohAtORCoQJUhMJxrfQq/wxJ07NzifpJUYYWnSCvpZ8
+        hmTXSBgiNVEmN8SQRPl2KqFLNf55AzTdkNKEDHTGS9ciPVPwkG+2mreP3/zj
+        iUMxBAAA
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:06:17 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=eace344fe11061cf0a80c99ddd40c34a&append_to_response=releases,trailers&include_adult=true&include_image_language=en&language=en&page=1&query=Due%20Date
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=10800
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:06:18 GMT
+      Etag:
+      - W/"86649a7d6c6d4f2d3d8952268d133947"
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      X-Memc:
+      - HIT
+      X-Memc-Age:
+      - '5361'
+      X-Memc-Expires:
+      - '5439'
+      X-Memc-Key:
+      - c7801717ed714d131c3a58935c695efe
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '35'
+      X-Ratelimit-Reset:
+      - '1436378782'
+      Content-Length:
+      - '766'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA5WUXW/TShCG/8por51gx0nj5i4khUqlqIIAEoejaOMd21vW
+        u2Y/4rqo/51ZtycSogfEnT2z87XvM/uddbxGtsoSZtEF5R1b/fOdcUGfbFVx
+        5TBhB15+FdZ0+477hq3YC/MWv13XG1u8qi/zzTdp1vNZGnwtdovpbVezhNWo
+        Le6liOnyRZIV/yZMCraaZ8s8T5ixspaaq73iug5jBww1xZ0cXnoVrduAsOUe
+        o++I9iixJ+sNerRwKeum5Rra4Dy40vL2oBB4aY1z4BuED+9BaqjkEUHwgWwG
+        DggdTYraQ2XseOogrW/AVNBIR4ctJSsbqcQULhFq9I58VYzlcOACnOfWQ9+g
+        HgN6rhR64FqACnVNswC3SKeMQp2M9i54MHqs9YVpM6nU8IWBks5P4XESbA/c
+        fqVCmorQaFZWg9Q13JpgNQ5P1eJsJXbUEAcrBUJlTUs2T4Nc+IZuYmcpk+LD
+        lK7LokLucC/i7a3YLM3SSZZN0jn5OuOoyknPomjPLm8CbvVWh83rfstnL/36
+        3F0V7ZOenemC4lb6ga3yaVbks7Nlwp4R6Uh9mRM5R+Nxz0m3UeKzKWE2mkoT
+        NPG1mOUPyR9pyxdlf3WXvV3cX99uDh/vL4zOr93F+dXL9f/Qli7n50/A5cvZ
+        Mv0b4Hak0q6RVsCnBlH9zF10liq0bhiFdc0A7z3XiiQiFDhoWZIqqJTpE0JN
+        EbICDsMISmkIFF4HdBHKCANhRedHzBoew0sbHJH46K2NrdEEBxr7CTVEeyC5
+        5pSXcKLoGCJkTEG7KikrEUq0Un/GYfxp0E7jEPrUYxV3TlGv+ig9RYwJxz3g
+        tCAekzGvJMBie41pCSFapRvaBuglLUmcY8cDtflIdvzvaIc1jalpGz14AtZB
+        6FzkU5heP4tiOpuki0me/YrifVcI0Yk79cEV/eYzvnt1XB/X77J7++YZFLNp
+        ms6XBWH1H4q/yvd7IoufiSweiBtvPD1N8WGk5yvmHv9P7+Ps4Qd+J+kqNgUA
+        AA==
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:06:18 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/configuration?api_key=eace344fe11061cf0a80c99ddd40c34a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=36000
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:06:19 GMT
+      Etag:
+      - W/"acd3a349fca1f788ac931639278ad061"
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '34'
+      X-Ratelimit-Reset:
+      - '1436378782'
+      Content-Length:
+      - '501'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA3WS227bMAyG30XXQdO1ydblVYpCkC3GESJLAkU5yIq++0ja
+        WZ11u+LB5E/ys95NGN0A1RzeTecq2IbRHMyJqBy2W/32QKPvHjIOW9qWrdmY
+        Cn1DsH+V1//Wd64/e8zF1vBLJr2ay/PjIwtdfryo+fakNmMYQnLRvG1MzENe
+        1e/2UvfzSav3OzUvmluU9iq4Vii5EuBK45/dO5Wcu5d17kQwH0OEL5vMw0/f
+        n6V93VApxPh16HrXz/KPjelPLg1gz3BVMM63SCzpAlrvCMSNNdtzypdkXdWY
+        z0qOwgSWAkUmujFdyAO6crqqj3TyTt3mBxC93lU1gBSOoefunKSPx6PrhVNy
+        oyr1CDzX2076Obiw8ZxaFKGEmr3stXg2tbEDXCWwJV5slJojAugzCX4djRoO
+        kAD5b6uHOnxoUMlWcijRKY9Q+AGyuzxScXw3q0UG1/TpbowsLwbokvHM3szY
+        9rklQrnkBl3vXMeKUBIT4BT03OKQRLVE14PNR6tENZFJfhUP8VqA2bdeWPIk
+        hXKXGYtLQfe7S8tKcxohAtORCoQJUhMJxrfQq/wxJ07NzifpJUYYWnSCvpZ8
+        hmTXSBgiNVEmN8SQRPl2KqFLNf55AzTdkNKEDHTGS9ciPVPwkG+2mreP3/zj
+        iUMxBAAA
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:06:20 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=eace344fe11061cf0a80c99ddd40c34a&append_to_response=releases,trailers&include_adult=true&include_image_language=en&language=en&page=1&query=The%20Italian%20Job
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=10800
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:06:21 GMT
+      Etag:
+      - W/"d2f9bd5bc1752e7e54df8546704596f0"
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      X-Memc:
+      - HIT
+      X-Memc-Age:
+      - '9473'
+      X-Memc-Expires:
+      - '1327'
+      X-Memc-Key:
+      - 68344935f03b24d6d09b9050f8322c49
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '33'
+      X-Ratelimit-Reset:
+      - '1436378782'
+      Content-Length:
+      - '2344'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        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
+        kRQAAA==
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:06:21 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/configuration?api_key=eace344fe11061cf0a80c99ddd40c34a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=36000
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:06:22 GMT
+      Etag:
+      - W/"acd3a349fca1f788ac931639278ad061"
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '32'
+      X-Ratelimit-Reset:
+      - '1436378782'
+      Content-Length:
+      - '501'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA3WS227bMAyG30XXQdO1ydblVYpCkC3GESJLAkU5yIq++0ja
+        WZ11u+LB5E/ys95NGN0A1RzeTecq2IbRHMyJqBy2W/32QKPvHjIOW9qWrdmY
+        Cn1DsH+V1//Wd64/e8zF1vBLJr2ay/PjIwtdfryo+fakNmMYQnLRvG1MzENe
+        1e/2UvfzSav3OzUvmluU9iq4Vii5EuBK45/dO5Wcu5d17kQwH0OEL5vMw0/f
+        n6V93VApxPh16HrXz/KPjelPLg1gz3BVMM63SCzpAlrvCMSNNdtzypdkXdWY
+        z0qOwgSWAkUmujFdyAO6crqqj3TyTt3mBxC93lU1gBSOoefunKSPx6PrhVNy
+        oyr1CDzX2076Obiw8ZxaFKGEmr3stXg2tbEDXCWwJV5slJojAugzCX4djRoO
+        kAD5b6uHOnxoUMlWcijRKY9Q+AGyuzxScXw3q0UG1/TpbowsLwbokvHM3szY
+        9rklQrnkBl3vXMeKUBIT4BT03OKQRLVE14PNR6tENZFJfhUP8VqA2bdeWPIk
+        hXKXGYtLQfe7S8tKcxohAtORCoQJUhMJxrfQq/wxJ07NzifpJUYYWnSCvpZ8
+        hmTXSBgiNVEmN8SQRPl2KqFLNf55AzTdkNKEDHTGS9ciPVPwkG+2mreP3/zj
+        iUMxBAAA
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:06:22 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=eace344fe11061cf0a80c99ddd40c34a&append_to_response=releases,trailers&include_adult=true&include_image_language=en&language=en&page=1&query=Fast%20%26%20Furious
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=10800
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:06:24 GMT
+      Etag:
+      - W/"b24d0ef07d48c28e659d4734ac932405"
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      X-Memc:
+      - HIT
+      X-Memc-Age:
+      - '9234'
+      X-Memc-Expires:
+      - '1566'
+      X-Memc-Key:
+      - 4f39cfb6854a7a62d647a1ee379efd65
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '39'
+      X-Ratelimit-Reset:
+      - '1436378794'
+      Content-Length:
+      - '4254'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA71aa2/iSrb9KzVodPuMBLRtXiZfrkLeCXmnmyRzrlpluzAF
+        tssp2yH06Pz3WbsMhCTudDIaXen0CfhR3q5ae+21V/GvWspDUduy6zUtsiLK
+        s9rWP/9V4wE+1rbGPMpEveZxfxZolf5IeT6pbdW++vb59dWj0he3jwf5/oz3
+        4vB799ifd6dBc5qGtXotFIkWP2RAwzlu3XbqrlW3rV67X++0/q9ekwGe2XWd
+        Tr9eU1qGMuHRj4gnYWHCqYkEg6xP5DKP6Oh+oaUqMtajk49CP0oxx+FdFctE
+        +ownAZvIjPlazFk+UUU4yfFXLFgkxuYTTklcyyMWC+2LhGuck2PBPDGRSdBk
+        N3R1IMaC5yLAgEwmudAJz6Wiu/BZI6osZwmPccH5XCTsesLn5tn4Yp4iNctE
+        KjTGYHO+yJpsUOAONa+ba79kzNMK1+k62xX+jOugHAOhK1w4k1Ekk3AZL15F
+        JQhwYf6MlWZaPIokFE02UhrLwzi7VjGPJKJ9js/nUYQAjzkNTxchPs6yCQ8W
+        LKS5S2KKVo3H0pd4s+X1f9ZOdZOdKU8Fiz9rjGs8GaEyX8WpyE1UimW5wB3c
+        HCzwyPVjY5ZqFWoer4Y7UAHedm+BAPIJz3EYMRY6QTgL3OVPEhWpUOLhmPRH
+        6Quab4Wh54KnKsF6KK1FjkNxgUnXwlcJXh7TKhEUrTVCicuYVPq8ErhHS0yT
+        mcN1EOvo5hMZAQvcAEQiGpaqOd4jy3URhjjliXwusLTP80nzR4N9SyQh4zrH
+        4mYbMwlEahEJnokfAU4BlY5ldxpWu2G1cC5VmDS9TqBgJ4x7Yny7G8vtwXUw
+        2j0c7A6enOk8TpYJlKq0iLiW+aK25TZ7Lduxe/VaVSI8ykCoda4+qlz84Fhf
+        k0e9ZrdeM4d8VSTI6H7P+av+m/xOiih6k8GUvu5z7rZavVbrc7nLsYD/w1Yp
+        7L5M4StBsAD+x5R0KgoYVjleVM5qj2bVbr+d1X5+0P3WPTiU/sH+zU8rHHij
+        7PT+pH8ejSpm1W522+2e62zM6tsQ35tcq2m9nFzrt1Nb+2pfOXJy+TMvrm6O
+        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
+        HWP81I5waL6vf8tnd//6N4cCYNbjJwAA
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:06:24 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/configuration?api_key=eace344fe11061cf0a80c99ddd40c34a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=36000
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:06:25 GMT
+      Etag:
+      - W/"acd3a349fca1f788ac931639278ad061"
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '38'
+      X-Ratelimit-Reset:
+      - '1436378794'
+      Content-Length:
+      - '501'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA3WS227bMAyG30XXQdO1ydblVYpCkC3GESJLAkU5yIq++0ja
+        WZ11u+LB5E/ys95NGN0A1RzeTecq2IbRHMyJqBy2W/32QKPvHjIOW9qWrdmY
+        Cn1DsH+V1//Wd64/e8zF1vBLJr2ay/PjIwtdfryo+fakNmMYQnLRvG1MzENe
+        1e/2UvfzSav3OzUvmluU9iq4Vii5EuBK45/dO5Wcu5d17kQwH0OEL5vMw0/f
+        n6V93VApxPh16HrXz/KPjelPLg1gz3BVMM63SCzpAlrvCMSNNdtzypdkXdWY
+        z0qOwgSWAkUmujFdyAO6crqqj3TyTt3mBxC93lU1gBSOoefunKSPx6PrhVNy
+        oyr1CDzX2076Obiw8ZxaFKGEmr3stXg2tbEDXCWwJV5slJojAugzCX4djRoO
+        kAD5b6uHOnxoUMlWcijRKY9Q+AGyuzxScXw3q0UG1/TpbowsLwbokvHM3szY
+        9rklQrnkBl3vXMeKUBIT4BT03OKQRLVE14PNR6tENZFJfhUP8VqA2bdeWPIk
+        hXKXGYtLQfe7S8tKcxohAtORCoQJUhMJxrfQq/wxJ07NzifpJUYYWnSCvpZ8
+        hmTXSBgiNVEmN8SQRPl2KqFLNf55AzTdkNKEDHTGS9ciPVPwkG+2mreP3/zj
+        iUMxBAAA
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:06:25 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=eace344fe11061cf0a80c99ddd40c34a&append_to_response=releases,trailers&include_adult=true&include_image_language=en&language=en&page=1&query=8%20Mile
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=10800
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:06:27 GMT
+      Etag:
+      - W/"53733e6b66bec91940d5918d5292df4f"
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      X-Memc:
+      - HIT
+      X-Memc-Age:
+      - '4524'
+      X-Memc-Expires:
+      - '6276'
+      X-Memc-Key:
+      - cd1213a3e94fb96f3927f062109380e4
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '37'
+      X-Ratelimit-Reset:
+      - '1436378794'
+      Content-Length:
+      - '1097'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA6WWW27jNhSGt3KgpykguZIcX+K3ZDoJYk/mkrunUwSUREus
+        KVEhKTvKYIDuoTvoVrqTrqQ/ZcdomqDFtG/Uoc79O0f64tUs594k8j3NTSOt
+        8SY/fvFYhqM3WTBpuO8lLF1mWtW3NbOFN/G+32umn1blm9Ob4achy/vJQ1sO
+        +P3b+f76pPdznXu+l/NK81uROXPR+CffE5k3GQ58T2mRi4rJW8mqvOl8e7yC
+        xu7CCiuddEynAgfcrLheCb6G7KLgZLi1ospJGPqBW62EJVFRtL8/6JG7T4Vt
+        3WUmViLjGSUtbUz5xEgrlpEtmCVTS2ENzpysWlfORsHkgphUMK5ZKpgkKSpu
+        enRArWogXRfCctzVNdc+TUVZtvTZOwzOWJII+9mj81LYgqaaTFOWqjJkrOZV
+        DtkaF86FKA2HF6so1coYcsm5IAwnpmFEM91SAm8Z04IjPkWLRi6ElNBFUpqz
+        ktQCDtKUQ7+zWVOh6h5dO+eLxjYaxiqXJ3IrNOekKncSOkN6MMSRamc6U65S
+        lbKUFmrJe6i25pIzw28zZl0X4jCMgygKwjHuamUs1zsMspuHCz1b18nb+vVd
+        NX4/Co8uL4t3yfzjxRaDWtWNRCK29SZxL+yPR9HQ95512DVK7XBbKctvGerS
+        0THsjXyvE6WoCqDsx/FX/18QrRopn0LYH2whjEbjqD/+FhDPzyZ0zoRlJUOp
+        uvb//ttTLk+Wy8YHr3kB9lzpL1TZgJ4Vdw3aKvtdofk9S61su+akSkluLNWS
+        oZmuITl3NK+UXIFcqDJas6piQdJhB5yYhtkFlFrJe3TYWLIABsZa10xHmXsQ
+        mhboe/dWp5i4oM4LFRyD4x7NGzoBXj6Ihk8Gyje0HGv33gctHkCQxWsJmkdH
+        rLLMWJHSkZAlHcGuWGE6tt5AEPgsfco1X1NT/yXlrhaiMlxvRy3XoiQwjNlz
+        dHcgJ41GeG7EELxZAnUQjwp1aBsUqeQZfG9SfpHQ/SDsB9Hec0L7cnZ/c32g
+        7t59PL263K/ezEZ36nU6NbPoBUKjXhiG4wF42xEKQbeGDGz/E6VhL3xKafgf
+        GB2HfjT2o3AvjLewxsNoEMX/G1aKKaCpMoXY0ksz8dBgw7Al3yAtyuYp0d0u
+        +Rv1DHZeHcwOaLwrCyR//PIrHQstDZ11i/E7/xEvslxC7Eg3VgFTtBtDZHmj
+        KYfGdpOajsLdZmNkSrelEpEHVpSg3G11RxipmmOndtg9hhbRYZCo1vjkZvBx
+        9hw07huBiXLLvTPRkm7cmodss80PWoWJfnXK4H2OuDKG0AFrLbTTLdxidtOB
+        +HX35GJeYGyqzHSO1kovHe+bgXNjpsEwhunFPRqFQTgM4uFzSlN+MrpezM+K
+        k6vTxbCYqjkfLdMPZ1eH9QuUArUwivZepJTiyZNefDu1AM8qi++z+y/A1xs/
+        Bpvn3e9B/+ufh8T3GzUIAAA=
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:06:27 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/configuration?api_key=eace344fe11061cf0a80c99ddd40c34a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=36000
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:06:28 GMT
+      Etag:
+      - W/"acd3a349fca1f788ac931639278ad061"
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '36'
+      X-Ratelimit-Reset:
+      - '1436378794'
+      Content-Length:
+      - '501'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA3WS227bMAyG30XXQdO1ydblVYpCkC3GESJLAkU5yIq++0ja
+        WZ11u+LB5E/ys95NGN0A1RzeTecq2IbRHMyJqBy2W/32QKPvHjIOW9qWrdmY
+        Cn1DsH+V1//Wd64/e8zF1vBLJr2ay/PjIwtdfryo+fakNmMYQnLRvG1MzENe
+        1e/2UvfzSav3OzUvmluU9iq4Vii5EuBK45/dO5Wcu5d17kQwH0OEL5vMw0/f
+        n6V93VApxPh16HrXz/KPjelPLg1gz3BVMM63SCzpAlrvCMSNNdtzypdkXdWY
+        z0qOwgSWAkUmujFdyAO6crqqj3TyTt3mBxC93lU1gBSOoefunKSPx6PrhVNy
+        oyr1CDzX2076Obiw8ZxaFKGEmr3stXg2tbEDXCWwJV5slJojAugzCX4djRoO
+        kAD5b6uHOnxoUMlWcijRKY9Q+AGyuzxScXw3q0UG1/TpbowsLwbokvHM3szY
+        9rklQrnkBl3vXMeKUBIT4BT03OKQRLVE14PNR6tENZFJfhUP8VqA2bdeWPIk
+        hXKXGYtLQfe7S8tKcxohAtORCoQJUhMJxrfQq/wxJ07NzifpJUYYWnSCvpZ8
+        hmTXSBgiNVEmN8SQRPl2KqFLNf55AzTdkNKEDHTGS9ciPVPwkG+2mreP3/zj
+        iUMxBAAA
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:06:28 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=eace344fe11061cf0a80c99ddd40c34a&append_to_response=releases,trailers&include_adult=true&include_image_language=en&language=en&page=1&query=The%20Minority%20Report
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=10800
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:06:29 GMT
+      Etag:
+      - '"c9c5e585a4d81ca208adb93d0d87ee42"'
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      X-Memc:
+      - MISS, STORE
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '10800'
+      X-Memc-Key:
+      - 6d75ac249e128477ba6696dda42b4348
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '35'
+      X-Ratelimit-Reset:
+      - '1436378794'
+      Content-Length:
+      - '57'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"page":1,"results":[],"total_pages":1,"total_results":0}'
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:06:30 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/configuration?api_key=eace344fe11061cf0a80c99ddd40c34a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=36000
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:06:31 GMT
+      Etag:
+      - W/"acd3a349fca1f788ac931639278ad061"
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '34'
+      X-Ratelimit-Reset:
+      - '1436378794'
+      Content-Length:
+      - '501'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA3WS227bMAyG30XXQdO1ydblVYpCkC3GESJLAkU5yIq++0ja
+        WZ11u+LB5E/ys95NGN0A1RzeTecq2IbRHMyJqBy2W/32QKPvHjIOW9qWrdmY
+        Cn1DsH+V1//Wd64/e8zF1vBLJr2ay/PjIwtdfryo+fakNmMYQnLRvG1MzENe
+        1e/2UvfzSav3OzUvmluU9iq4Vii5EuBK45/dO5Wcu5d17kQwH0OEL5vMw0/f
+        n6V93VApxPh16HrXz/KPjelPLg1gz3BVMM63SCzpAlrvCMSNNdtzypdkXdWY
+        z0qOwgSWAkUmujFdyAO6crqqj3TyTt3mBxC93lU1gBSOoefunKSPx6PrhVNy
+        oyr1CDzX2076Obiw8ZxaFKGEmr3stXg2tbEDXCWwJV5slJojAugzCX4djRoO
+        kAD5b6uHOnxoUMlWcijRKY9Q+AGyuzxScXw3q0UG1/TpbowsLwbokvHM3szY
+        9rklQrnkBl3vXMeKUBIT4BT03OKQRLVE14PNR6tENZFJfhUP8VqA2bdeWPIk
+        hXKXGYtLQfe7S8tKcxohAtORCoQJUhMJxrfQq/wxJ07NzifpJUYYWnSCvpZ8
+        hmTXSBgiNVEmN8SQRPl2KqFLNf55AzTdkNKEDHTGS9ciPVPwkG+2mreP3/zj
+        iUMxBAAA
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:06:31 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=eace344fe11061cf0a80c99ddd40c34a&append_to_response=releases,trailers&include_adult=true&include_image_language=en&language=en&page=1&query=Minority%20Report
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=10800
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 08 Jul 2015 18:06:32 GMT
+      Etag:
+      - W/"7be55aff090607b22371a2eee119b561"
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      X-Memc:
+      - HIT
+      X-Memc-Age:
+      - '8318'
+      X-Memc-Expires:
+      - '2482'
+      X-Memc-Key:
+      - d6335b50111a0b700b6b325b119d12b4
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '33'
+      X-Ratelimit-Reset:
+      - '1436378794'
+      Content-Length:
+      - '782'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA5WU7W/bNhDG/5Ubv/SL4kl2ltr+MjTBuqx760vaNFgHg5bO
+        0rUUyZGUDbXI/76HTuMkw9ZigGHLPOr43HM/3ifldctqWRUqcBxMimr5xyel
+        Gzyq5UabyIVa6/pDE5xfeZ06tVTfDvPT7W4QeVEOvzwd3m7l52evy/rs/O1P
+        l5P3vlWFatkGXkmT003nxXezYv54XixOjud/FkoaHDgvC+WCtGK1WRlt22Ev
+        RLHF64dAkmTy6q9isZZGesnehZS3bDlshXcIPnOdpSe24ZCcJYmkKTlP79Tz
+        wHWQnt8pqrEgllLHZHTio2kVE9Vs0xDGgnYdI8Z1Z51x7Ui1tuQDN1JjU84Q
+        ac0bFzgnGB/ht3Z9LylxM6HTId2dvmZEsD0f9NegQxhvkmvrsBSgYcsxSauT
+        C5R0aDlF6qQnZIfufggog+ouRyZ0Bh2HwjZiG2xpjaS6uy0mjjFxTxohH+AJ
+        ckXErENtNd+qlvQIkpzb1/493AtsWEdeNfgPB6dlOT0qT46mJWLeIWU4NLub
+        GW/SK/v45fuKry6ev/i9Mlc/Nrvj04+fm+2dH4zO7VHL2WRRzqpZof67c1tp
+        2B3g2rrEK41m7tt/Mjkp1H6pdoMFgovZ/Lr4CpB2MOYhcp8hm5VlWR3/H87O
+        ugD/XvlsXoBnX+TuPBvV0HqE4XDM6iQONJuRAlu3s4hlGBpBF3ODIvpNbkNV
+        WSI1HjZietCK0MUbip3bRXoggNZBbJs7B0wyPRkQk6TG1xC0AUBQkDM96TlI
+        nblv9Ii8tsGLewg3g7UC5Oiyk8QFnQYo2595xca4XZYodWYG2aPVHjrS/ZSo
+        ZEIXGausMF+vTnK33XAj3bsP+XpgRpBOhPJRJwd2lEaPwCY44IlVzyF6rpPg
+        AnxDd949rPjWp1z4kn7jXtOlGCO6jwU9NY7Os9G46x/3NfxgBGrPOsyPyb9h
+        XVVHZf78E+sbZO6DW03AymK6uCP36yx8ieRyggF3n+TyGlQmlzDu8szFZMTQ
+        vfl/GL3T678BiK56yZEFAAA=
+    http_version: 
+  recorded_at: Wed, 08 Jul 2015 18:06:32 GMT
 recorded_with: VCR 2.9.3
