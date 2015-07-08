@@ -34,19 +34,20 @@ describe Movie do
         expect(Movie.from_title("Movie Exists")).to eq(movie)
       end
 
-      it "fetches from omdb if doesn't exist" do
-        VCR.use_cassette('omdb') do
-          movie = Movie.from_title("Terminator")
+      it "fetches from tmdb if doesn't exist" do
+        VCR.use_cassette('tmdb') do
+          movie = Movie.from_title("The Terminator")
           expect(Movie.count).to eq(1)
-          expect(movie.year).to eq("2001")
+          expect(movie.year).to eq("1984")
         end
       end
     end
 
     describe "::popular_movies" do
       it "yields values" do
-        movie = FactoryGirl.create(:movie, :title => "Terminator")
-        expect(Movie.popular_movies.first.title).to eq("Terminator")
+        VCR.use_cassette('popular_movies_tmdb') do
+          expect(Movie.popular_movies.first.title).to eq("Jurassic World")
+        end
       end
     end
   end

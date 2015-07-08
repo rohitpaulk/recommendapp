@@ -1,0 +1,193 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/configuration?api_key=eace344fe11061cf0a80c99ddd40c34a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=36000
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Fri, 03 Jul 2015 20:25:54 GMT
+      Etag:
+      - W/"acd3a349fca1f788ac931639278ad061"
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '39'
+      X-Ratelimit-Reset:
+      - '1435955164'
+      Content-Length:
+      - '501'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA3WS227bMAyG30XXQdO1ydblVYpCkC3GESJLAkU5yIq++0ja
+        WZ11u+LB5E/ys95NGN0A1RzeTecq2IbRHMyJqBy2W/32QKPvHjIOW9qWrdmY
+        Cn1DsH+V1//Wd64/e8zF1vBLJr2ay/PjIwtdfryo+fakNmMYQnLRvG1MzENe
+        1e/2UvfzSav3OzUvmluU9iq4Vii5EuBK45/dO5Wcu5d17kQwH0OEL5vMw0/f
+        n6V93VApxPh16HrXz/KPjelPLg1gz3BVMM63SCzpAlrvCMSNNdtzypdkXdWY
+        z0qOwgSWAkUmujFdyAO6crqqj3TyTt3mBxC93lU1gBSOoefunKSPx6PrhVNy
+        oyr1CDzX2076Obiw8ZxaFKGEmr3stXg2tbEDXCWwJV5slJojAugzCX4djRoO
+        kAD5b6uHOnxoUMlWcijRKY9Q+AGyuzxScXw3q0UG1/TpbowsLwbokvHM3szY
+        9rklQrnkBl3vXMeKUBIT4BT03OKQRLVE14PNR6tENZFJfhUP8VqA2bdeWPIk
+        hXKXGYtLQfe7S8tKcxohAtORCoQJUhMJxrfQq/wxJ07NzifpJUYYWnSCvpZ8
+        hmTXSBgiNVEmN8SQRPl2KqFLNf55AzTdkNKEDHTGS9ciPVPwkG+2mreP3/zj
+        iUMxBAAA
+    http_version: 
+  recorded_at: Fri, 03 Jul 2015 20:25:55 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=eace344fe11061cf0a80c99ddd40c34a&append_to_response=releases,trailers&include_adult=true&include_image_language=en&language=en&page=1&query=The%20Terminator
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=10800
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Fri, 03 Jul 2015 20:25:56 GMT
+      Etag:
+      - W/"9cc8998fcbe3526b7ba0d8ce922e9cb8"
+      Server:
+      - openresty
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      X-Memc:
+      - MISS, STORE
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '10800'
+      X-Memc-Key:
+      - 3c90be71204c5889364c89693d520367
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '38'
+      X-Ratelimit-Reset:
+      - '1435955164'
+      Content-Length:
+      - '2852'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        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
+        +Xn7V4reH/8DUsbTpLwYAAA=
+    http_version: 
+  recorded_at: Fri, 03 Jul 2015 20:25:56 GMT
+recorded_with: VCR 2.9.3

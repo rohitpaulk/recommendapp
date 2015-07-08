@@ -1,11 +1,3 @@
-GIT
-  remote: git://github.com/jvanbaarsen/omdb.git
-  revision: d345d7350f101a6053e5e677ff9c563ead7bab18
-  specs:
-    omdb (1.0.4)
-      json
-      rest-client
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -75,6 +67,8 @@ GEM
     diff-lcs (1.2.5)
     domain_name (0.5.24)
       unf (>= 0.0.5, < 1.0.0)
+    enceladus (0.0.6)
+      rest-client (~> 1.8.0, >= 1.8.0)
     erubis (2.7.0)
     execjs (2.2.2)
     factory_girl (4.5.0)
@@ -239,12 +233,12 @@ DEPENDENCIES
   byebug
   capybara
   coffee-rails (~> 4.1.0)
+  enceladus
   factory_girl_rails
   fb_graph (~> 2.7.17)
   haml (~> 4.0.5)
   jbuilder (~> 2.0)
   jquery-rails
-  omdb!
   pg
   pushmeup
   rails (= 4.2.0)
