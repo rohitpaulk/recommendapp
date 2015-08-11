@@ -43,13 +43,13 @@ class Movie < ActiveRecord::Base
   end
 
   def self.create_movie_from_api(api_movie)
-      movie = Movie.create!(
-        title:       api_movie.original_title,
-        year:        api_movie.release_date,
-        plot:        api_movie.overview,
-        imdb_id:     api_movie.id,  #This isn't imdb id. TODO
-        imdb_rating: api_movie.vote_average,  #Not imdb rating. TODO
-        poster_url:  api_movie.poster_urls[1] #TODO
-      )
+    movie = Movie.create!(
+      title:       api_movie.original_title,
+      year:        api_movie.release_date,
+      plot:        api_movie.overview,
+      imdb_id:     api_movie.id,  #This isn't imdb id. TODO
+      imdb_rating: api_movie.vote_average,  #Not imdb rating. TODO
+      poster_url:  api_movie.poster_urls[1] #TODO
+    )
   end
 end
