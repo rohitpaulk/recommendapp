@@ -20,19 +20,8 @@ module Api
     end
 
     def create
-      recommendee = User.find(params["recommendee_id"])
-      item_class = Kernel.const_get(params['item_type'])
-      item = item_class.find(params['item_id'])
-      reco = Recommendation.new(
-        :recommender => @api_user,
-        :recommendee => recommendee,
-        :item => item
-      )
-      if reco.save
-        render :json => reco
-      else
-        render json: { errors: reco.errors }, status: 409 and return
-      end
+      new_recos = Recommendation.create_by_id_and_email(@api_user, params)
+      render :json => new_recos.to_json
     end
 
     def show
