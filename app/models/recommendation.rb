@@ -25,47 +25,24 @@ class Recommendation < ActiveRecord::Base
 
   before_validation :set_pending_status
 
-  def self.create_by_id_and_email(recommender, params)
-    recommendee_ids = params["recommendee_ids"]
-    recommendee_emails = params["recommendee_emails"]
-    item_class = Kernel.const_get(params['item_type'])
-    item = item_class.find(params['item_id'])
-
+  def self.create_by_id_and_email(recommender, item, recommendee_ids, recommendee_emails)
     new_recommendations = []
 
-    unless recommendee_ids.nil?
-      recommendee_ids.each do |id|
-        recommendee = User.find(id)
-        reco = Recommendation.new(
-          :recommender => recommender,
-          :recommendee => recommendee,
-          :item => item
-        )
-        if reco.save
-          new_recommendations.append(reco)
-        else
-          #Handle batch error
-        end
+    recommendee_ids.each do |id|
+      recommendee = User.find_by_id(id)
+      if recommendee
+        new_recommendations.append(create_recommendation(recommender, recommendee, item))
+      else
+        new_recommendations.append(["Invalid recommendee id!"])
       end
     end
-
-    unless recommendee_emails.nil?
-      recommendee_emails.each do |email|
-        recommendee = User.find_by_email(email)
-        if recommendee
-          reco = Recommendation.new(
-            :recommender => recommender,
-            :recommendee => recommendee,
-            :item => item
-          )
-          if reco.save
-            new_recommendations.append(reco)
-          else
-            #Handle batch error
-          end
-        else
-          #TODO - New user. Send email with new recommendation.
-        end
+    recommendee_emails.each do |email|
+      recommendee = User.find_by_email(email)
+      if recommendee
+        new_recommendations.append(create_recommendation(recommender, recommendee, item))
+        #TODO make them friends
+      else
+        #TODO - New user. Send email with new recommendation.
       end
     end
     return new_recommendations
@@ -81,4 +58,16 @@ class Recommendation < ActiveRecord::Base
     save!
   end
 
+  private
+  def self.create_recommendation(recommender, recommendee, item)
+    reco = Recommendation.new(
+      :recommender => recommender,
+      :recommendee => recommendee,
+      :item => item
+    )
+    unless reco.save
+      return reco.errors.full_messages
+    end
+    return reco
+  end
 end
