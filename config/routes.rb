@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     end
     resources :android_apps, only: [:index, :show]
     resources :recommendations
+    resources :search, only: [:index]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
