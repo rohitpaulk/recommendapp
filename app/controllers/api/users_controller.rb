@@ -24,8 +24,9 @@ class Api::UsersController < ApplicationController
     user.update_facebook_avatar
     user.update_movies_from_facebook
 
-    render :json => user.as_json(:include => :elsewheres)
-                        .merge(:has_completed_tour => user.recommendations.exists?)
+    render :json => user.to_json(:include => :elsewheres,
+                                 :methods => :has_completed_tour
+                                 )
   end
 
   def update
