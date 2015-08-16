@@ -88,23 +88,16 @@ class User < ActiveRecord::Base
     updated_apps = []
 
     apps.each do |item|
-      if AndroidApp.exists?(:uid => item[:uid])
-        existing_app = AndroidApp.find_by_uid(item[:uid])
-        unless android_apps.include?(existing_app)
-          android_apps.append(existing_app)
-          updated_apps.append(existing_app)
+      app = AndroidApp.create_or_find_by_uid(item[:uid])
+      if app
+        updated_apps.append(app)
+        unless android_apps.include?(app)
+          android_apps.append(app)
         end
-        if reco = Recommendation.where(:recommendee => self, :item => existing_app).first
+        if reco = Recommendation.where(:recommendee => self, :item => app).first
           reco.status = 'successful'
           reco.save!
         end
-      else
-        name = item[:display_name]
-        name.encode!('UTF-8','binary',invalid: :replace, undef: :replace, replace: '')
-        new_app = AndroidApp.create(:uid => item[:uid], :display_name => name)
-
-        android_apps.append(new_app)
-        updated_apps.append(new_app)
       end
     end
 
