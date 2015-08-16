@@ -80,7 +80,7 @@ class User < ActiveRecord::Base
 
     fb_movies.each do |movie|
       movie_object = Movie.from_title(movie.name)
-      self.movies << movie_object if movie_object
+      self.movies << movie_object if (movie_object && !self.movies.include?(movie_object))
     end
   end
 
