@@ -90,9 +90,9 @@ class User < ActiveRecord::Base
     apps.each do |item|
       app = AndroidApp.create_or_find_by_uid(item[:uid])
       if app
-        updated_apps.append(app)
         unless android_apps.include?(app)
           android_apps.append(app)
+          updated_apps.append(app)
         end
         if reco = Recommendation.where(:recommendee => self, :item => app).first
           reco.status = 'successful'
