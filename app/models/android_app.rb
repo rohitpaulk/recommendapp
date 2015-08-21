@@ -6,6 +6,7 @@ class AndroidApp < ActiveRecord::Base
 
   has_many :user_items, :as => :item
   has_many :users, :through => :user_items
+  has_many :recommendations, :as => :item
 
   def playstore_url
     "https://play.google.com/store/apps/details?id=#{uid}"
