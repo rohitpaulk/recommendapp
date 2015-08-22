@@ -19,17 +19,23 @@ module Api
     end
 
     def create
-      requestee = User.find(params["requestee_id"])
-      request = Request.new(
-        :requester => @api_user,
-        :requestee => requestee,
-        :item_type => params["item_type"]
+      params["requestee_emails"] ||= []
+      params["requestee_ids"] ||= []
+
+      render plain: "Requestee list should be an array", status: 400 and return unless
+      params["requestee_ids"].is_a?(Array) and params["requestee_emails"].is_a?(Array)
+
+      render plain: "Invalid item type", status: 400 and return unless
+      [nil, "Movie", "AndroidApp"].include?(params["item_type"])
+
+      new_requests = Request.create_by_id_and_email(
+        @api_user,
+        params["item_type"],
+        params["requestee_ids"],
+        params["requestee_emails"]
       )
-      if request.save
-        render :json => request
-      else
-        render json: { errors: request.errors }, status: 409 and return
-      end
+
+      render json: new_requests.to_json
     end
 
     def show
@@ -51,5 +57,4 @@ module Api
     end
 
   end
-  
 end

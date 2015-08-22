@@ -19,8 +19,6 @@ ActiveRecord::Schema.define(version: 20150821124421) do
     t.string   "icon_url"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.string   "rating"
-    t.string   "description"
   end
 
   create_table "elsewheres", force: :cascade do |t|
