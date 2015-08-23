@@ -62,6 +62,10 @@ class User < ActiveRecord::Base
     }.compact
   end
 
+  def has_completed_tour
+    self.recommendations.exists?
+  end
+
   def update_facebook_friends
     self.following << fetch_facebook_friends
   end
