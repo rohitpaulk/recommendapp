@@ -20,15 +20,19 @@ module Api
     end
 
     def create
-      params["recommendee_emails"] ||= []
-      params["recommendee_ids"] ||= []
-
-      (item_class = Kernel.const_get(params['item_type'])) rescue render plain: "Invalid item type", :status => 400 and return
-      render plain: "Invalid item id", status: 400 and return unless item = item_class.find_by_id(params['item_id'])
-      render plain: "Recommendee list should be an array", status: 400 and return unless params["recommendee_ids"].is_a?(Array) and params["recommendee_emails"].is_a?(Array)
-
-      new_recos = Recommendation.create_by_id_and_email(@api_user, item, params["recommendee_ids"], params["recommendee_emails"])
-      render json: new_recos.to_json
+      recommendee = User.find(params["recommendee_id"])
+      item_class = Kernel.const_get(params['item_type'])
+      item = item_class.find(params['item_id'])
+      reco = Recommendation.new(
+        :recommender => @api_user,
+        :recommendee => recommendee,
+        :item => item
+      )
+      if reco.save
+        render :json => reco
+      else
+        render json: { errors: reco.errors }, status: 409 and return
+      end
     end
 
     def show
