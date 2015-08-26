@@ -33,14 +33,14 @@ class Recommendation < ActiveRecord::Base
       if recommendee
         new_recommendations.append(create_recommendation(recommender, recommendee, item))
       else
-        new_recommendations.append(["Invalid recommendee id!"])
+        new_recommendations.append(format_error(["Invalid recommendee id"]))
       end
     end
     recommendee_emails.each do |email|
       recommendee = User.find_by_email(email)
       if recommendee
         new_recommendations.append(create_recommendation(recommender, recommendee, item))
-        #TODO make them friends
+        #TODO - Make them friends.
       else
         #TODO - New user. Send email with new recommendation.
       end
@@ -66,8 +66,12 @@ class Recommendation < ActiveRecord::Base
       :item => item
     )
     unless reco.save
-      return reco.errors.full_messages
+      return format_error(reco.errors.full_messages)
     end
     return reco
+  end
+
+  def self.format_error(msg)
+    return { :errors => msg }
   end
 end
