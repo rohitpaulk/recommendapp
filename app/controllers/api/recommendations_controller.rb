@@ -16,7 +16,7 @@ module Api
 
       result = result.all
 
-      render :json => result
+      render :json => include_associations(result)
     end
 
     def create
@@ -33,7 +33,7 @@ module Api
 
     def show
       reco = Recommendation.find(params[:id])
-      render :json => reco.to_json(include: ["recommender", "recommendee", "item"])
+      render :json => include_associations(reco)
     end
 
     def update
@@ -47,6 +47,21 @@ module Api
       else
         render :json => { errors: reco.errors }, status: 409
       end
+    end
+
+    private
+    def include_associations(reco)
+      return reco.to_json(include: {
+        :recommender => {
+          :only => [:id, :name, :avatar_url]
+        },
+        :recommendee => {
+          :only => [:id, :name, :avatar_url]
+        },
+        :item => {
+          :except => [:created_at, :updated_at]
+        }
+      })
     end
 
   end
