@@ -14,6 +14,10 @@ module Api
         result = result.where(:recommender_id => params[:recommender_id])
       end
 
+      if params[:item_type]
+        result = result.where(:item_type => params[:item_type])
+      end
+
       result = result.all
 
       render :json => include_associations(result)
