@@ -4,6 +4,7 @@ class Movie < ActiveRecord::Base
 
   has_many :user_items, :as => :item
   has_many :users, :through => :user_items
+  has_many :recommendations, :as => :item
 
   def self.from_title(title)
     if Movie.exists?(title: title)
