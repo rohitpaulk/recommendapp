@@ -1,4 +1,5 @@
 class Recommendation < ActiveRecord::Base
+  has_one :request, :foreign_key => "response_id"
   belongs_to :recommendee, :class_name => "User"
   belongs_to :recommender, :class_name => "User"
   belongs_to :item, :polymorphic => true
@@ -11,7 +12,7 @@ class Recommendation < ActiveRecord::Base
 
   validates_uniqueness_of :item_id, scope: [:recommendee, :recommender, :item_type]
 
-  after_create :send_notification
+  after_create :send_notification, :update_request
 
   class RecursionValidator < ActiveModel::Validator
     def validate(record)
@@ -73,5 +74,17 @@ class Recommendation < ActiveRecord::Base
 
   def self.format_error(msg)
     return { :errors => msg }
+  end
+
+  def update_request
+    request = Request.where(
+        :requestee => recommender,
+        :requester => recommendee,
+        :item_type => item_type
+      ).first
+    if request.present?
+      request.response = self
+      request.save
+    end
   end
 end
