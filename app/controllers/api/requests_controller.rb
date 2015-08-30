@@ -15,7 +15,7 @@ module Api
 
       result = result.all
 
-      render :json => result
+      render :json => include_associations(result)
     end
 
     def create
@@ -40,7 +40,7 @@ module Api
 
     def show
       request = Request.find(params[:id])
-      render :json => request.to_json(include: ["requester", "requestee"])
+      render :json => include_associations(request)
     end
 
     def update
@@ -54,6 +54,18 @@ module Api
       else
         render :json => { errors: request.errors }, status: 409 and return
       end
+    end
+
+    private
+    def include_associations(request)
+      return request.to_json(include: {
+        :requester => {
+          :only => [:id, :name, :avatar_url]
+        },
+        :requestee => {
+          :only => [:id, :name, :avatar_url]
+        }
+      })
     end
 
   end
