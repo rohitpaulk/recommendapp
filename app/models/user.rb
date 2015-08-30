@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   has_many :recommendations, :foreign_key => :recommender_id
   has_many :recommended_android_apps, :through => :recommendations, :source => :item, :source_type => "AndroidApp"
 
+  has_many :requests, :foreign_key => :requester_id
+
   has_many :outgoing_relationships, class_name: 'UserFollower', foreign_key: :follower_id
   has_many :following, through: :outgoing_relationships, source: :following, class_name: "User"
 

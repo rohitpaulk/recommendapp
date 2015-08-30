@@ -26,7 +26,7 @@ module Api
       params["requestee_ids"].is_a?(Array) and params["requestee_emails"].is_a?(Array)
 
       render plain: "Invalid item type", status: 400 and return unless
-      [nil, "Movie", "AndroidApp"].include?(params["item_type"])
+      ["Movie", "AndroidApp"].include?(params["item_type"])
 
       new_requests = Request.create_by_id_and_email(
         @api_user,

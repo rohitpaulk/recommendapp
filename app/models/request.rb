@@ -32,7 +32,7 @@ class Request < ActiveRecord::Base
       if requestee
         new_requests.append(create_request(requester, requestee, item_type))
       else
-        new_requests.append(["Invalid requestee id!"])
+        new_requests.append(format_error["Invalid requestee id!"])
       end
     end
 
@@ -66,8 +66,12 @@ class Request < ActiveRecord::Base
       :item_type => item_type
     )
     unless request.save
-      return request.errors.full_messages
+      return format_error(request.errors.full_messages)
     end
     return request
+  end
+
+  def self.format_error(msg)
+    return { :errors => msg }
   end
 end

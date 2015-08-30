@@ -118,23 +118,6 @@ describe "API", :type => :request do
     end
 
     describe 'item filters' do
-      it 'throws an error if a pair of params is not provided' do
-        get "/api/users/#{@user.id}/friends", {
-          api_access_token: @user.api_access_token,
-          item_id: @app1.id
-        }
-        expect(response.status).to eq(400)
-        expect(response.body).to eq('Provide a pair of parameters, item_id and item_type')
-      end
-
-      it 'throws an error if a pair of params is not provided' do
-        get "/api/users/#{@user.id}/friends", {
-          api_access_token: @user.api_access_token,
-          item_type: 'AndroidApp'
-        }
-        expect(response.status).to eq(400)
-        expect(response.body).to eq('Provide a pair of parameters, item_id and item_type')
-      end
 
       it 'throws an error if item_type is invalid' do
         get "/api/users/#{@user.id}/friends", {
