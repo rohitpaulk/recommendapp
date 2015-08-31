@@ -9,6 +9,7 @@ class Api::SearchController < ApplicationController
       )
     if params.has_key?(:item_type)
       render plain: "Invalid item type", status: 422 and return if !item_types.include? params[:item_type]
+      render plain: "Invalid search term", status: 422 and return if !params[:q]
       item_class = Kernel.const_get(params[:item_type])
       result = item_class.search(params[:q])
     else
