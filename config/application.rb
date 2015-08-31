@@ -22,5 +22,14 @@ module Recommendapp
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    config.after_initialize do
+      Enceladus.connect("eace344fe11061cf0a80c99ddd40c34a",
+      {
+        include_image_language: "en",
+        language: "en,null",
+        include_adult: true
+      })
+    end
   end
 end
