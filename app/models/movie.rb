@@ -22,7 +22,13 @@ class Movie < ActiveRecord::Base
     while page <= collection.total_pages && movies.length < 20
       collection.current_page = page
       collection.results_per_page[page - 1].each do |api_movie|
-        movies.append(Movie.new(movie_params_from_api(api_movie)))
+        searched_movie = Movie.new(movie_params_from_api(api_movie))
+        movie = Movie.where(:imdb_id => searched_movie.imdb_id).first
+        unless movie
+          searched_movie.save
+          movie = searched_movie
+        end
+        movies.append(movie)
       end
       page += 1
     end
