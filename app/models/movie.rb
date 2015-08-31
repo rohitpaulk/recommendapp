@@ -19,7 +19,7 @@ class Movie < ActiveRecord::Base
   def self.search(title, page = 1)
     movies = []
     collection = Enceladus::Movie.find_by_title(title)
-    while page <= collection.total_pages
+    while page <= collection.total_pages && movies.length < 20
       collection.current_page = page
       collection.results_per_page[page - 1].each do |api_movie|
         movies.append(Movie.new(movie_params_from_api(api_movie)))
