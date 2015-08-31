@@ -102,12 +102,12 @@ describe "API", :type => :request do
 
   describe "GET /users/:id/friends" do
     before do
-      user1 = FactoryGirl.create(:user)
+      @user1 = FactoryGirl.create(:user)
       user2 = FactoryGirl.create(:user)
       @app1 = FactoryGirl.create(:android_app)
 
       @user = FactoryGirl.create(:user)
-      @user.following += [user1, user2]
+      @user.following += [@user1, user2]
     end
 
     it "fetches friends for user" do
@@ -117,47 +117,47 @@ describe "API", :type => :request do
       expect(json.size).to eq(2)
     end
 
-    describe 'has_item filters' do
-      it 'throws an error if a pair of params is not provided' do
+    describe 'item filters' do
+
+      it 'throws an error if item_type is invalid' do
         get "/api/users/#{@user.id}/friends", {
           api_access_token: @user.api_access_token,
-          has_item_id: @app1.id
+          item_id: @app1.id,
+          item_type: 'InvalidType'
         }
-        expect(response.status).to eq(400)
-        expect(response.body).to eq('Provide a pair of parameters, has_item_id and has_item_type')
+        expect(response.status).to eq(422)
+        expect(response.body).to eq('Invalid item_type')
       end
 
-      it 'throws an error if a pair of params is not provided' do
-        get "/api/users/#{@user.id}/friends", {
-          api_access_token: @user.api_access_token,
-          has_item_type: 'AndroidApp'
-        }
-        expect(response.status).to eq(400)
-        expect(response.body).to eq('Provide a pair of parameters, has_item_id and has_item_type')
-      end
-
-      it 'throws an error if has_item_type is invalid' do
-        get "/api/users/#{@user.id}/friends", {
-          api_access_token: @user.api_access_token,
-          has_item_id: @app1.id,
-          has_item_type: 'InvalidType'
-        }
-        expect(response.status).to eq(400)
-        expect(response.body).to eq('Invalid has_item_type, should be AndroidApp')
-      end
-
-      it 'filters with has_item parameters' do
+      it 'checks if follower has item' do
         @user.following.first.android_apps << @app1
         get "/api/users/#{@user.id}/friends", {
           api_access_token: @user.api_access_token,
-          has_item_id: @app1.id,
-          has_item_type: 'AndroidApp'
+          item_id: @app1.id,
+          item_type: 'AndroidApp'
         }
         expect(response.status).to eq(200)
         expect(json.size).to eq(2)
         expect(json[0]).to have_key('has_item')
         expect(json[0]['has_item']).to eq(true)
         expect(json[1]['has_item']).to eq(false)
+      end
+
+      it 'checks if user recommended the item to follower' do
+        Recommendation.create(:recommender => @user,
+                              :recommendee => @user1,
+                              :item_type => 'AndroidApp',
+                              :item_id => @app1.id)
+        get "/api/users/#{@user.id}/friends", {
+          api_access_token: @user.api_access_token,
+          item_id: @app1.id,
+          item_type: 'AndroidApp'
+        }
+        expect(response.status).to eq(200)
+        expect(json.size).to eq(2)
+        expect(json[0]).to have_key('has_been_recommended')
+        expect(json[0]['has_been_recommended']).to eq(true)
+        expect(json[1]['has_been_recommended']).to eq(false)
       end
     end
 
