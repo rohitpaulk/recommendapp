@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   has_many :recommendations, :foreign_key => :recommender_id
   has_many :recommended_android_apps, :through => :recommendations, :source => :item, :source_type => "AndroidApp"
 
+  has_many :requests, :foreign_key => :requester_id
+
   has_many :outgoing_relationships, class_name: 'UserFollower', foreign_key: :follower_id
   has_many :following, through: :outgoing_relationships, source: :following, class_name: "User"
 
@@ -60,6 +62,10 @@ class User < ActiveRecord::Base
       elsewhere = Elsewhere.where(provider: 'facebook', uid: fb_uid).first
       if elsewhere then elsewhere.user else nil end
     }.compact
+  end
+
+  def has_completed_tour
+    self.recommendations.exists?
   end
 
   def update_facebook_friends

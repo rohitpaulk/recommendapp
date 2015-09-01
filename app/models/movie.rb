@@ -4,55 +4,60 @@ class Movie < ActiveRecord::Base
 
   has_many :user_items, :as => :item
   has_many :users, :through => :user_items
+  has_many :recommendations, :as => :item
 
   def self.from_title(title)
     if Movie.exists?(title: title)
       Movie.find_by_title(title)
     else
-      Enceladus.connect("eace344fe11061cf0a80c99ddd40c34a",
-        {
-          include_image_language: "en",
-          language: "en,null",
-          include_adult: true
-        })
       api_movie = Enceladus::Movie.find_by_title(title).first
       return nil unless api_movie
-      unless movie = Movie.find_by_imdb_id(api_movie.id)
-        movie = create_movie_from_api(api_movie)
-      end
-      movie
+      Movie.create!(movie_params_from_api(api_movie))
     end
   end
 
-  def self.popular_movies
-    Enceladus.connect("eace344fe11061cf0a80c99ddd40c34a",
-      {
-        include_image_language: "en",
-        language: "en,null",
-        include_adult: true
-      })
+  def self.search(title, page = 1)
+    movies = []
+    collection = Enceladus::Movie.find_by_title(title)
+    while page <= collection.total_pages && movies.length < 20
+      collection.current_page = page
+      collection.results_per_page[page - 1].each do |api_movie|
+        searched_movie = Movie.new(movie_params_from_api(api_movie))
+        movie = Movie.where(:imdb_id => searched_movie.imdb_id).first
+        unless movie
+          searched_movie.save
+          movie = searched_movie
+        end
+        movies.append(movie)
+      end
+      page += 1
+    end
+    return movies
+  end
 
+  def self.popular_movies
     collection = Enceladus::Movie.popular
     api_movies = collection.results_per_page[0]
     Enumerator.new do |e|
       api_movies.each { |api_movie|
         movie = Movie.find_by_title(api_movie.original_title)
         unless movie
-          movie = create_movie_from_api(api_movie)
+          movie = Movie.create!(movie_params_from_api(api_movie))
         end
         e.yield movie
       }
     end
   end
 
-  def self.create_movie_from_api(api_movie)
-    movie = Movie.create!(
+  def self.movie_params_from_api(api_movie)
+    return {
       title:       api_movie.original_title,
-      year:        Date.parse(api_movie.release_date).year,
+      year:        api_movie.release_date,
       plot:        api_movie.overview,
       imdb_id:     api_movie.id,  #This isn't imdb id. TODO
       imdb_rating: api_movie.vote_average,  #Not imdb rating. TODO
       poster_url:  api_movie.poster_urls[1] #TODO
-    )
+    }
   end
+
 end

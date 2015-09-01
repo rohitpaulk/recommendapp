@@ -4,11 +4,6 @@ class Api::FriendsController < ApplicationController
   def index
     user = User.find(params[:user_id])
 
-    # If has_item is provided, we need both.
-    if params[:item_type].present? ^ params[:item_id].present?
-      render plain: "Provide a pair of parameters, item_id and item_type", status: 400 and return
-    end
-
     # If item_type exists, should be valid
     unless [nil, 'Movie', 'AndroidApp'].include?(params[:item_type])
       render plain: "Invalid item_type", status: 422 and return
@@ -31,6 +26,17 @@ class Api::FriendsController < ApplicationController
         follower = follower.serializable_hash
         follower[:has_item] = has_item
         follower[:has_been_recommended] = has_been_recommended
+        follower
+      end
+    elsif params[:item_type]
+      result = result.each.map do |follower|
+        has_been_requested = user.requests.where(
+                                :requestee => follower,
+                                :item_type => params[:item_type],
+                                :status => ['pending', 'sent']
+                              ).exists?
+        follower = follower.serializable_hash
+        follower[:has_been_requested] = has_been_requested
         follower
       end
     end
