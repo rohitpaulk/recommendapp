@@ -23,14 +23,15 @@ class AndroidApp < ActiveRecord::Base
   end
 
   def self.search(query)
-    api_apps = MarketBot::Android::SearchQuery.new(query)
-    api_apps.update
-    api_apps.results.each do |api_app|
-      puts api_app
-      uid = api_app[:market_id] #weird
-      app = create_or_find_by_uid(uid)
-      puts app
-    end
+    return AndroidApp.where("display_name LIKE ?", "%#{query}%")
+    # api_apps = MarketBot::Android::SearchQuery.new(query)
+    # api_apps.update
+    # api_apps.results.each do |api_app|
+    #   puts api_app
+    #   uid = api_app[:market_id] #weird
+    #   app = create_or_find_by_uid(uid)
+    #   puts app
+    # end
   end
 
   private
