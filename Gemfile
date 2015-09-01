@@ -36,6 +36,9 @@ gem 'fb_graph', '~> 2.7.17'
 # Movies
 gem 'enceladus'
 
+# Apps
+gem 'market_bot'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

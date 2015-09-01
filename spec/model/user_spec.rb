@@ -68,17 +68,19 @@ describe User do
     it "creates apps if they don't exist" do
       apps = [
         {
-          uid: "1234",
-          display_name: "Angry Birds"
+          uid: "it.gmariotti.cardslib.demo",
+          display_name: "Sample App 1"
         },
         {
-          uid: "2345",
-          display_name: "Temple Run"
+          uid: "it.gmariotti.cardslib.demo.extras",
+          display_name: "Sample App 2"
         }
       ]
-      user.update_apps(apps)
-      expect(AndroidApp.count).to eq(2)
-      expect(user.android_apps.count).to eq(2)
+      VCR.use_cassette("android_apps") do
+        user.update_apps(apps)
+        expect(AndroidApp.count).to eq(2)
+        expect(user.android_apps.count).to eq(2)
+      end
     end
 
     it "uses existing apps if they do exist" do
@@ -89,32 +91,38 @@ describe User do
           display_name: app.display_name
         },
         {
-          uid: "2345",
-          display_name: "Temple Run"
+          uid: "it.gmariotti.cardslib.demo.extras",
+          display_name: "Sample App 2"
         }
       ]
-      user.update_apps(apps)
-      expect(AndroidApp.count).to eq(2)
-      expect(user.android_apps.count).to eq(2)
+      VCR.use_cassette("android_apps") do
+        user.update_apps(apps)
+        expect(AndroidApp.count).to eq(2)
+        expect(user.android_apps.count).to eq(2)
+      end
     end
 
     it "doesn't recreate user_items if they already exist" do
       apps = [
         {
-          uid: "1234",
-          display_name: "Angry Birds"
+          uid: "it.gmariotti.cardslib.demo",
+          display_name: "Sample App 1"
         },
         {
-          uid: "2345",
-          display_name: "Temple Run"
+          uid: "it.gmariotti.cardslib.demo.extras",
+          display_name: "Sample App 2"
         }
       ]
-      user.update_apps(apps)
-      expect(AndroidApp.count).to eq(2)
-      expect(user.android_apps.count).to eq(2)
-      user.update_apps(apps)
-      expect(AndroidApp.count).to eq(2)
-      expect(user.android_apps.count).to eq(2)
+      VCR.use_cassette("android_apps") do
+        user.update_apps(apps)
+        expect(AndroidApp.count).to eq(2)
+        expect(user.android_apps.count).to eq(2)
+      end
+      VCR.use_cassette("android_apps") do
+        user.update_apps(apps)
+        expect(AndroidApp.count).to eq(2)
+        expect(user.android_apps.count).to eq(2)
+      end
     end
 
     it "updates recommendation status" do
@@ -124,9 +132,11 @@ describe User do
         :recommendee => user,
         :item => app
       )
-      user.update_apps([app])
-      recommendation.reload
-      expect(recommendation.status).to eq("successful")
+      VCR.use_cassette("android_apps") do
+        user.update_apps([app])
+        recommendation.reload
+        expect(recommendation.status).to eq("successful")
+      end
     end
   end
 
