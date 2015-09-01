@@ -57,7 +57,6 @@ group :development, :test do
   gem 'sqlite3'
 
   gem 'vcr'
-  gem 'webmock'
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -73,3 +72,6 @@ group :development, :test do
   gem 'factory_girl_rails'
 end
 
+group :test do
+  gem 'webmock'
+end

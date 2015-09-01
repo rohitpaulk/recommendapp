@@ -11,16 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150830160338) do
+ActiveRecord::Schema.define(version: 20150901144121) do
 
   create_table "android_apps", force: :cascade do |t|
     t.string   "uid"
     t.string   "display_name"
     t.string   "icon_url"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
     t.string   "rating"
     t.string   "description"
+    t.integer  "recommendations_count"
   end
 
   create_table "elsewheres", force: :cascade do |t|
@@ -37,8 +38,9 @@ ActiveRecord::Schema.define(version: 20150830160338) do
     t.string   "imdb_rating"
     t.string   "imdb_id"
     t.string   "poster_url"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.integer  "recommendations_count"
   end
 
   create_table "recommendations", force: :cascade do |t|
