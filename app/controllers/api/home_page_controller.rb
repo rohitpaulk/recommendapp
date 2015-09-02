@@ -38,13 +38,13 @@ class Api::HomePageController < ApplicationController
 
   def category_data(item_class, category_id)
     result = item_class.method(@categories[category_id]).call
-    return format_data(result, category_id).to_json
+    return format_data(result, category_id + 1).to_json
   end
 
   def format_data(items, category_id)
     return {
       :category_id    => category_id,
-      :category_name  => @categories_name[category_id],
+      :category_name  => @categories_name[category_id - 1],
       :items => items
     }
   end

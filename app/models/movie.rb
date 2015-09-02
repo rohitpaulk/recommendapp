@@ -58,7 +58,8 @@ class Movie < ActiveRecord::Base
   end
 
   def self.recent_recommendations(count = -1)
-    result = Movie.joins(:recommendations).order("recommendations.updated_at")
+    result = Movie.joins(:recommendations)
+    .select("movies.*, recommendations.updated_at").order("recommendations.updated_at")
     if count > 0
       result = result.limit(count)
     end
