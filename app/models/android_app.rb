@@ -34,6 +34,22 @@ class AndroidApp < ActiveRecord::Base
     # end
   end
 
+  def self.top_recommendations(count = -1)
+    result = AndroidApp.order(recommendations_count: :desc)
+    if count > 0
+      result = result.limit(count)
+    end
+    result.distinct
+  end
+
+  def self.recent_recommendations(count = -1)
+    result = AndroidApp.joins(:recommendations).order("recommendations.updated_at")
+    if count > 0
+      result = result.limit(count)
+    end
+    result.distinct
+  end
+
   private
   def self.app_params_from_api(api_app)
     return {

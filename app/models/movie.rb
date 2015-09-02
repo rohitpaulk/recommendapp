@@ -49,6 +49,41 @@ class Movie < ActiveRecord::Base
     end
   end
 
+  def self.top_recommendations(count = -1)
+    result = Movie.order(recommendations_count: :desc)
+    if count > 0
+      result = result.limit(count)
+    end
+    result.distinct
+  end
+
+  def self.recent_recommendations(count = -1)
+    result = Movie.joins(:recommendations).order("recommendations.updated_at")
+    if count > 0
+      result = result.limit(count)
+    end
+    result.distinct
+  end
+
+  def self.recommendations_around_user(user)
+    #Option 1
+    at = Recommendation.arel_table
+    ids = User.first.following.select(:id)
+    Movie.joins(:recommendations)
+    .where(at[:recommender_id].in(ids).or(at[:recommendee_id].in(ids)))
+
+    #Option 2
+    # Movie.joins(:recommendations)
+    # .where(
+    #     Movie.joins(:recommendations)
+    #     .where(recommendations: {:recommender => user.following})
+    #     .where(recommendations: {:recommendee => user.following})
+    #     .where_values.reduce(:or)
+    # ).distinct
+
+  end
+
+  private
   def self.movie_params_from_api(api_movie)
     return {
       title:       api_movie.original_title,
