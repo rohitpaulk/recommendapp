@@ -15,11 +15,12 @@ Rails.application.routes.draw do
     resources :recommendations
     resources :search, only: [:index]
     resources :requests
+
+    get 'home/movies' => 'home_page#movies'
+    get 'home/movies/:category_id' => 'home_page#movies_show'
+    get 'home/:android_apps' => 'home_page#android_apps'
+    get 'home/android_apps/:category_id' => 'home_page#android_apps_show'
   end
-  get 'home/movies' => 'api/home_page#movies'
-  get 'home/movies/:category_id' => 'api/home_page#movies_show'
-  get 'home/:android_apps' => 'api/home_page#android_apps'
-  get 'home/android_apps/:category_id' => 'api/home_page#android_apps_show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

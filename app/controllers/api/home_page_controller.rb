@@ -1,5 +1,7 @@
 class Api::HomePageController < ApplicationController
 
+  before_filter :require_auth
+
   def initialize
     @categories = ["top_recommendations", "recent_recommendations"]
     @categories_name = ["Top Recommendations", "Recent recommendations"]
