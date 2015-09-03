@@ -12,7 +12,7 @@ class Recommendation < ActiveRecord::Base
 
   validates_uniqueness_of :item_id, scope: [:recommendee, :recommender, :item_type]
 
-  after_create :send_notification, :update_request
+  after_create :update_request, :send_notification
 
   class RecursionValidator < ActiveModel::Validator
     def validate(record)
@@ -54,7 +54,12 @@ class Recommendation < ActiveRecord::Base
   end
 
   def send_notification
-    recommendee.send_notification(self.serializable_hash(:include => ["recommender", "recommendee"]))
+    if @reply
+      notification = Notification.new("Response", recommender.name, self.item_type, self.item_id)
+    else
+      notification = Notification.new("Recommendation", recommender.name, self.item_type, self.item_id)
+    end
+    recommendee.send_notification(notification.instance_values)
     self.status = 'sent'
     save!
   end
@@ -80,11 +85,14 @@ class Recommendation < ActiveRecord::Base
     request = Request.where(
         :requestee => recommender,
         :requester => recommendee,
-        :item_type => item_type
+        :item_type => item_type,
+        :response => nil
       ).first
     if request.present?
       request.response = self
+      request.status = 'successful'
       request.save
+      @reply = true
     end
   end
 end

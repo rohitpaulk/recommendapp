@@ -13,6 +13,8 @@ class Request < ActiveRecord::Base
   validates_uniqueness_of :item_type, scope: [:requestee, :requester],
     conditions: -> { where( status: ["pending","sent"] ) }
 
+  after_create :send_notification
+
   class RequestValidator < ActiveModel::Validator
     def validate(record)
       if record.requester_id == record.requestee_id
@@ -54,7 +56,8 @@ class Request < ActiveRecord::Base
   end
 
   def send_notification
-    requestee.send_notification(self.serializable_hash(:include => ["requester", "requestee"]))
+    notification = Notification.new("Request", requester.name, item_type)
+    requestee.send_notification(notification.instance_values)
     self.status = 'sent'
     save!
   end
