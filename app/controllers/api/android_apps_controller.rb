@@ -12,14 +12,14 @@ class Api::AndroidAppsController < ApplicationController
   end
 
   def create
-    render plain: "Sir, please give array", status: 400 and return unless params[:apps].is_a?(Array)
+    render plain: "Provide an array of apps.", status: 400 and return unless params[:apps].is_a?(Array)
 
     updated_apps = @user.update_apps(params['apps'])
     render :json => updated_apps.to_json
   end
 
   def batch_delete
-    render plain: "Sir, pleasee give uid param. Please sir.", status: 400 and return unless params[:uid]
+    render plain: "Provide an array of apps.", status: 400 and return unless params[:uid]
 
     app = AndroidApp.find_by_uid(params[:uid])
 

@@ -25,8 +25,7 @@ class Api::UsersController < ApplicationController
     user.update_movies_from_facebook
 
     render :json => user.to_json(:include => :elsewheres,
-                                 :methods => :has_completed_tour
-                                 )
+                                 :methods => :has_completed_tour)
   end
 
   def update

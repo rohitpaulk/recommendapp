@@ -16,7 +16,7 @@ class AndroidApp < ActiveRecord::Base
     app = AndroidApp.find_by_uid(uid)
     unless app
       api_app = MarketBot::Android::App.new(uid)
-      api_app.update
+      api_app.update rescue MarketBot::ResponseError and return nil
       app = AndroidApp.create(app_params_from_api(api_app)) if api_app
     end
     app
