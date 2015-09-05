@@ -100,10 +100,6 @@ class User < ActiveRecord::Base
           android_apps.append(app)
           updated_apps.append(app)
         end
-        if reco = Recommendation.where(:recommendee => self, :item => app).first
-          reco.status = 'successful'
-          reco.save!
-        end
       end
     end
 
