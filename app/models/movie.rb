@@ -12,7 +12,10 @@ class Movie < ActiveRecord::Base
     else
       api_movie = Enceladus::Movie.find_by_title(title).first
       return nil unless api_movie
-      Movie.create!(movie_params_from_api(api_movie))
+      unless movie = Movie.find_by_imdb_id(api_movie.id)
+        movie = create_movie_from_api(api_movie)
+      end
+      movie
     end
   end
 
