@@ -72,6 +72,12 @@ class User < ActiveRecord::Base
     self.following << fetch_facebook_friends
   end
 
+  def make_friends(user)
+    unless self.following.include?(user)
+      self.following << user
+    end
+  end
+
   def update_facebook_avatar
     facebook_elsewhere = elsewheres.where(provider: 'facebook').first
     return unless facebook_elsewhere

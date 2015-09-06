@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   namespace 'api' do
     resources :users do
       resources :friends, only: :index
+      resources :user_items, only: [:index, :create]
       resources :movies, only: :index
       resources :android_apps, only: [:index, :create] do
         collection do

@@ -43,7 +43,7 @@ class Request < ActiveRecord::Base
       requestee = User.find_by_email(email)
       if requestee
         new_requests.append(create_request(requester, requestee, item_type))
-        #TODO make them friends
+        requester.make_friends(requestee)
       else
         #TODO New user, send email!
       end

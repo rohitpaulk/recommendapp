@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150901144121) do
+ActiveRecord::Schema.define(version: 20150906074755) do
 
   create_table "android_apps", force: :cascade do |t|
     t.string   "uid"
@@ -81,6 +81,7 @@ ActiveRecord::Schema.define(version: 20150901144121) do
     t.string   "item_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "like"
   end
 
   create_table "users", force: :cascade do |t|

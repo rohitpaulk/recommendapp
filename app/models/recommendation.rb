@@ -27,8 +27,9 @@ class Recommendation < ActiveRecord::Base
   before_validation :set_pending_status
 
   def self.create_by_id_and_email(recommender, item, recommendee_ids, recommendee_emails)
-    new_recommendations = []
+    UserItem.create_or_find_by_item(recommender, item)
 
+    new_recommendations = []
     recommendee_ids.each do |id|
       recommendee = User.find_by_id(id)
       if recommendee
@@ -41,12 +42,29 @@ class Recommendation < ActiveRecord::Base
       recommendee = User.find_by_email(email)
       if recommendee
         new_recommendations.append(create_recommendation(recommender, recommendee, item))
-        #TODO - Make them friends.
+        recommender.make_friends(recommendee)
       else
         #TODO - New user. Send email with new recommendation.
       end
     end
     return new_recommendations
+  end
+
+  # Updates the status when recommendee likes/dislikes the item 
+  # and sends notification to recommender
+  def self.update_status(user_item)
+    sent_reco = Recommendation.where(
+      :recommendee_id => user_item.user_id,
+      :item_id => user_item.item_id,
+      :item_type => user_item.item_type,
+      :status => 'sent'
+    )
+    sent_reco.each do |reco|
+      reco.status = 'successful'
+      reco.save!
+      notification = Notification.new("Acknowledge", reco.recommendee.name, reco.item_type, reco.item_id, user_item.like)
+      reco.recommender.send_notification(notification.instance_values)
+    end
   end
 
   def set_pending_status
@@ -88,6 +106,7 @@ class Recommendation < ActiveRecord::Base
         :item_type => item_type,
         :response => nil
       ).first
+    @reply = false
     if request.present?
       request.response = self
       request.status = 'successful'
