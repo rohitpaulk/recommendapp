@@ -18,6 +18,14 @@ module Api
         result = result.where(:item_type => params[:item_type])
       end
 
+      if params[:item_id]
+        result = result.where(:item_id => params[:item_id])
+      end
+
+      if params[:status]
+        result = result.where(:status => params[:status])
+      end
+
       result = result.all
 
       render :json => include_associations(result)
