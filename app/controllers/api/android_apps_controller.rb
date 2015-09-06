@@ -19,9 +19,10 @@ class Api::AndroidAppsController < ApplicationController
   end
 
   def batch_delete
-    render plain: "Provide an array of apps.", status: 400 and return unless params[:uid]
+    render plain: "Provide app uid", status: 400 and return unless params[:uid]
 
     app = AndroidApp.find_by_uid(params[:uid])
+    render plain: "Invalid app id", status: 400 and return unless app
 
     if @user.android_apps.include?(app)
       @user.android_apps.delete(app)
