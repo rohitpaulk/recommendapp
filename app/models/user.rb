@@ -90,9 +90,11 @@ class User < ActiveRecord::Base
   def update_movies_from_facebook
     fb_movies = fetch_facebook_movies
 
+    i = 0
     fb_movies.each do |movie|
       movie_object = Movie.from_title(movie.name)
       self.movies << movie_object if (movie_object && !self.movies.include?(movie_object))
+      break if ++i == 5
     end
   end
 
