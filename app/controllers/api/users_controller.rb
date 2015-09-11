@@ -20,7 +20,7 @@ class Api::UsersController < ApplicationController
     )
     user = User.create_or_find_by_uid(user_params.delete(:fb_uid), user_params)
 
-    user.update_facebook_friends
+    user.fetch_facebook_friends
     user.update_facebook_avatar
     user.update_movies_from_facebook
 

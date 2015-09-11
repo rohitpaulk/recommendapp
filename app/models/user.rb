@@ -57,24 +57,25 @@ class User < ActiveRecord::Base
     return unless facebook_elsewhere
     user = FbGraph::User.me(facebook_elsewhere.access_token)
 
-    user.friends.map { |fb_friend|
+    user.friends.each do |fb_friend|
       fb_uid = fb_friend.raw_attributes['id']
       elsewhere = Elsewhere.where(provider: 'facebook', uid: fb_uid).first
-      if elsewhere then elsewhere.user else nil end
-    }.compact
+      if elsewhere
+        make_friends(elsewhere.user)
+      end
+    end
   end
 
   def has_completed_tour
     self.recommendations.exists?
   end
 
-  def update_facebook_friends
-    self.following << fetch_facebook_friends
-  end
-
   def make_friends(user)
     unless self.following.include?(user)
       self.following << user
+    end
+    unless user.following.include?(self)
+      user.following << self
     end
   end
 
@@ -94,7 +95,8 @@ class User < ActiveRecord::Base
     fb_movies.each do |movie|
       movie_object = Movie.from_title(movie.name)
       self.movies << movie_object if (movie_object && !self.movies.include?(movie_object))
-      break if ++i == 5
+      i = i + 1
+      break if i == 5
     end
   end
 
