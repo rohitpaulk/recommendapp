@@ -35,7 +35,7 @@ class AndroidApp < ActiveRecord::Base
   end
 
   def self.top_recommendations(count = -1)
-    result = AndroidApp.order(recommendations_count: :desc)
+    result = AndroidApp.joins(:recommendations).order(recommendations_count: :desc)
     if count > 0
       result = result.limit(count)
     end

@@ -80,6 +80,7 @@ class Recommendation < ActiveRecord::Base
     recommendee.send_notification(notification.instance_values)
     self.status = 'sent'
     save!
+    
   end
 
   private
