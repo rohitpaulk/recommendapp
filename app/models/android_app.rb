@@ -23,7 +23,7 @@ class AndroidApp < ActiveRecord::Base
   end
 
   def self.search(query)
-    return AndroidApp.where("display_name LIKE ?", "%#{query}%")
+    return AndroidApp.where("LOWER(display_name) LIKE ?", "%#{query.downcase}%")
     # api_apps = MarketBot::Android::SearchQuery.new(query)
     # api_apps.update
     # api_apps.results.each do |api_app|
