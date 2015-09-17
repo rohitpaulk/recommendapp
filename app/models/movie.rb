@@ -13,7 +13,7 @@ class Movie < ActiveRecord::Base
       api_movie = Enceladus::Movie.find_by_title(title).first
       return nil unless api_movie
       unless movie = Movie.find_by_imdb_id(api_movie.id)
-        movie = create_movie_from_api(api_movie)
+        movie = Movie.create!(movie_params_from_api(api_movie))
       end
       movie
     end
@@ -43,7 +43,7 @@ class Movie < ActiveRecord::Base
     api_movies = collection.results_per_page[0]
     Enumerator.new do |e|
       api_movies.each { |api_movie|
-        movie = Movie.find_by_title(api_movie.original_title)
+        movie = Movie.find_by_imdb_id(api_movie.id)
         unless movie
           movie = Movie.create!(movie_params_from_api(api_movie))
         end

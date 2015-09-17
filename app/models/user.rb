@@ -71,13 +71,11 @@ class User < ActiveRecord::Base
   end
 
   def make_friends(user)
-    if user
-      unless self.following.include?(user)
-        self.following << user
-      end
-      unless user.following.include?(self)
-        user.following << self
-      end
+    unless self.following.include?(user)
+      self.following << user
+    end
+    unless user.following.include?(self)
+      user.following << self
     end
   end
 
