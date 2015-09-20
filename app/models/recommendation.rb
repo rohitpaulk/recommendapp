@@ -50,8 +50,9 @@ class Recommendation < ActiveRecord::Base
     return new_recommendations
   end
 
-  # Updates the status when recommendee likes/dislikes the item 
-  # and sends notification to recommender
+  # Updates the status of all sent recommendation
+  # when recommendee likes/dislikes the item
+  # and sends notification to recommenders
   def self.update_status(user_item)
     sent_reco = Recommendation.where(
       :recommendee_id => user_item.user_id,
