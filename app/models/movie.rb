@@ -53,7 +53,7 @@ class Movie < ActiveRecord::Base
   end
 
   def self.top_recommendations(count = -1)
-    result = Movie.order(recommendations_count: :desc)
+    result = Movie.where.not(recommendations_count: nil).order(recommendations_count: :desc)
     if count > 0
       result = result.limit(count)
     end
