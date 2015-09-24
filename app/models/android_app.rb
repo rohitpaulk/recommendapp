@@ -35,7 +35,7 @@ class AndroidApp < ActiveRecord::Base
   end
 
   def self.top_recommendations(count = -1)
-    result = AndroidApp.joins(:recommendations).order(recommendations_count: :desc)
+    result = AndroidApp.order(recommendations_count: :desc)
     if count > 0
       result = result.limit(count)
     end
@@ -44,11 +44,13 @@ class AndroidApp < ActiveRecord::Base
 
   def self.recent_recommendations(count = -1)
     result = AndroidApp.joins(:recommendations)
-    .select("android_apps.*, recommendations.updated_at").order("recommendations.updated_at")
+    .select("DISTINCT android_apps.id, android_apps.*")
+    .select("recommendations.updated_at")
+    .order("recommendations.updated_at")
     if count > 0
       result = result.limit(count)
     end
-    result.distinct
+    result
   end
 
   private

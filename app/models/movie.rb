@@ -53,7 +53,7 @@ class Movie < ActiveRecord::Base
   end
 
   def self.top_recommendations(count = -1)
-    result = Movie.joins(:recommendations).order(recommendations_count: :desc)
+    result = Movie.order(recommendations_count: :desc)
     if count > 0
       result = result.limit(count)
     end
@@ -62,11 +62,13 @@ class Movie < ActiveRecord::Base
 
   def self.recent_recommendations(count = -1)
     result = Movie.joins(:recommendations)
-    .select("movies.*, recommendations.updated_at").order("recommendations.updated_at")
+    .select("DISTINCT movies.id, movies.*")
+    .select("recommendations.updated_at")
+    .order("recommendations.updated_at")
     if count > 0
       result = result.limit(count)
     end
-    result.distinct
+    result
   end
 
   def self.recommendations_around_user(user)
