@@ -61,16 +61,23 @@ class Movie < ActiveRecord::Base
   end
 
   def self.recent_recommendations(count = -1)
-    # SELECT * FROM ( SELECT DISTINCT ON (movies.id) recommendations.updated_at AS date,
-    # movies.* FROM movies INNER JOIN recommendations ON recommendations.item_id = movies.id 
-    # AND recommendations.item_type = 'Movie') alias ORDER BY date DESC NULLS LAST;
+    # find all unique recommende movies in a subquery,
+    # then order them by recommendation date.
+    # See http://stackoverflow.com/questions/32775220/rails-distinct-on-after-a-join/32787503#32787503
+    # for a better way.
+    inner_query = Movie.joins(:recommendations)
+      .select("DISTINCT ON (movies.id) movies.*, recommendations.updated_at as date")
 
-    result = Movie.joins(:recommendations)
-    .select("DISTINCT ON (movies.id) movies.*, recommendations.updated_at as date")
-    if count > 0
-      result = result.first(count)
+    result = Movie.from("(#{inner_query.to_sql}) as unique_recommendations")
+      .select("unique_recommendations.*")
+      .order("unique_recommendations.date DESC")
+
+    if(count > 0)
+      # should be in subquery. But gives different result then.
+      result = result.limit(count)
     end
-    result.sort_by(&:date).reverse
+
+    result
   end
 
   def self.recommendations_around_user(user)
