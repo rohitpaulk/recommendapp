@@ -44,13 +44,11 @@ class AndroidApp < ActiveRecord::Base
 
   def self.recent_recommendations(count = -1)
     result = AndroidApp.joins(:recommendations)
-    .select("DISTINCT android_apps.id, android_apps.*")
-    .select("recommendations.updated_at")
-    .order("recommendations.updated_at")
+    .select("DISTINCT ON (android_apps.id) android_apps.*, recommendations.updated_at as date")
     if count > 0
       result = result.limit(count)
     end
-    result
+    result.sort_by(&:date).reverse
   end
 
   private
