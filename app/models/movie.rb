@@ -61,10 +61,14 @@ class Movie < ActiveRecord::Base
   end
 
   def self.recent_recommendations(count = -1)
+    # SELECT * FROM ( SELECT DISTINCT ON (movies.id) recommendations.updated_at AS date,
+    # movies.* FROM movies INNER JOIN recommendations ON recommendations.item_id = movies.id 
+    # AND recommendations.item_type = 'Movie') alias ORDER BY date DESC NULLS LAST;
+
     result = Movie.joins(:recommendations)
     .select("DISTINCT ON (movies.id) movies.*, recommendations.updated_at as date")
     if count > 0
-      result = result.limit(count)
+      result = result.first(count)
     end
     result.sort_by(&:date).reverse
   end
