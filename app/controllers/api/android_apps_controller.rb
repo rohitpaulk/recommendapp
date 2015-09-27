@@ -31,8 +31,30 @@ class Api::AndroidAppsController < ApplicationController
     render :plain => "Deleted"
   end
 
+  def activity
+    app = AndroidApp.find_by_id(params[:id])
+    render plain: "Invalid app id", status: 400 and return unless app
+    activity = app.activity_around_user(@api_user)
+    render json: include_activity_associations(activity)
+  end
+
   def show
     app = AndroidApp.find(params[:id])
     render :json => app.to_json
+  end
+
+  private
+  def include_activity_associations(activity)
+    return activity.to_json(include: {
+      :recommender => {
+        :only => [:id, :name, :avatar_url]
+      },
+      :recommendee => {
+        :only => [:id, :name, :avatar_url]
+      },
+      :request => {
+        :except => [:created_at, :updated_at]
+      }
+    })
   end
 end

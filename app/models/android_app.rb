@@ -57,6 +57,10 @@ class AndroidApp < ActiveRecord::Base
     result
   end
 
+  def activity_around_user(user)
+    Item.activity_around_user_for_item(user, self)
+  end
+
   private
   def self.app_params_from_api(api_app)
     return {

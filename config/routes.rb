@@ -12,7 +12,16 @@ Rails.application.routes.draw do
         end
       end
     end
-    resources :android_apps, only: [:index, :show]
+    resources :android_apps, only: [:index, :show] do
+      member do
+        get 'activity'
+      end
+    end
+    resources :movies, only: :show do
+      member do
+        get 'activity'
+      end
+    end
     resources :recommendations
     resources :search, only: [:index]
     resources :requests

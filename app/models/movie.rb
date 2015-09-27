@@ -98,6 +98,10 @@ class Movie < ActiveRecord::Base
 
   end
 
+  def activity_around_user(user)
+    Item.activity_around_user_for_item(user, self)
+  end
+
   private
   def self.movie_params_from_api(api_movie)
     return {
