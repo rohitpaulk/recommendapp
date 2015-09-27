@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150906074755) do
+ActiveRecord::Schema.define(version: 20150927080941) do
 
   create_table "android_apps", force: :cascade do |t|
     t.string   "uid"
@@ -24,12 +24,16 @@ ActiveRecord::Schema.define(version: 20150906074755) do
     t.integer  "recommendations_count"
   end
 
+  add_index "android_apps", ["uid"], name: "index_android_apps_on_uid", unique: true
+
   create_table "elsewheres", force: :cascade do |t|
     t.string  "provider"
     t.string  "uid"
     t.string  "access_token"
     t.integer "user_id"
   end
+
+  add_index "elsewheres", ["uid", "provider"], name: "index_elsewheres_on_uid_and_provider", unique: true
 
   create_table "movies", force: :cascade do |t|
     t.string   "title"
@@ -43,6 +47,8 @@ ActiveRecord::Schema.define(version: 20150906074755) do
     t.integer  "recommendations_count"
   end
 
+  add_index "movies", ["imdb_id"], name: "index_movies_on_imdb_id", unique: true
+
   create_table "recommendations", force: :cascade do |t|
     t.integer  "recommender_id"
     t.integer  "recommendee_id"
@@ -52,6 +58,8 @@ ActiveRecord::Schema.define(version: 20150906074755) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "recommendations", ["item_id", "recommendee_id", "recommender_id", "item_type"], name: "index_for_unique_recommendation", unique: true
 
   create_table "requests", force: :cascade do |t|
     t.integer  "requestee_id"
@@ -63,6 +71,7 @@ ActiveRecord::Schema.define(version: 20150906074755) do
     t.integer  "response_id"
   end
 
+  add_index "requests", ["item_type", "requestee_id", "requester_id"], name: "index_requests_on_item_type_and_requestee_id_and_requester_id", unique: true, where: "status IN (\"pending\",\"sent\")"
   add_index "requests", ["response_id"], name: "index_requests_on_response_id", unique: true
 
   create_table "user_followers", force: :cascade do |t|
@@ -84,6 +93,8 @@ ActiveRecord::Schema.define(version: 20150906074755) do
     t.boolean  "like"
   end
 
+  add_index "user_items", ["user_id", "item_id", "item_type"], name: "index_user_items_on_user_id_and_item_id_and_item_type", unique: true
+
   create_table "users", force: :cascade do |t|
     t.string   "api_access_token"
     t.string   "name"
@@ -93,5 +104,7 @@ ActiveRecord::Schema.define(version: 20150906074755) do
     t.string   "email"
     t.string   "push_id"
   end
+
+  add_index "users", ["api_access_token"], name: "index_users_on_api_access_token", unique: true
 
 end
