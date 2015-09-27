@@ -1,17 +1,23 @@
 class User < ActiveRecord::Base
-  has_many :elsewheres
+  has_many :elsewheres, :dependent => :destroy
 
-  has_many :user_items
+  has_many :user_items, :dependent => :destroy
+
   has_many :android_apps, :through => :user_items, :source => :item, :source_type => "AndroidApp"
   has_many :movies, :through => :user_items, :source => :item, :source_type => "Movie"
 
-  has_many :recommendations, :foreign_key => :recommender_id
+  has_many :recommendations, :foreign_key => :recommender_id, :dependent => :destroy
+  has_many :received_recommendations, class_name: 'Recommendation', :foreign_key => :recommendee_id, dependent: :destroy
   has_many :recommended_android_apps, :through => :recommendations, :source => :item, :source_type => "AndroidApp"
 
-  has_many :requests, :foreign_key => :requester_id
+  has_many :requests, :foreign_key => :requester_id, :dependent => :destroy
+  has_many :received_requests, class_name: 'Request', foreign_key: :requestee_id, dependent: :destroy
 
   has_many :outgoing_relationships, class_name: 'UserFollower', foreign_key: :follower_id
-  has_many :following, through: :outgoing_relationships, source: :following, class_name: "User"
+  has_many :following, through: :outgoing_relationships, source: :following, class_name: "User", :dependent => :destroy
+
+  has_many :incoming_relationships, class_name: 'UserFollower', foreign_key: :following_id
+  has_many :followers, through: :incoming_relationships, source: :follower, class_name: "User", :dependent => :destroy
 
   validates_presence_of :api_access_token
   validates_presence_of :elsewheres

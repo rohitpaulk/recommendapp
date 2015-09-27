@@ -1,5 +1,5 @@
 class Recommendation < ActiveRecord::Base
-  has_one :request, :foreign_key => "response_id"
+  has_one :request, :foreign_key => "response_id", dependent: :nullify
   belongs_to :recommendee, :class_name => "User"
   belongs_to :recommender, :class_name => "User"
   belongs_to :item, :polymorphic => true, :counter_cache => true

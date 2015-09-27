@@ -2,9 +2,9 @@ class Movie < ActiveRecord::Base
   validates_presence_of :imdb_id, :title
   validates_uniqueness_of :imdb_id
 
-  has_many :user_items, :as => :item
+  has_many :user_items, :as => :item, dependent: :destroy
   has_many :users, :through => :user_items
-  has_many :recommendations, :as => :item
+  has_many :recommendations, :as => :item, dependent: :destroy
 
   def self.from_title(title)
     if Movie.exists?(title: title)
