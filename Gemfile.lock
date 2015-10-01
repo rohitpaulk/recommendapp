@@ -89,6 +89,7 @@ GEM
     haml (4.0.6)
       tilt
     hike (1.2.3)
+    hirb (0.7.3)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
     httparty (0.13.3)
@@ -246,6 +247,7 @@ DEPENDENCIES
   factory_girl_rails
   fb_graph (~> 2.7.17)
   haml (~> 4.0.5)
+  hirb
   jbuilder (~> 2.0)
   jquery-rails
   market_bot

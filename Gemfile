@@ -45,6 +45,9 @@ gem 'market_bot'
 # Use Puma as the app server
 gem 'puma'
 
+#Print active record tables
+gem 'hirb'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
