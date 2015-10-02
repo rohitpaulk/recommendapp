@@ -53,57 +53,26 @@ class Movie < ActiveRecord::Base
   end
 
   def self.top_recommendations(count = -1)
-    result = Movie.where.not(recommendations_count: nil).order(recommendations_count: :desc)
-    if count > 0
-      result = result.limit(count)
-    end
-    result.distinct
+    Item.top_recommendations(Movie, count)
   end
 
   def self.top_recommendations_around_user(user, count = -1)
-    result = Movie.joins(:recommendations).joins(:recommendations => :recommender)
-      .where(:recommendations => { :recommender_id => user.following } )
-      .select("count(recommendations.item_id) AS friends_rec_count,
-        movies.*,
-        array_agg( DISTINCT users.avatar_url) AS profile_pics") #only postgresql
-      .group("movies.id")
-      .order("friends_rec_count DESC")
-
-    result
+    Item.top_recommendations_around_user(Movie, user, count)
   end
 
   def self.recent_recommendations(count = -1)
-    # find all unique recommended movies in a subquery,
-    # then order them by recommendation date.
-    # See http://stackoverflow.com/questions/32775220/rails-distinct-on-after-a-join/32787503#32787503
-    # for a better way.
-    inner_query = Movie.joins(:recommendations)
-      .select("DISTINCT ON (movies.id) movies.*, recommendations.updated_at as date")
-
-    result = Movie.from("(#{inner_query.to_sql}) as unique_recommendations")
-      .select("unique_recommendations.*")
-      .order("unique_recommendations.date DESC")
-
-    if(count > 0)
-      # should be in subquery. But gives different result then.
-      result = result.limit(count)
-    end
-
-    result
+    Item.recent_recommendations(Movie, count)
   end
 
   def self.recent_recommendations_around_user(user, count = -1)
-    result = Movie.joins(:recommendations).joins(:recommendations => :recommender)
-    .where(:recommendations => { :recommender_id => user.following } )
-    .select("
-      max(recommendations.updated_at) as date,
-      movies.*,
-      array_agg( DISTINCT users.avatar_url ) AS profile_pics")
-    .group("movies.id")
-    .order("date DESC")
+    Item.recent_recommendations_around_user(Movie, user, count)
   end
 
-  def self.trending
+  def activity_around_user(user)
+    Item.activity_around_user_for_item(user, self)
+  end
+
+  def self.trending #TODO
     older = Movie.joins(:recommendations)
     .select("count(recommendations.item_id) as cc, movies.id")
     .group("movies.id")
@@ -116,14 +85,11 @@ class Movie < ActiveRecord::Base
     .order("cc DESC")
     .where(:recommendations => { :created_at => 2.days.ago..Time.now } )
 
-    sql = "WITH older as (#{a.to_sql}), newer as (#{b.to_sql}) SELECT newer.cc/older.cc AS tr from older inner join newer ON older.id = newer.id"
+    sql = "WITH older as (#{older.to_sql}), newer as (#{newer.to_sql}) SELECT newer.cc/older.cc AS tr from older inner join newer ON older.id = newer.id"
 
     Movie.find_by_sql(sql)
   end
 
-  def activity_around_user(user)
-    Item.activity_around_user_for_item(user, self)
-  end
 
   private
   def self.movie_params_from_api(api_movie)

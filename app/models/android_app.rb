@@ -24,37 +24,22 @@ class AndroidApp < ActiveRecord::Base
 
   def self.search(query)
     return AndroidApp.where("LOWER(display_name) LIKE ?", "%#{query.downcase}%")
-    # api_apps = MarketBot::Android::SearchQuery.new(query)
-    # api_apps.update
-    # api_apps.results.each do |api_app|
-    #   puts api_app
-    #   uid = api_app[:market_id] #weird
-    #   app = create_or_find_by_uid(uid)
-    #   puts app
-    # end
   end
 
   def self.top_recommendations(count = -1)
-    result = AndroidApp.where.not(recommendations_count: nil).order(recommendations_count: :desc)
-    if count > 0
-      result = result.limit(count)
-    end
-    result.distinct
+    Item.top_recommendations(AndroidApp, count)
+  end
+
+  def self.top_recommendations_around_user(user, count = -1)
+    Item.top_recommendations_around_user(AndroidApp, user, count)
   end
 
   def self.recent_recommendations(count = -1)
-    inner_query = AndroidApp.joins(:recommendations)
-      .select("DISTINCT ON (android_apps.id) android_apps.*, recommendations.updated_at as date")
+    Item.recent_recommendations(AndroidApp, count)
+  end
 
-    result = AndroidApp.from("(#{inner_query.to_sql}) as unique_recommendations")
-      .select("unique_recommendations.*")
-      .order("unique_recommendations.date DESC")
-
-    if(count > 0)
-      result = result.limit(count)
-    end
-    
-    result
+  def self.recent_recommendations_around_user(user, count = -1)
+    Item.recent_recommendations_around_user(AndroidApp, user, count)
   end
 
   def activity_around_user(user)
