@@ -35,6 +35,8 @@ class Api::HomePageController < ApplicationController
 
   def home_data(item_class)
     result = []
+    result.append(format_data(item_class.top_recommendations_around_user(@api_user, 4), 0))
+    result.append(format_data(item_class.recent_recommendations_around_user(@api_user, 4), 1))
     result.append(format_data(item_class.top_recommendations(4), 2))
     result.append(format_data(item_class.recent_recommendations(4), 3))
     return result
