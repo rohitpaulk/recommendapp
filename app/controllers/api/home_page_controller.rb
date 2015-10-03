@@ -1,10 +1,14 @@
 class Api::HomePageController < ApplicationController
 
-  before_filter :require_auth
+  before_filter :require_auth, :init_categories
 
-  def initialize
-    @categories = ["top_recommendations", "recent_recommendations"]
-    @categories_name = ["Top Recommendations", "Recent recommendations"]
+  def init_categories
+    @categories = [
+      Category.new("Popular around you", "top_recommendations_around_user", [@api_user]),
+      Category.new("Recent around you", "recent_recommendations_around_user", [@api_user]),
+      Category.new("Popular overall", "top_recommendations", []),
+      Category.new("Recent overall", "recent_recommendations", [])
+    ]
   end
 
   def movies
@@ -28,25 +32,38 @@ class Api::HomePageController < ApplicationController
   end
 
   private
-  #Helper methods. Might change!.
+
   def home_data(item_class)
     result = []
-    result.append(format_data(item_class.top_recommendations(4), 1))
-    result.append(format_data(item_class.recent_recommendations(4), 2))
+    result.append(format_data(item_class.top_recommendations(4), 2))
+    result.append(format_data(item_class.recent_recommendations(4), 3))
     return result
   end
 
   def category_data(item_class, category_id)
-    result = item_class.method(@categories[category_id]).call
-    return format_data(result, category_id + 1).to_json
+    method = @categories[category_id].method_name
+    args = @categories[category_id].arguments
+
+    result = item_class.send(method, *args)
+    return format_data(result, category_id).to_json
   end
 
   def format_data(items, category_id)
     return {
-      :category_id    => category_id,
-      :category_name  => @categories_name[category_id - 1],
+      :category_id    => category_id + 1,
+      :category_name  => @categories[category_id].category_name,
       :items => items
     }
   end
 
+  class Category
+    attr_reader :category_name, :method_name, :arguments
+
+    def initialize(category_name, method_name, arguments)
+      @category_name = category_name
+      @method_name = method_name
+      @arguments = arguments
+    end
+
+  end
 end
