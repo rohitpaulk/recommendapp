@@ -9,7 +9,7 @@ class Api::FriendsController < ApplicationController
       render plain: "Invalid item_type", status: 422 and return
     end
 
-    result = user.following
+    result = user.following.order(:name)
 
     if params[:item_type] && params[:item_id]
       result = result.each.map do |follower|
