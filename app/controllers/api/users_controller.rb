@@ -30,7 +30,7 @@ class Api::UsersController < ApplicationController
 
   def update
     user_params = params.permit(
-      :push_id
+      :push_id, :logged_in
     )
     if @user.update(user_params)
       render :json => @user

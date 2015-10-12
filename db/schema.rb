@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150927080941) do
+ActiveRecord::Schema.define(version: 20151012131710) do
 
   create_table "android_apps", force: :cascade do |t|
     t.string   "uid"
@@ -103,6 +103,7 @@ ActiveRecord::Schema.define(version: 20150927080941) do
     t.datetime "updated_at"
     t.string   "email"
     t.string   "push_id"
+    t.boolean  "logged_in",        default: true
   end
 
   add_index "users", ["api_access_token"], name: "index_users_on_api_access_token", unique: true

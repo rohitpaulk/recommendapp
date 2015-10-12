@@ -34,7 +34,10 @@ class User < ActiveRecord::Base
       # Store the new access token
       elsewhere.access_token = params[:fb_access_token]
       elsewhere.save!
-      return Elsewhere.where(:uid => uid, :provider => 'facebook').first.user
+      user = Elsewhere.where(:uid => uid, :provider => 'facebook').first.user
+      user.logged_in = true
+      user.save!
+      return user
     else
       user = User.new
       user.email = params[:email]
@@ -125,6 +128,6 @@ class User < ActiveRecord::Base
 
   def send_notification(data)
     # Data is already in hash format
-    GCM.send_notification(push_id, data) if push_id
+    GCM.send_notification(push_id, data) if push_id && logged_in
   end
 end
