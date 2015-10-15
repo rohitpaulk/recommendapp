@@ -94,13 +94,23 @@ class Movie < ActiveRecord::Base
   private
   def self.movie_params_from_api(api_movie)
     return {
-      title:       api_movie.original_title,
-      year:        api_movie.release_date,
-      plot:        api_movie.overview,
-      imdb_id:     api_movie.id,  #This isn't imdb id. TODO
-      imdb_rating: api_movie.vote_average,  #Not imdb rating. TODO
-      poster_url:  api_movie.poster_urls[1] #TODO
+      title:        api_movie.original_title,
+      year:         api_movie.release_date,
+      plot:         api_movie.overview,
+      imdb_id:      api_movie.id,  #This isn't imdb id. TODO
+      imdb_rating:  api_movie.vote_average,  #Not imdb rating. TODO
+      poster_url:   api_movie.poster_urls[1], #TODO
+      trailer_link: self.get_trailer_link(api_movie.id)
     }
+  end
+
+  # TODO seperate class!
+  def self.get_trailer_link(api_movie_id)
+    api_movie_show = Enceladus::Movie.find(api_movie_id)
+    if api_movie_show.youtube_trailers.length > 0
+      return api_movie_show.youtube_trailers.first.link
+    end
+    return nil
   end
 
 end

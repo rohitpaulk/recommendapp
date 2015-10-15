@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151012131710) do
+ActiveRecord::Schema.define(version: 20151015123234) do
 
   create_table "android_apps", force: :cascade do |t|
     t.string   "uid"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20151012131710) do
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
     t.integer  "recommendations_count"
+    t.string   "trailer_link"
   end
 
   add_index "movies", ["imdb_id"], name: "index_movies_on_imdb_id", unique: true
