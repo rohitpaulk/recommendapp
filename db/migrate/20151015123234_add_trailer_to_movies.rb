@@ -6,6 +6,7 @@ class AddTrailerToMovies < ActiveRecord::Migration
       if api_movie.youtube_trailers.first
         movie.trailer_link = api_movie.youtube_trailers.first.link
         movie.save(:validate => false)
+        sleep(1)
       end
     end
   end
