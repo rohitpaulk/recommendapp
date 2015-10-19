@@ -28,7 +28,8 @@ class Item
 
     result = klass.joins(:recommendations).joins(:recommendations => :recommender)
     result = result.where(:recommendations => { :recommender_id => user.following } )
-    result = result.select("count(recommendations.item_id) AS friends_rec_count,
+    result = result.select(
+      "count(DISTINCT recommendations.item_id || ' ' || recommendations.recommender_id) AS friends_rec_count,
       #{table_name}.*,
       array_agg( DISTINCT users.avatar_url) AS profile_pics"
     ) #only postgresql
