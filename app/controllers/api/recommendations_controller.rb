@@ -26,7 +26,13 @@ module Api
         result = result.where(:status => params[:status])
       end
 
-      result = result.all
+      result = result.all.order("case
+        when status = 'sent' then '1'
+        when status = 'pending' then '2'
+        when status = 'successful' then '3'
+        else status end asc,
+        created_at desc"
+      )
 
       render :json => include_associations(result)
     end
