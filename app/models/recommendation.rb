@@ -22,7 +22,16 @@ class Recommendation < ActiveRecord::Base
     end
   end
 
+  class ItemExistValidator < ActiveModel::Validator
+    def validate(record)
+      if User.find(record.recommendee_id).user_items.exists?(:item_type => record.item_type, :item_id => record.item_id)
+        record.errors[:base] << "Already has this."
+      end
+    end
+  end
+
   validates_with RecursionValidator
+  validates_with ItemExistValidator, :on => :create
 
   before_validation :set_pending_status
 
