@@ -16,11 +16,21 @@ class Item
   end
 
   def self.top_recommendations(klass, count = -1)
-    result = klass.where.not(recommendations_count: nil).order(recommendations_count: :desc)
+    table_name = klass.table_name
+
+    result = klass.joins(:recommendations)
+    result = result.select(
+      "count(DISTINCT recommendations.item_id || ' ' || recommendations.recommender_id) AS rec_count,
+      #{table_name}.*"
+    )
+    result = result.group("#{table_name}.id")
+    result = result.order("rec_count DESC")
+
+    # result = klass.where.not(recommendations_count: nil).order(recommendations_count: :desc)
     if count > 0
       result = result.limit(count)
     end
-    result.distinct
+    result
   end
 
   def self.top_recommendations_around_user(klass, user, count = -1)
