@@ -14,15 +14,19 @@ class Recommendation < ActiveRecord::Base
 
   after_create :update_request, :send_notification
 
-  class RecursionValidator < ActiveModel::Validator
+  class CustomValidator < ActiveModel::Validator
     def validate(record)
       if record.recommender_id == record.recommendee_id
         record.errors[:base] << "You can't recommend items to yourself!"
       end
+      if User.find(record.recommendee_id).user_items
+        .exists?(:item_type => record.item_type, :item_id => record.item_id)
+        record.errors[:base] << "Already has this."
+      end
     end
   end
 
-  validates_with RecursionValidator
+  validates_with CustomValidator
 
   before_validation :set_pending_status
 
