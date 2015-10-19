@@ -108,7 +108,7 @@ class Movie < ActiveRecord::Base
   def self.get_trailer_link(api_movie_id)
     api_movie_show = Enceladus::Movie.find(api_movie_id)
     if api_movie_show.youtube_trailers.length > 0
-      return api_movie_show.youtube_trailers.first.link
+      return "https://www.youtube.com/watch?v=" + api_movie_show.youtube_trailers.first.source
     end
     return nil
   end
