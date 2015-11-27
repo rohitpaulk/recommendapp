@@ -1,1 +1,1 @@
-Work in progress.
+Backend for Sugesto android app.
